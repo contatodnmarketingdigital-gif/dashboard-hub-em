@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Estrategico - Comportamento de Compra | BRAINPRO</title>
+<title>Dashboard Estratégico - Comportamento de Compra | BRAINPRO</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
@@ -236,23 +236,37 @@
 
   canvas { max-height: 300px; }
 
-  @media (max-width: 1200px) {
+  @média (max-width: 1200px) {
     .kpi-grid { grid-template-columns: repeat(3, 1fr); }
     .grid-2, .grid-3, .grid-2-1, .grid-1-2 { grid-template-columns: 1fr; }
   }
-  @media (max-width: 768px) {
+  @média (max-width: 768px) {
     .kpi-grid { grid-template-columns: 1fr 1fr; }
     .container { padding: 12px; }
     .header { padding: 20px; }
     .header h1 { font-size: 22px; }
   }
+
+/* Chart container fix — força canvas a renderizar com tamanho explícito */
+.card { min-height: 360px; display: flex; flex-direction: column; }
+.card .card-title { flex: 0 0 auto; }
+.card canvas { 
+  flex: 1 1 auto !important; 
+  max-height: 300px !important; 
+  min-height: 280px !important; 
+  width: 100% !important; 
+}
+.card.no-chart, .card:has(canvas[id="entryFunnelChart"]) { min-height: auto; }
+.kpi { min-height: auto; }
+.kpi-strip .kpi { min-height: auto; }
+
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Dashboard Estrategico de Comportamento de Compra</h1>
-  <p>BRAINPRO - Analise da Jornada do Cliente | Dados: Kiwify + Voomp + Hotmart | Atualizado em Abril 2026</p>
+  <h1>Dashboard Estratégico de Comportamento de Compra</h1>
+  <p>BRAINPRO - Análise da Jornada do Cliente | Dados: Kiwify + Voomp + Hotmart | Atualizado em Abril 2026</p>
 </div>
 
 <div class="container">
@@ -261,14 +275,14 @@
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-icon">&#9200;</div>
-      <div class="kpi-label">Tempo Medio 1a &rarr; 2a Compra</div>
+      <div class="kpi-label">Tempo Médio 1a &rarr; 2a Compra</div>
       <div class="kpi-value">62,5 <span style="font-size:14px;color:var(--text-muted)">dias</span></div>
-      <div class="kpi-sub">Mediana: 4 dias | Janela ideal: ate 7 dias</div>
-      <div class="kpi-badge badge-warn">Mediana rapida</div>
+      <div class="kpi-sub">Mediana: 4 dias | Janela ideal: até 7 dias</div>
+      <div class="kpi-badge badge-warn">Mediana rápida</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-icon">&#128176;</div>
-      <div class="kpi-label">Ticket Medio Inicial vs Recorrente</div>
+      <div class="kpi-label">Ticket Médio Inicial vs Recorrente</div>
       <div class="kpi-value">R$ 413 <span style="font-size:16px;color:var(--accent5)">&rarr;</span> R$ 565</div>
       <div class="kpi-sub">Crescimento de +36,8% no ticket recorrente</div>
       <div class="kpi-badge badge-up">+36,8%</div>
@@ -282,14 +296,14 @@
     </div>
     <div class="kpi-card">
       <div class="kpi-icon">&#128200;</div>
-      <div class="kpi-label">LTV Medio por Cliente</div>
+      <div class="kpi-label">LTV Médio por Cliente</div>
       <div class="kpi-value">R$ 577</div>
       <div class="kpi-sub">Receita total: R$ 729.039</div>
-      <div class="kpi-badge badge-up">1.707 transacoes</div>
+      <div class="kpi-badge badge-up">1.707 transações</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-icon">&#127942;</div>
-      <div class="kpi-label">Tempo Medio ate Upgrade</div>
+      <div class="kpi-label">Tempo Médio até Upgrade</div>
       <div class="kpi-value">94 <span style="font-size:14px;color:var(--text-muted)">dias</span></div>
       <div class="kpi-sub">72 clientes fizeram upgrade (barato &rarr; premium)</div>
       <div class="kpi-badge badge-warn">~3 meses</div>
@@ -297,39 +311,39 @@
   </div>
 
   <!-- SECAO 1: TEMPO ENTRE COMPRAS -->
-  <div class="section-title">&#128336; Analise de Tempo entre Compras</div>
+  <div class="section-title">&#128336; Análise de Tempo entre Compras</div>
   <div class="grid-2">
     <div class="card">
-      <div class="card-title"><span class="icon">&#128202;</span> Distribuicao do Tempo entre Compras</div>
+      <div class="card-title"><span class="icon">&#128202;</span> Distribuição do Tempo entre Compras</div>
       <canvas id="timeDistChart"></canvas>
     </div>
     <div class="card">
       <div class="card-title"><span class="icon">&#128197;</span> Quando os Clientes Voltam a Comprar</div>
       <canvas id="rebuyChart"></canvas>
       <div style="margin-top:16px;padding:12px;background:rgba(59,130,246,0.08);border-radius:8px;font-size:12px;color:var(--text-muted)">
-        <strong style="color:#60a5fa">Insight:</strong> 39,6% dos clientes que recompram fazem isso na <strong>primeira semana</strong>. A janela ideal de remarketing e de 0-7 dias apos a primeira compra.
+        <strong style="color:#60a5fa">Insight:</strong> 39,6% dos clientes que recompram fazem isso na <strong>primeira semana</strong>. A janela ideal de remarketing e de 0-7 dias após a primeira compra.
       </div>
     </div>
   </div>
 
   <!-- SECAO 2: PROGRESSAO DE VALOR -->
-  <div class="section-title">&#128176; Progressao de Valor e Ticket Medio</div>
+  <div class="section-title">&#128176; Progressão de Valor e Ticket Médio</div>
   <div class="grid-2">
     <div class="card">
-      <div class="card-title"><span class="icon">&#128200;</span> Ticket Medio por Segmento de Cliente</div>
+      <div class="card-title"><span class="icon">&#128200;</span> Ticket Médio por Segmento de Cliente</div>
       <canvas id="ticketChart"></canvas>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">&#128202;</span> Segmentacao de Clientes</div>
+      <div class="card-title"><span class="icon">&#128202;</span> Segmentação de Clientes</div>
       <table>
         <thead>
           <tr>
             <th>Segmento</th>
             <th class="text-right">Clientes</th>
             <th class="text-right">% do Total</th>
-            <th class="text-right">Ticket Medio</th>
+            <th class="text-right">Ticket Médio</th>
             <th class="text-right">Receita Total</th>
-            <th class="text-right">Tempo Medio</th>
+            <th class="text-right">Tempo Médio</th>
           </tr>
         </thead>
         <tbody>
@@ -360,16 +374,16 @@
         </tbody>
       </table>
       <div style="margin-top:16px;padding:12px;background:rgba(139,92,246,0.08);border-radius:8px;font-size:12px;color:var(--text-muted)">
-        <strong style="color:#a78bfa">Insight:</strong> Clientes com 3+ produtos gastam <strong>2,6x mais</strong> que clientes de produto unico (R$1.203 vs R$467). E recompram mais rapido (36 vs 68 dias).
+        <strong style="color:#a78bfa">Insight:</strong> Clientes com 3+ produtos gastam <strong>2,6x mais</strong> que clientes de produto único (R$1.203 vs R$467). E recompram mais rápido (36 vs 68 dias).
       </div>
     </div>
   </div>
 
   <!-- SECAO 3: FUNIL DE RETENCAO -->
-  <div class="section-title">&#128293; Funil de Retencao e Conversao</div>
+  <div class="section-title">&#128293; Funil de Retenção e Conversão</div>
   <div class="grid-2">
     <div class="card">
-      <div class="card-title"><span class="icon">&#128204;</span> Funil de Retencao (Produtos Unicos Comprados)</div>
+      <div class="card-title"><span class="icon">&#128204;</span> Funil de Retenção (Produtos Únicos Comprados)</div>
       <div class="funnel">
         <div class="funnel-step">
           <div class="funnel-label">1+ produto</div>
@@ -398,14 +412,14 @@
         </div>
       </div>
       <div style="margin-top:16px;padding:12px;background:rgba(239,68,68,0.08);border-radius:8px;font-size:12px;color:var(--text-muted)">
-        <strong style="color:#ef4444">Gargalo Principal:</strong> 80,9% dos clientes param apos o 1o produto. A conversao 1&rarr;2 produtos e o maior gargalo da esteira.
+        <strong style="color:#ef4444">Gargalo Principal:</strong> 80,9% dos clientes param após o 1o produto. A conversão 1&rarr;2 produtos e o maior gargalo da esteira.
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">&#128260;</span> Principais Progressoes entre Produtos</div>
+      <div class="card-title"><span class="icon">&#128260;</span> Principais Progressões entre Produtos</div>
       <div id="progressions-container"></div>
       <div style="margin-top:16px;padding:12px;background:rgba(6,182,212,0.08);border-radius:8px;font-size:12px;color:var(--text-muted)">
-        <strong style="color:#06b6d4">Insight:</strong> As progressoes mais comuns envolvem o produto "Neuromodulacao Nao-Invasiva" como porta de entrada, seguido por cursos mais aprofundados como TEA e Frequencias Binaurais.
+        <strong style="color:#06b6d4">Insight:</strong> As progressões mais comuns envolvem o produto "Neuromodulação Não-Invasiva" como porta de entrada, seguido por cursos mais aprofundados como TEA e Frequências Binaurais.
       </div>
     </div>
   </div>
@@ -424,93 +438,93 @@
   </div>
 
   <!-- SECAO 5: PLATAFORMAS -->
-  <div class="section-title">&#127760; Analise por Plataforma e Pagamento</div>
+  <div class="section-title">&#127760; Análise por Plataforma e Pagamento</div>
   <div class="grid-3">
     <div class="card">
       <div class="card-title"><span class="icon">&#128187;</span> Receita por Plataforma</div>
       <canvas id="platformChart"></canvas>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">&#128179;</span> Metodos de Pagamento (Assinaturas)</div>
+      <div class="card-title"><span class="icon">&#128179;</span> Métodos de Pagamento (Assinaturas)</div>
       <canvas id="paymentChart"></canvas>
     </div>
     <div class="card">
-      <div class="card-title"><span class="icon">&#128202;</span> Metricas Complementares</div>
+      <div class="card-title"><span class="icon">&#128202;</span> Métricas Complementares</div>
       <table>
         <tbody>
-          <tr><td>Total de Transacoes</td><td class="text-right text-blue"><strong>1.707</strong></td></tr>
-          <tr><td>Clientes Unicos</td><td class="text-right text-blue"><strong>1.263</strong></td></tr>
-          <tr><td>Media de Compras/Cliente</td><td class="text-right"><strong>1,35</strong></td></tr>
-          <tr><td>Ticket Medio Geral</td><td class="text-right text-green"><strong>R$ 427</strong></td></tr>
+          <tr><td>Total de Transações</td><td class="text-right text-blue"><strong>1.707</strong></td></tr>
+          <tr><td>Clientes Únicos</td><td class="text-right text-blue"><strong>1.263</strong></td></tr>
+          <tr><td>Média de Compras/Cliente</td><td class="text-right"><strong>1,35</strong></td></tr>
+          <tr><td>Ticket Médio Geral</td><td class="text-right text-green"><strong>R$ 427</strong></td></tr>
           <tr><td>Receita Total Acumulada</td><td class="text-right text-green"><strong>R$ 729.039</strong></td></tr>
           <tr><td>Clientes Kiwify</td><td class="text-right"><strong>1.335 vendas</strong></td></tr>
           <tr><td>Assinaturas Voomp</td><td class="text-right"><strong>372 ativas</strong></td></tr>
-          <tr><td>Taxa Conversao 1&rarr;2</td><td class="text-right text-yellow"><strong>19,1%</strong></td></tr>
+          <tr><td>Taxa Conversão 1&rarr;2</td><td class="text-right text-yellow"><strong>19,1%</strong></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
   <!-- SECAO 6: INSIGHTS ESTRATEGICOS -->
-  <div class="section-title">&#128161; Insights Estrategicos e Acoes Recomendadas</div>
+  <div class="section-title">&#128161; Insights Estratégicos e Ações Recomendadas</div>
 
   <div class="insight-card">
     <div class="insight-title">&#9200; 1. Melhor Momento para Upsell: Primeiros 7 Dias</div>
     <div class="insight-text">
-      A mediana do tempo entre compras e de apenas <strong>4 dias</strong>, e 39,6% dos clientes que recompram o fazem na primeira semana. Isso indica que o momento mais quente para upsell e imediatamente apos a primeira compra. Apos 7 dias, o engajamento cai drasticamente.
+      A mediana do tempo entre compras e de apenas <strong>4 dias</strong>, e 39,6% dos clientes que recompram o fazem na primeira semana. Isso indica que o momento mais quente para upsell e imediatamente após a primeira compra. Após 7 dias, o engajamento cai drasticamente.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Implementar sequencia automatizada de e-mails de upsell nos dias 1, 3, 5 e 7 apos a primeira compra. Oferecer combo ou desconto progressivo para segundo produto.
+      <strong>Ação:</strong> Implementar sequência automatizada de e-mails de upsell nos dias 1, 3, 5 e 7 após a primeira compra. Oferecer combo ou desconto progressivo para segundo produto.
     </div>
   </div>
 
   <div class="insight-card">
-    <div class="insight-title">&#128293; 2. Maior Gargalo: Conversao do 1o para 2o Produto (80,9% param)</div>
+    <div class="insight-title">&#128293; 2. Maior Gargalo: Conversão do 1o para 2o Produto (80,9% param)</div>
     <div class="insight-text">
-      De 1.263 clientes, 1.022 (80,9%) compram apenas 1 produto e nao avancam na esteira. Este e o ponto critico onde se perde mais receita potencial. O ticket medio salta de R$467 para R$989 quando o cliente compra 2 produtos, representando um aumento de 112% no valor do cliente.
+      De 1.263 clientes, 1.022 (80,9%) compram apenas 1 produto e não avancam na esteira. Este e o ponto crítico onde se perde mais receita potencial. O ticket médio salta de R$467 para R$989 quando o cliente compra 2 produtos, representando um aumento de 112% no valor do cliente.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Criar uma oferta irresistivel de segundo produto (desconto de 30-40%) ativada automaticamente 3-5 dias apos a primeira compra. Usar remarketing com prova social e depoimentos.
+      <strong>Ação:</strong> Criar uma oferta irresistivel de segundo produto (desconto de 30-40%) ativada automaticamente 3-5 dias após a primeira compra. Usar remarketing com prova social e depoimentos.
     </div>
   </div>
 
   <div class="insight-card">
     <div class="insight-title">&#128176; 3. Oportunidade de Aumento de LTV: Clientes Multi-Produto</div>
     <div class="insight-text">
-      Clientes com 3+ produtos gastam em media R$1.203, ou seja, <strong>2,6x mais</strong> que clientes de produto unico. Alem disso, o tempo medio entre compras desses clientes e de apenas 36 dias (vs 68 dias do grupo com 2 produtos), mostrando que quanto mais engajado, mais rapido compra novamente.
+      Clientes com 3+ produtos gastam em média R$1.203, ou seja, <strong>2,6x mais</strong> que clientes de produto unico. Além disso, o tempo médio entre compras desses clientes e de apenas 36 dias (vs 68 dias do grupo com 2 produtos), mostrando que quanto mais engajado, mais rápido compra novamente.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Criar um programa VIP para clientes com 2+ produtos, oferecendo acesso antecipado a novos cursos, grupo exclusivo e descontos progressivos (15% no 3o, 20% no 4o produto).
+      <strong>Ação:</strong> Criar um programa VIP para clientes com 2+ produtos, oferecendo acesso antecipado a novos cursos, grupo exclusivo e descontos progressivos (15% no 3o, 20% no 4o produto).
     </div>
   </div>
 
   <div class="insight-card">
-    <div class="insight-title">&#128640; 4. Neuromodulacao Nao-Invasiva como Porta de Entrada Estrategica</div>
+    <div class="insight-title">&#128640; 4. Neuromodulação Não-Invasiva como Porta de Entrada Estratégica</div>
     <div class="insight-text">
-      Com 530 vendas e ticket medio de R$30, o curso "Neuromodulacao Nao-Invasiva" funciona como o principal produto de entrada (low-ticket). Muitos clientes progridem deste curso para cursos premium como TEA (R$358) e Frequencias Binaurais (R$306). E a principal ponte da esteira.
+      Com 530 vendas e ticket médio de R$30, o curso "Neuromodulação Não-Invasiva" funciona como o principal produto de entrada (low-ticket). Muitos clientes progridem deste curso para cursos premium como TEA (R$358) e Frequências Binaurais (R$306). E a principal ponte da esteira.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Investir em trafego pago para este produto de entrada e criar um funil de nutricao que conduza naturalmente ao proximo curso da esteira. Testar oferta de "upgrade imediato" com desconto no checkout.
+      <strong>Ação:</strong> Investir em trafego pago para este produto de entrada e criar um funil de nutricao que conduza naturalmente ao proximo curso da esteira. Testar oferta de "upgrade imediato" com desconto no checkout.
     </div>
   </div>
 
   <div class="insight-card">
     <div class="insight-title">&#128179; 5. Voomp Assinaturas: Maior Fonte de Receita</div>
     <div class="insight-text">
-      As assinaturas Voomp geram R$471.506 (64,7% da receita total) com apenas 372 transacoes, resultando no maior ticket medio (R$1.267). O modelo de assinatura e claramente o mais lucrativo. 60% dos assinantes usam boleto, o que pode impactar a taxa de inadimplencia.
+      As assinaturas Voomp geram R$471.506 (64,7% da receita total) com apenas 372 transações, resultando no maior ticket médio (R$1.267). O modelo de assinatura e claramente o mais lucrativo. 60% dos assinantes usam boleto, o que pode impactar a taxa de inadimplência.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Priorizar migracao de clientes Kiwify para o modelo de assinatura Voomp. Oferecer incentivo para pagamento via cartao de credito (desconto de 5%) para reduzir inadimplencia.
+      <strong>Ação:</strong> Priorizar migração de clientes Kiwify para o modelo de assinatura Voomp. Oferecer incentivo para pagamento via cartao de credito (desconto de 5%) para reduzir inadimplência.
     </div>
   </div>
 
   <div class="insight-card">
-    <div class="insight-title">&#128337; 6. Janela de Upgrade: 94 Dias em Media</div>
+    <div class="insight-title">&#128337; 6. Janela de Upgrade: 94 Dias em Média</div>
     <div class="insight-text">
-      O tempo medio para um cliente migrar de produto barato para premium e de 94 dias (~3 meses). Isso sugere que a nutricao de longo prazo e essencial. Ha uma janela de oportunidade entre 60-120 dias que precisa ser explorada com conteudo de valor e ofertas estrategicas.
+      O tempo médio para um cliente migrar de produto barato para premium e de 94 dias (~3 meses). Isso sugere que a nutricao de longo prazo e essencial. Há uma janela de oportunidade entre 60-120 dias que precisa ser explorada com conteudo de valor e ofertas estratégicas.
     </div>
     <div class="insight-action">
-      <strong>Acao:</strong> Criar campanha de remarketing de 90 dias com conteudo educacional (webinars gratuitos, aulas demonstrativas) nas semanas 4, 8 e 12 apos a compra. Incluir oferta especial no marco de 90 dias.
+      <strong>Ação:</strong> Criar campanhá de remarketing de 90 dias com conteudo educacional (webinars gratuitos, aulas demonstrativas) nas semanas 4, 8 e 12 após a compra. Incluir oferta especial no marco de 90 dias.
     </div>
   </div>
 
@@ -519,22 +533,22 @@
   <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.05),rgba(139,92,246,0.05));border-color:rgba(59,130,246,0.2)">
     <div style="font-size:14px;line-height:1.8;color:var(--text-muted)">
       <p style="margin-bottom:16px">
-        A analise de <strong style="color:var(--text)">1.263 clientes unicos</strong> e <strong style="color:var(--text)">1.707 transacoes</strong> revela um negocio com forte potencial de crescimento por meio da otimizacao da esteira de produtos. A receita acumulada e de <strong style="color:#22c55e">R$ 729.039</strong>, com LTV medio de <strong style="color:#22c55e">R$ 577</strong> por cliente.
+        A análise de <strong style="color:var(--text)">1.263 clientes únicos</strong> e <strong style="color:var(--text)">1.707 transações</strong> revela um negocio com forte potencial de crescimento por meio da otimização da esteira de produtos. A receita acumulada e de <strong style="color:#22c55e">R$ 729.039</strong>, com LTV médio de <strong style="color:#22c55e">R$ 577</strong> por cliente.
       </p>
       <p style="margin-bottom:16px">
-        O principal gargalo esta na <strong style="color:#ef4444">conversao do 1o para o 2o produto</strong>, onde 80,9% dos clientes param. Converter apenas 10% desses clientes geraria uma receita adicional estimada de <strong style="color:#22c55e">R$ 53.000+</strong>.
+        O principal gargalo está na <strong style="color:#ef4444">conversão do 1o para o 2o produto</strong>, onde 80,9% dos clientes param. Converter apenas 10% desses clientes geraria uma receita adicional estimada de <strong style="color:#22c55e">R$ 53.000+</strong>.
       </p>
       <p style="margin-bottom:16px">
-        A <strong style="color:#60a5fa">janela critica de recompra</strong> e de 0-7 dias (mediana de 4 dias), indicando que acoes de upsell devem ser imediatas. Clientes multi-produto sao 2,6x mais valiosos e compram com frequencia 2x maior.
+        A <strong style="color:#60a5fa">janela crítica de recompra</strong> e de 0-7 dias (mediana de 4 dias), indicando que ações de upsell devem ser imediatas. Clientes multi-produto são 2,6x mais valiosos e compram com frequência 2x maior.
       </p>
       <p>
-        As <strong style="color:#a78bfa">assinaturas Voomp</strong> representam 64,7% da receita com o maior ticket medio. A estrategia prioritaria deve ser: (1) maximizar conversao do 1o para 2o produto nos primeiros 7 dias, (2) criar programa de fidelidade para clientes 2+, e (3) migrar mais clientes para o modelo de assinatura.
+        As <strong style="color:#a78bfa">assinaturas Voomp</strong> representam 64,7% da receita com o maior ticket médio. A estrategia prioritaria deve ser: (1) maximizar conversão do 1o para 2o produto nos primeiros 7 dias, (2) criar programa de fidelidade para clientes 2+, e (3) migrar mais clientes para o modelo de assinatura.
       </p>
     </div>
   </div>
 
   <div style="text-align:center;padding:30px;color:var(--text-muted);font-size:12px;margin-top:20px">
-    Dashboard gerado automaticamente | BRAINPRO - Analise de Comportamento de Compra | Abril 2026
+    Dashboard gerado automaticamente | BRAINPRO - Análise de Comportamento de Compra | Abril 2026
   </div>
 
 </div>
@@ -605,7 +619,7 @@ new Chart(document.getElementById('ticketChart'), {
     labels: ['1 Produto', '2 Produtos', '3+ Produtos'],
     datasets: [
       {
-        label: 'Ticket Medio (R$)',
+        label: 'Ticket Médio (R$)',
         data: [467, 989, 1203],
         backgroundColor: ['rgba(59,130,246,0.7)', 'rgba(139,92,246,0.7)', 'rgba(34,197,94,0.7)'],
         borderRadius: 6,
@@ -629,7 +643,7 @@ new Chart(document.getElementById('ticketChart'), {
     responsive: true,
     plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, font: { size: 11 } } } },
     scales: {
-      y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Ticket Medio (R$)', font: { size: 11 } }, grid: { color: 'rgba(51,65,85,0.3)' } },
+      y: { beginAtZero: true, position: 'left', title: { display: true, text: 'Ticket Médio (R$)', font: { size: 11 } }, grid: { color: 'rgba(51,65,85,0.3)' } },
       y1: { beginAtZero: true, position: 'right', title: { display: true, text: 'Clientes', font: { size: 11 } }, grid: { display: false } },
       x: { grid: { display: false } }
     }
@@ -640,7 +654,7 @@ new Chart(document.getElementById('ticketChart'), {
 new Chart(document.getElementById('productChart'), {
   type: 'bar',
   data: {
-    labels: ['Assinatura Voomp', 'Curso Neuromod. TEA', 'Freq. Binaurais', 'Workshop TDAH', 'Neuromod. Nao-Invasiva', 'Aval. Biofeedback VFC', 'Durma Bem', 'Nervo Vago'],
+    labels: ['Assinatura Voomp', 'Curso Neuromod. TEA', 'Freq. Binaurais', 'Workshop TDAH', 'Neuromod. Não-Invasiva', 'Aval. Biofeedback VFC', 'Durma Bem', 'Nervo Vago'],
     datasets: [{
       label: 'Receita (R$)',
       data: [471506, 110253, 75565, 27686, 16083, 7128, 3937, 5104],
@@ -752,13 +766,13 @@ new Chart(document.getElementById('paymentChart'), {
 
 // 8. Render Progressions
 const progressions = [
-  {from: 'Neuromod. Nao-Invasiva', to: 'Curso Neuromod. TEA', count: 46},
-  {from: 'Neuromod. Nao-Invasiva', to: 'Freq. Binaurais', count: 38},
-  {from: 'Neuromod. Nao-Invasiva', to: 'Workshop TDAH', count: 22},
+  {from: 'Neuromod. Não-Invasiva', to: 'Curso Neuromod. TEA', count: 46},
+  {from: 'Neuromod. Não-Invasiva', to: 'Freq. Binaurais', count: 38},
+  {from: 'Neuromod. Não-Invasiva', to: 'Workshop TDAH', count: 22},
   {from: 'Curso Neuromod. TEA', to: 'Freq. Binaurais', count: 19},
-  {from: 'Neuromod. Nao-Invasiva', to: 'Aval. Biofeedback VFC', count: 12},
+  {from: 'Neuromod. Não-Invasiva', to: 'Aval. Biofeedback VFC', count: 12},
   {from: 'Curso Neuromod. TEA', to: 'Workshop TDAH', count: 11},
-  {from: 'Neuromod. Nao-Invasiva', to: 'Durma Bem', count: 8},
+  {from: 'Neuromod. Não-Invasiva', to: 'Durma Bem', count: 8},
   {from: 'Freq. Binaurais', to: 'Workshop TDAH', count: 7}
 ];
 

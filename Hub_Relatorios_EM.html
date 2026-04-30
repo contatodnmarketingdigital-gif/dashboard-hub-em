@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hub de Análises — Equipe Milionária</title>
+<title>Hub de Análises — Brainpro Academy</title>
 <style>
 :root{
   --bg:#0A0E1A; --bg2:#0F172A; --card:#131a2e; --card2:#1a2340;
@@ -15,197 +15,154 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--text)}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans-serif;line-height:1.55;min-height:100vh;background:linear-gradient(135deg,#0A0E1A 0%,#0F172A 100%);}
-
-/* HEADER */
-.app-header{
-  background:linear-gradient(135deg,#0d1b3e 0%,#0a0e1a 40%,#150d30 100%);
-  border-bottom:1px solid var(--border);
-  padding:28px 32px 0 32px; position:sticky; top:0; z-index:50;
-  backdrop-filter:blur(8px);
-}
-.app-header-inner{max-width:1440px;margin:0 auto;}
-.app-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:18px;}
+.app-header{background:linear-gradient(135deg,#0d1b3e 0%,#0a0e1a 40%,#150d30 100%);border-bottom:1px solid var(--border);padding:28px 32px 0 32px;position:sticky;top:0;z-index:50;backdrop-filter:blur(8px)}
+.app-header-inner{max-width:1440px;margin:0 auto}
+.app-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:18px}
 .app-title h1{font-size:24px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(90deg,#60a5fa,#a78bfa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .app-title p{font-size:13px;color:var(--muted2);margin-top:4px;font-weight:500}
 .app-meta{font-size:11px;color:var(--muted);text-align:right;line-height:1.7}
 .app-meta strong{color:var(--muted2);font-weight:600}
 .status-dot{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:rgba(74,222,128,.12);color:var(--green);font-size:10px;font-weight:700;letter-spacing:.06em;margin-top:6px}
 .status-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-
-/* PRIMARY TABS */
 .primary-tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-top:6px;overflow-x:auto;scrollbar-width:none}
 .primary-tabs::-webkit-scrollbar{display:none}
-.primary-tab{
-  background:none;border:none;color:var(--muted2);
-  font-size:13px;font-weight:600;letter-spacing:.01em;
-  padding:14px 20px;cursor:pointer;position:relative;
-  font-family:inherit;white-space:nowrap;transition:color .2s;
-  display:inline-flex;align-items:center;gap:8px;
-}
+.primary-tab{background:none;border:none;color:var(--muted2);font-size:13px;font-weight:600;letter-spacing:.01em;padding:14px 20px;cursor:pointer;position:relative;font-family:inherit;white-space:nowrap;transition:color .2s;display:inline-flex;align-items:center;gap:8px}
 .primary-tab:hover{color:var(--text-strong)}
 .primary-tab.active{color:var(--text-strong)}
-.primary-tab.active::after{
-  content:'';position:absolute;bottom:-1px;left:12px;right:12px;height:2px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;
-}
-.primary-tab .badge{
-  background:rgba(96,165,250,.15);color:var(--accent);
-  font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;
-}
-
-/* SECONDARY TABS */
-.secondary-bar{
-  background:rgba(15,23,42,.55);
-  border-bottom:1px solid var(--border);
-  padding:10px 32px;display:none;
-  position:sticky; top:88px; z-index:40; backdrop-filter:blur(6px);
-}
-.secondary-bar.show{display:block}
-.secondary-tabs{
-  max-width:1440px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;
-}
-.secondary-tab{
-  background:rgba(30,41,59,.55);border:1px solid var(--border);
-  color:var(--muted2);font-size:12px;font-weight:600;
-  padding:7px 14px;border-radius:999px;cursor:pointer;
-  font-family:inherit;transition:all .2s;
-}
-.secondary-tab:hover{color:var(--text-strong);border-color:var(--border-strong)}
-.secondary-tab.active{
-  background:linear-gradient(135deg,rgba(96,165,250,.18),rgba(167,139,250,.14));
-  color:var(--text-strong);border-color:rgba(96,165,250,.4);
-}
-
-/* MAIN AREA */
-.app-main{max-width:1440px;margin:0 auto;padding:28px 32px 60px 32px;}
+.primary-tab.active::after{content:'';position:absolute;bottom:-1px;left:12px;right:12px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px}
+.app-main{max-width:1440px;margin:0 auto;padding:28px 32px 60px 32px}
 .tab-pane{display:none;animation:fade .25s ease}
 .tab-pane.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-
-/* IFRAME WRAPPER */
-.iframe-wrap{
-  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
-  padding:0;overflow:hidden;height:calc(100vh - 220px);min-height:760px;
-  position:relative;
-}
+.iframe-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:0;overflow:hidden;height:calc(100vh - 220px);min-height:760px;position:relative}
 .iframe-wrap iframe{width:100%;height:100%;border:none;display:block;background:var(--bg)}
-.iframe-toolbar{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 18px;background:rgba(15,23,42,.7);
-  border-bottom:1px solid var(--border);font-size:12px;color:var(--muted2)
-}
+.iframe-toolbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:rgba(15,23,42,.7);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted2)}
 .iframe-toolbar a{color:var(--accent);text-decoration:none;font-weight:600}
 .iframe-toolbar a:hover{text-decoration:underline}
 
-/* HOME */
-.home-hero{
-  background:linear-gradient(135deg,rgba(74,222,128,.08) 0%,rgba(15,23,42,.3) 100%);
-  border:1px solid rgba(74,222,128,.2);border-radius:16px;
-  padding:28px;margin-bottom:24px;
-}
+.home-hero{background:linear-gradient(135deg,rgba(167,139,250,.10) 0%,rgba(15,23,42,.3) 100%);border:1px solid rgba(167,139,250,.25);border-radius:16px;padding:28px;margin-bottom:24px}
 .home-hero h2{font-size:22px;font-weight:700;color:var(--text-strong);letter-spacing:-.01em}
 .home-hero p{font-size:14px;color:var(--muted2);margin-top:8px;line-height:1.6;max-width:880px}
 
 .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
-.kpi{background:linear-gradient(135deg,rgba(30,41,59,.7) 0%,rgba(15,23,42,.5) 100%);
-  border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
+.kpi{background:linear-gradient(135deg,rgba(30,41,59,.7) 0%,rgba(15,23,42,.5) 100%);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative;overflow:hidden}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent-color,var(--accent)),transparent)}
 .kpi.g{--accent-color:var(--green)} .kpi.b{--accent-color:var(--accent)}
 .kpi.a{--accent-color:var(--amber)} .kpi.p{--accent-color:var(--accent2)}
 .kpi.c{--accent-color:var(--accent3)} .kpi.pk{--accent-color:var(--pink)}
+.kpi.r{--accent-color:var(--red)}
 .kpi-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .kpi-val{font-size:22px;font-weight:700;color:var(--text-strong);margin-top:6px}
 .kpi-sub{font-size:11px;color:var(--muted2);margin-top:4px}
 
-.home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;margin-bottom:24px}
-.home-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:22px;transition:transform .2s, border-color .2s;
-}
+/* FUNIL DA ESTEIRA — visualização principal */
+.esteira{display:grid;grid-template-columns:1fr;gap:0;margin:24px 0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 30px}
+.esteira-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.esteira-header h3{font-size:17px;font-weight:700;color:var(--text-strong)}
+.esteira-header p{font-size:12px;color:var(--muted2);margin-top:4px}
+.esteira-meta{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.esteira-stages{display:flex;gap:0;align-items:stretch;flex-wrap:wrap}
+.esteira-stage{flex:1;min-width:200px;padding:18px 16px;text-align:center;position:relative;border-right:1px solid var(--border)}
+.esteira-stage:last-child{border-right:none}
+.esteira-stage-label{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.esteira-stage-product{font-size:14px;font-weight:700;color:var(--text-strong);margin-bottom:14px;letter-spacing:-.01em}
+.esteira-bar{position:relative;height:140px;display:flex;flex-direction:column-reverse;align-items:center;justify-content:flex-start;margin-bottom:12px}
+.esteira-bar-fill{width:80%;border-radius:8px 8px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;color:#fff;font-weight:800;font-size:18px;text-shadow:0 1px 2px rgba(0,0,0,.3);transition:height .8s}
+.esteira-stage.t1 .esteira-bar-fill{background:linear-gradient(180deg,#10b981,#4ADE80)}
+.esteira-stage.t2 .esteira-bar-fill{background:linear-gradient(180deg,#3b82f6,#60A5FA)}
+.esteira-stage.t3 .esteira-bar-fill{background:linear-gradient(180deg,#FBBF24,#f59e0b)}
+.esteira-stage.t4 .esteira-bar-fill{background:linear-gradient(180deg,#A78BFA,#8b5cf6)}
+.esteira-stage-meta{font-size:11.5px;color:var(--muted2);line-height:1.5}
+.esteira-stage-meta strong{color:var(--text);font-weight:700}
+.esteira-arrow{position:absolute;right:-9px;top:50%;width:18px;height:18px;background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);transform:translateY(-50%) rotate(45deg);z-index:2}
+.esteira-stage:last-child .esteira-arrow{display:none}
+.esteira-conv{display:flex;justify-content:space-around;margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
+.esteira-conv-step{flex:1;text-align:center;font-size:11px;color:var(--muted2)}
+.esteira-conv-step strong{display:block;font-size:14px;font-weight:700;color:var(--accent3);margin-bottom:2px}
+
+/* DADOS BRUTOS POR PRODUTO — tabela */
+.raw-table-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:22px}
+.raw-table-header{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-end}
+.raw-table-header h3{font-size:16px;font-weight:700;color:var(--text-strong)}
+.raw-table-header p{font-size:12px;color:var(--muted2);margin-top:3px}
+.raw-table{width:100%;border-collapse:collapse;font-size:13px}
+.raw-table th{text-align:left;padding:12px 18px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--border-strong);background:rgba(96,165,250,.04)}
+.raw-table td{padding:13px 18px;color:var(--text);border-bottom:1px solid var(--border)}
+.raw-table tr:last-child td{border-bottom:none}
+.raw-table tr:hover td{background:rgba(148,163,184,.03)}
+.raw-table .num{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.raw-table .product-cell{font-weight:700;color:var(--text-strong);font-size:13px}
+.raw-table .product-cell .pdesc{display:block;font-size:10.5px;color:var(--muted2);font-weight:500;margin-top:2px;letter-spacing:0}
+.raw-table .pill-data{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.02em}
+.pill-data.green{background:rgba(74,222,128,.12);color:var(--green)}
+.pill-data.amber{background:rgba(251,191,36,.12);color:var(--amber)}
+.pill-data.red{background:rgba(248,113,113,.12);color:var(--red)}
+.pill-data.muted{background:rgba(148,163,184,.12);color:var(--muted2)}
+
+.home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:24px}
+.home-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;transition:transform .2s,border-color .2s}
 .home-card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
 .home-card-eyebrow{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.home-card.tea .home-card-eyebrow{color:var(--green)}
-.home-card.brain .home-card-eyebrow{color:var(--accent2)}
-.home-card h3{font-size:17px;font-weight:700;color:var(--text-strong);margin-top:6px;margin-bottom:8px}
-.home-card p{font-size:13px;color:var(--muted2);line-height:1.6}
-.home-card .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.home-card .pill{
-  background:rgba(96,165,250,.1);color:var(--accent);
-  font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;
-  border:1px solid rgba(96,165,250,.18);cursor:pointer;font-family:inherit;
-  transition:all .15s;
-}
+.home-card.teia .home-card-eyebrow{color:var(--green)}
+.home-card.tdcs .home-card-eyebrow{color:var(--amber)}
+.home-card.pos .home-card-eyebrow{color:var(--accent2)}
+.home-card.estrat .home-card-eyebrow{color:var(--accent3)}
+.home-card h3{font-size:14px;font-weight:700;color:var(--text-strong);margin-top:6px;margin-bottom:6px}
+.home-card p{font-size:12px;color:var(--muted2);line-height:1.55}
+.home-card .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.home-card .pill{background:rgba(96,165,250,.1);color:var(--accent);font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;border:1px solid rgba(96,165,250,.18);cursor:pointer;font-family:inherit;transition:all .15s}
 .home-card .pill:hover{background:rgba(96,165,250,.18);color:var(--text-strong)}
-.home-card.tea .pill{background:rgba(74,222,128,.1);color:var(--green);border-color:rgba(74,222,128,.18)}
-.home-card.tea .pill:hover{background:rgba(74,222,128,.2)}
-.home-card.brain .pill{background:rgba(167,139,250,.1);color:var(--accent2);border-color:rgba(167,139,250,.18)}
-.home-card.brain .pill:hover{background:rgba(167,139,250,.2)}
+.home-card.teia .pill{background:rgba(74,222,128,.1);color:var(--green);border-color:rgba(74,222,128,.18)}
+.home-card.tdcs .pill{background:rgba(251,191,36,.1);color:var(--amber);border-color:rgba(251,191,36,.18)}
+.home-card.pos .pill{background:rgba(167,139,250,.1);color:var(--accent2);border-color:rgba(167,139,250,.18)}
+.home-card.estrat .pill{background:rgba(34,211,238,.1);color:var(--accent3);border-color:rgba(34,211,238,.18)}
 
-.timeline{margin:18px 0}
-.timeline-row{
-  display:grid;grid-template-columns:80px 1fr;gap:16px;padding:12px 0;
-  border-bottom:1px solid var(--border)
-}
-.timeline-row:last-child{border-bottom:none}
-.timeline-date{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.05em}
-.timeline-content strong{color:var(--text-strong);font-weight:600;font-size:13px}
-.timeline-content small{display:block;color:var(--muted2);font-size:12px;margin-top:3px;line-height:1.55}
+/* SUB-TABS dentro de TEA */
+.subtab-bar{display:flex;gap:6px;background:rgba(15,23,42,.55);border:1px solid var(--border);border-radius:999px;padding:5px;margin-bottom:20px;width:fit-content}
+.subtab{background:transparent;border:none;color:var(--muted2);font-size:12.5px;font-weight:600;padding:7px 16px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .2s}
+.subtab.active{background:linear-gradient(135deg,rgba(96,165,250,.18),rgba(167,139,250,.14));color:var(--text-strong);border:1px solid rgba(96,165,250,.4)}
+.subpane{display:none}
+.subpane.active{display:block}
 
-/* REPORT BODY (TEA reports rendered from docx) */
-.rep-header{
-  background:linear-gradient(135deg,rgba(96,165,250,.06) 0%,rgba(15,23,42,.3) 100%);
-  border:1px solid rgba(96,165,250,.18);border-radius:14px;
-  padding:24px 28px;margin-bottom:22px;
-}
+.rep-header{background:linear-gradient(135deg,rgba(96,165,250,.06) 0%,rgba(15,23,42,.3) 100%);border:1px solid rgba(96,165,250,.18);border-radius:14px;padding:24px 28px;margin-bottom:22px}
 .rep-eyebrow{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .rep-title{font-size:24px;font-weight:800;color:var(--text-strong);letter-spacing:-.01em;line-height:1.3}
 .rep-subtitle{font-size:13px;color:var(--muted2);margin-top:6px}
-.rep-body{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:30px 36px;font-size:14px;
-}
+.rep-body{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:30px 36px;font-size:14px}
 .rep-body .rep-meta{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em}
 .rep-body .rep-meta:first-child{font-size:14px;color:var(--text-strong);font-weight:700}
-.rep-body .rep-h1{
-  font-size:18px;font-weight:800;color:var(--text-strong);margin-top:30px;margin-bottom:14px;
-  padding-bottom:8px;border-bottom:2px solid;border-image:linear-gradient(90deg,var(--accent),transparent) 1;
-  letter-spacing:-.01em;
-}
-.rep-body .rep-h2{
-  font-size:14px;font-weight:700;color:var(--accent3);margin-top:22px;margin-bottom:10px;
-  text-transform:uppercase;letter-spacing:.05em
-}
+.rep-body .rep-h1{font-size:18px;font-weight:800;color:var(--text-strong);margin-top:30px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid;border-image:linear-gradient(90deg,var(--accent),transparent) 1;letter-spacing:-.01em}
+.rep-body .rep-h2{font-size:14px;font-weight:700;color:var(--accent3);margin-top:22px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
 .rep-body .rep-p{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:12px;letter-spacing:.005em}
 .rep-body .rep-list{margin:10px 0 14px 0;padding-left:0;list-style:none}
-.rep-body .rep-list li{
-  font-size:13.5px;color:var(--text);line-height:1.6;padding:6px 0 6px 24px;position:relative;
-}
-.rep-body .rep-list li::before{
-  content:'▸';position:absolute;left:8px;color:var(--accent);font-weight:800
-}
+.rep-body .rep-list li{font-size:13.5px;color:var(--text);line-height:1.6;padding:6px 0 6px 24px;position:relative}
+.rep-body .rep-list li::before{content:'▸';position:absolute;left:8px;color:var(--accent);font-weight:800}
 .rep-body .rep-table-wrap{overflow-x:auto;margin:14px 0 22px 0;border:1px solid var(--border);border-radius:10px}
 .rep-body .rep-table{width:100%;border-collapse:collapse;font-size:12.5px}
-.rep-body .rep-table th{
-  background:rgba(96,165,250,.08);color:var(--text-strong);font-weight:700;
-  padding:11px 12px;text-align:left;letter-spacing:.02em;
-  border-bottom:1px solid var(--border-strong);
-  text-transform:uppercase;font-size:10.5px
-}
-.rep-body .rep-table td{
-  padding:10px 12px;color:var(--text);border-bottom:1px solid var(--border);
-}
+.rep-body .rep-table th{background:rgba(96,165,250,.08);color:var(--text-strong);font-weight:700;padding:11px 12px;text-align:left;letter-spacing:.02em;border-bottom:1px solid var(--border-strong);text-transform:uppercase;font-size:10.5px}
+.rep-body .rep-table td{padding:10px 12px;color:var(--text);border-bottom:1px solid var(--border)}
 .rep-body .rep-table tr:last-child td{border-bottom:none}
 .rep-body .rep-table tr:hover td{background:rgba(148,163,184,.04)}
 
-/* RESPONSIVE */
+.placeholder-box{background:rgba(251,191,36,.06);border:1px dashed rgba(251,191,36,.4);border-radius:12px;padding:20px 24px;margin:18px 0;color:var(--muted2);font-size:13px;line-height:1.6}
+.placeholder-box strong{color:var(--amber)}
+.placeholder-box ul{margin-top:10px;padding-left:20px;list-style-type:'→  '}
+.placeholder-box li{margin:4px 0}
+
+.section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:18px}
+.section h3{font-size:15px;font-weight:700;color:var(--text-strong);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+
 @media (max-width:900px){
   .app-header{padding:18px 18px 0 18px}
   .app-main{padding:20px 18px 50px 18px}
-  .secondary-bar{padding:10px 18px;top:auto;position:static}
   .app-title-row{flex-direction:column;gap:10px}
   .app-meta{text-align:left}
   .iframe-wrap{height:80vh;min-height:560px}
   .rep-body{padding:18px}
+  .esteira-stages{flex-direction:column}
+  .esteira-stage{border-right:none;border-bottom:1px solid var(--border)}
+  .esteira-stage:last-child{border-bottom:none}
+  .esteira-arrow{display:none}
 }
 </style>
 </head>
@@ -215,1196 +172,533 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Inter',Roboto,sans
   <div class="app-header-inner">
     <div class="app-title-row">
       <div class="app-title">
-        <h1>Hub de Análises Consolidado</h1>
-        <p>Equipe Milionária · TEA · BRAINPRO · Tráfego pago + Recompra + Comportamento de compra</p>
+        <h1>Hub de Análises Estratégicas</h1>
+        <p>Brainpro Academy · TEA · tDCS · Pós-Graduação · Funil perpétuo múltiplataforma</p>
       </div>
       <div class="app-meta">
-        <strong>Cliente:</strong> Equipe Milionária<br>
+        <strong>Cliente:</strong> Brainpro Academy<br>
         <strong>Atualizado:</strong> 30/04/2026<br>
-        <strong>Fontes:</strong> Meta Ads · Kiwify · Hotmart · CRM<br>
-        <span class="status-dot">HUB INTEGRADO</span>
+        <strong>Fontes:</strong> Kiwify · Eduzz · Voomp · Hotmart · Meta Ads<br>
+        <span class="status-dot">HUB EXECUTIVO</span>
       </div>
     </div>
     <nav class="primary-tabs" id="primaryTabs">
       <button class="primary-tab active" data-tab="home">🏠 Visão Geral</button>
-      <button class="primary-tab" data-tab="tea-reports">📋 TEA · Relatórios <span class="badge">4</span></button>
-      <button class="primary-tab" data-tab="tea-dashboard">📈 TEA · Dashboard</button>
-      <button class="primary-tab" data-tab="brain-comportamento">🧠 BRAINPRO · Comportamento</button>
-      <button class="primary-tab" data-tab="brain-recompra">🔁 BRAINPRO · Recompra</button>
+      <button class="primary-tab" data-tab="comportamento">🔍 Comportamento &amp; Recompra</button>
+      <button class="primary-tab" data-tab="tea">🎯 TEA</button>
+      <button class="primary-tab" data-tab="tdcs">🧠 tDCS</button>
+      <button class="primary-tab" data-tab="pos">🎓 Pós-Graduação</button>
+      <button class="primary-tab" data-tab="estratégica">📊 Análise Estratégica</button>
     </nav>
   </div>
 </header>
 
-<!-- Sub-tabs (only visible for tea-reports) -->
-<div class="secondary-bar" id="secondaryBar">
-  <div class="secondary-tabs" id="secondaryTabs">
-    <button class="secondary-tab active" data-sub="tab-tea-v1">v1 · Análise Inicial</button>
-    <button class="secondary-tab" data-sub="tab-tea-v2">v2 · Margem Real</button>
-    <button class="secondary-tab" data-sub="tab-tea-v3">v3 · Recalibração B2B</button>
-    <button class="secondary-tab" data-sub="tab-tea-v4">v4 · Análise Definitiva</button>
-  </div>
-</div>
-
 <main class="app-main">
 
-  <!-- HOME -->
+  <!-- ============ HOME · VISÃO GERAL ============ -->
   <section class="tab-pane active" id="home">
+
     <div class="home-hero">
-      <h2>Tudo num lugar só — TEA + BRAINPRO em abas integradas</h2>
-      <p>Este hub consolida 4 versões da análise do <strong style="color:#4ADE80">Curso Neuromodulação no TEA</strong> (da diagnose inicial à versão definitiva com dados reais Kiwify) e os 2 dashboards do <strong style="color:#A78BFA">BRAINPRO</strong> (comportamento de compra e funil de recompra). Use as abas no topo para navegar entre relatórios e dashboards interativos.</p>
+      <h2>Brainpro Academy · Diagnóstico executivo da operação</h2>
+      <p>Visão consolidada múltiplataforma da operação completa: <strong style="color:#4ADE80">R$ 729k</strong> de receita acumulada, <strong style="color:#A78BFA">1.263 clientes únicos</strong>, LTV médio R$ 577. A esteira de produtos funciona — Não-Invasiva alimenta TEA, TEA puxa tDCS, tDCS leva à Pós-Graduação. Os números abaixo mostram como cada degrau está performando hoje e onde estão as alavancas de crescimento.</p>
     </div>
 
-    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:0 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Veredito consolidado · TEA</h3>
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:0 0 12px 0;letter-spacing:.05em;text-transform:uppercase">KPIs consolidados · Brainpro Academy</h3>
     <div class="kpi-strip">
-      <div class="kpi g"><div class="kpi-label">Receita Líquida</div><div class="kpi-val">R$ 108,1k</div><div class="kpi-sub">Kiwify + Hotmart (×2)</div></div>
-      <div class="kpi b"><div class="kpi-label">Vendas Totais</div><div class="kpi-val">362</div><div class="kpi-sub">308 Kiwify + 54 Hotmart</div></div>
-      <div class="kpi p"><div class="kpi-label">ROAS Real</div><div class="kpi-val">1,70x</div><div class="kpi-sub">vs 1,49x só Kiwify</div></div>
-      <div class="kpi a"><div class="kpi-label">Ticket Médio</div><div class="kpi-val">R$ 298,59</div><div class="kpi-sub">Kiwify R$ 306 · Hot R$ 253</div></div>
-      <div class="kpi pk"><div class="kpi-label">Público Feminino</div><div class="kpi-val">76%</div><div class="kpi-sub">Profissionais de saúde</div></div>
-      <div class="kpi c"><div class="kpi-label">Margem Bruta</div><div class="kpi-val">R$ 44,6k</div><div class="kpi-sub">41,3% margem</div></div>
+      <div class="kpi g"><div class="kpi-label">Receita Total</div><div class="kpi-val">R$ 729k</div><div class="kpi-sub">1.707 transações · base instalada de R$ 729k já capturada</div></div>
+      <div class="kpi b"><div class="kpi-label">Ticket Médio Geral</div><div class="kpi-val">R$ 427</div><div class="kpi-sub">cliente recorrente vale +36,8% · escada funciona</div></div>
+      <div class="kpi p"><div class="kpi-label">LTV por Cliente</div><div class="kpi-val">R$ 577</div><div class="kpi-sub">média 1,35 compras · subir LTV = subir lucro 1:1</div></div>
+      <div class="kpi a"><div class="kpi-label">Taxa de Recompra</div><div class="kpi-val">22,8%</div><div class="kpi-sub">288 com 2+ produtos · 1 em cada 5 ascende</div></div>
+      <div class="kpi pk"><div class="kpi-label">Janela Quente Upsell</div><div class="kpi-val">0–7d</div><div class="kpi-sub">mediana 4d · sem fluxo automatizado, perde 39,6% em 7 dias</div></div>
+      <div class="kpi r"><div class="kpi-label">Gargalo do Funil</div><div class="kpi-val">80,9%</div><div class="kpi-sub">param após 1º produto · maior alavanca isolada da operação</div></div>
     </div>
 
+    <!-- ✦ FUNIL DA ESTEIRA · principal visualização ✦ -->
+    <div class="esteira">
+      <div class="esteira-header">
+        <div>
+          <h3>Como anda nossa esteira — funil perpétuo Brainpro</h3>
+          <p>Caminho do cliente do produto de entrada até a Pós-Graduação · acumulado todas as plataformas</p>
+        </div>
+        <div class="esteira-meta">FONTE: KIWIFY · EDUZZ · VOOMP</div>
+      </div>
+
+      <div class="esteira-stages">
+        <div class="esteira-stage t1">
+          <div class="esteira-arrow"></div>
+          <div class="esteira-stage-label">Topo · Produto de entrada</div>
+          <div class="esteira-stage-product">Não-Invasiva (R$ 30)</div>
+          <div class="esteira-bar"><div class="esteira-bar-fill" style="height:100%">513</div></div>
+          <div class="esteira-stage-meta"><strong>513 compradores</strong><br>18,5% recompram (95)<br>tempo médio 95d</div>
+        </div>
+        <div class="esteira-stage t2">
+          <div class="esteira-arrow"></div>
+          <div class="esteira-stage-label">Degrau 2 · Curso premium</div>
+          <div class="esteira-stage-product">TEA (R$ 358)</div>
+          <div class="esteira-bar"><div class="esteira-bar-fill" style="height:58%">300</div></div>
+          <div class="esteira-stage-meta"><strong>300 compradores</strong><br>18,0% recompram (54)<br>best-seller · tempo 92d</div>
+        </div>
+        <div class="esteira-stage t3">
+          <div class="esteira-arrow"></div>
+          <div class="esteira-stage-label">Degrau 3 · Aprofundamento</div>
+          <div class="esteira-stage-product">tDCS (R$ ~397)</div>
+          <div class="esteira-bar"><div class="esteira-bar-fill" style="height:17%">87</div></div>
+          <div class="esteira-stage-meta"><strong>87 compradores</strong><br>82,8% cross-sell (72)<br>17,2% compra direta (15)</div>
+        </div>
+        <div class="esteira-stage t4">
+          <div class="esteira-stage-label">Topo · Destino premium</div>
+          <div class="esteira-stage-product">Pós-Graduação</div>
+          <div class="esteira-bar"><div class="esteira-bar-fill" style="height:5%">27</div></div>
+          <div class="esteira-stage-meta"><strong>27 alunos</strong><br>96,3% via esteira (26)<br>8 vieram do Kiwify</div>
+        </div>
+      </div>
+
+      <div class="esteira-conv">
+        <div class="esteira-conv-step"><strong>58,5%</strong>do topo entra em TEA</div>
+        <div class="esteira-conv-step"><strong>29,0%</strong>de TEA chega em tDCS</div>
+        <div class="esteira-conv-step"><strong>31,0%</strong>de tDCS entra em PG</div>
+        <div class="esteira-conv-step"><strong>5,3%</strong>conversão topo→PG</div>
+      </div>
+    </div>
+
+    <!-- DADOS BRUTOS POR PRODUTO + IMPORTÂNCIA -->
+    <div class="raw-table-wrap">
+      <div class="raw-table-header">
+        <div>
+          <h3>Dados brutos por produto — o que cada número significa para o negócio</h3>
+          <p>Cada linhá traz o número absoluto de cada produto + a leitura executiva (por que esse dado importa)</p>
+        </div>
+      </div>
+      <table class="raw-table">
+        <thead>
+          <tr>
+            <th style="min-width:240px">Indicador<br><span style="font-weight:500;font-size:9.5px;color:#94A3B8;letter-spacing:0;text-transform:none">+ por que importa</span></th>
+            <th class="num">🎯 TEA<br><span style="font-weight:500;font-size:9.5px;color:#94A3B8;letter-spacing:0;text-transform:none">Curso Neuromodulação no TEA</span></th>
+            <th class="num">🧠 tDCS<br><span style="font-weight:500;font-size:9.5px;color:#94A3B8;letter-spacing:0;text-transform:none">Estimulação Transcraniana</span></th>
+            <th class="num">🎓 Pós-Graduação<br><span style="font-weight:500;font-size:9.5px;color:#94A3B8;letter-spacing:0;text-transform:none">Especialização Voomp/Eduzz</span></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="product-cell">Compradores acumulados<span class="pdesc">tamanho da base · indica o teto de cross-sell e LAL</span></td>
+            <td class="num">300<br><span style="font-size:11px;color:#94A3B8">+362 cross Kiwify+Hotmart</span></td>
+            <td class="num">87<br><span style="font-size:11px;color:#94A3B8">via Eduzz</span></td>
+            <td class="num">27<br><span style="font-size:11px;color:#94A3B8">via Eduzz/Voomp</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Ticket médio<span class="pdesc">define o CPA-máximo viável e a margem por venda</span></td>
+            <td class="num">R$ 358</td>
+            <td class="num">R$ ~397 <span class="pill-data muted">est.</span></td>
+            <td class="num">— <span class="pill-data muted">a definir</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Receita acumulada<span class="pdesc">tamanho do produto na operação · base de comparação para investimento</span></td>
+            <td class="num">R$ 110.253<br><span style="font-size:11px;color:#94A3B8">+R$ 108k Equipe Mil.</span></td>
+            <td class="num">R$ ~34.500 <span class="pill-data muted">est.</span></td>
+            <td class="num">— <span class="pill-data muted">faltam dados</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Taxa de recompra<span class="pdesc">% que comprou outro depois · mede aderência à esteira</span></td>
+            <td class="num"><span class="pill-data amber">18,0%</span> (54)</td>
+            <td class="num"><span class="pill-data green">82,8%</span> (72)</td>
+            <td class="num">— (topo da escada)</td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Cross-platform (múltiplataforma)<span class="pdesc">mostra força da marca além de uma única plataforma</span></td>
+            <td class="num">5 alunos cross com PG</td>
+            <td class="num">20,7% também na Kiwify</td>
+            <td class="num"><span class="pill-data green">29,6%</span> têm Kiwify</td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Investimento Meta Ads<span class="pdesc">mídia paga aplicada · principal alavanca de aquisição</span></td>
+            <td class="num">R$ 63.495<br><span style="font-size:11px;color:#94A3B8">81 campanhas · 13 meses</span></td>
+            <td class="num"><span class="pill-data amber">não rastreado</span></td>
+            <td class="num"><span class="pill-data amber">não rastreado</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">CPA · Custo por venda<span class="pdesc">eficiência da aquisição · se &lt; ticket, escala é viável</span></td>
+            <td class="num"><span class="pill-data green">R$ 175</span></td>
+            <td class="num">— <span class="pill-data muted">sem dado</span></td>
+            <td class="num">— <span class="pill-data muted">sem dado</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">ROAS real (receita ÷ gasto)<span class="pdesc">retorno por real investido · &gt; 1,5× indica saúde para escala</span></td>
+            <td class="num"><span class="pill-data green">1,70×</span></td>
+            <td class="num">— <span class="pill-data muted">sem dado</span></td>
+            <td class="num">— <span class="pill-data muted">sem dado</span></td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Margem bruta de mídia<span class="pdesc">receita − gasto Meta · não inclui custos operacionais</span></td>
+            <td class="num"><span class="pill-data green">R$ 44.595 (41%)</span></td>
+            <td class="num">—</td>
+            <td class="num">—</td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Tempo médio até recompra<span class="pdesc">define a janela ideal de upsell e o ritmo da esteira</span></td>
+            <td class="num">92 dias</td>
+            <td class="num">22 dias (→ Vagal)</td>
+            <td class="num">— (destino)</td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Próximo destino #1<span class="pdesc">para onde o cliente vai depois · diz qual oferta plugar no fluxo</span></td>
+            <td class="num">Workshop TDAH (18×)<br>Voomp (16×)</td>
+            <td class="num">Extensão Vagal (18×)<br>DRY (9×)</td>
+            <td class="num">— (final da esteira)</td>
+          </tr>
+
+          <tr>
+            <td class="product-cell">Status estratégico<span class="pdesc">papel do produto na operação · onde investir prioridade</span></td>
+            <td class="num"><span class="pill-data green">Best-seller · feeder #1 da PG</span></td>
+            <td class="num"><span class="pill-data amber">Subaproveitado · pivot técnico</span></td>
+            <td class="num"><span class="pill-data green">100% via esteira</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size:12px;color:#64748B;background:rgba(96,165,250,.05);border-left:3px solid #60A5FA;padding:12px 14px;border-radius:6px;margin-bottom:24px"><strong style="color:#60A5FA">Notas métodológicas:</strong> dados consolidados até 30/04/2026 a partir de Kiwify, Eduzz e Voomp. Foco em volumes, ticket, recompra e esteira de produtos — não inclui análise de mídia paga, CPA ou margem após custos operacionais.</p>
+
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:8px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Navegar para análises detalhadas</h3>
     <div class="home-grid">
-
-      <div class="home-card tea">
-        <div class="home-card-eyebrow">📋 TEA · 4 Relatórios em Versões</div>
-        <h3>Curso Neuromodulação no TEA — Estratégia evoluída em 4 cortes</h3>
-        <p>De um diagnóstico inicial sem ticket conhecido (v1) até a análise definitiva com dados reais cruzados Kiwify×Meta (v4). Inclui margem por cenário (v2) e a virada para público B2B profissionais de saúde (v3). Mantidas as 4 versões como abas separadas para preservar a evolução do raciocínio.</p>
-        <div class="pills">
-          <button class="pill" data-goto="tea-reports" data-sub="tab-tea-v1">v1 · Análise Inicial</button>
-          <button class="pill" data-goto="tea-reports" data-sub="tab-tea-v2">v2 · Margem</button>
-          <button class="pill" data-goto="tea-reports" data-sub="tab-tea-v3">v3 · Recalibração</button>
-          <button class="pill" data-goto="tea-reports" data-sub="tab-tea-v4">v4 · Definitiva</button>
-        </div>
-      </div>
-
-      <div class="home-card tea">
-        <div class="home-card-eyebrow">📈 TEA · Dashboard Visual</div>
-        <h3>Performance interativa — KPIs, gráficos, heatmap e demografia</h3>
-        <p>Dashboard completo com 308 vendas Kiwify + 54 Hotmart consolidadas: ROAS mensal, dia da semana, hora do dia, mapa de calor semana×dia, ofertas, top campanhas por UTM, perfil demográfico (76% feminino, Sudeste 47%) e plano de ação 60 dias.</p>
-        <div class="pills">
-          <button class="pill" data-goto="tea-dashboard">Abrir dashboard</button>
-        </div>
-      </div>
-
-      <div class="home-card brain">
-        <div class="home-card-eyebrow">🧠 BRAINPRO · Comportamento de Compra</div>
-        <h3>Como o aluno entra e percorre o funil BRAINPRO</h3>
-        <p>Dashboard estratégico do comportamento de compra do aluno BRAINPRO: pontos de entrada, padrões de decisão e oportunidades de otimização do funil de aquisição.</p>
-        <div class="pills">
-          <button class="pill" data-goto="brain-comportamento">Abrir dashboard</button>
-        </div>
-      </div>
-
-      <div class="home-card brain">
-        <div class="home-card-eyebrow">🔁 BRAINPRO · Funil de Recompra</div>
-        <h3>Da entrada até a pós-graduação — escada de recompra</h3>
-        <p>Dashboard completo do funil estratégico de recompra: entrada, recompra de cursos, ascensão para pós-graduação. Inclui prioridades, KPIs por etapa e plano de ativação.</p>
-        <div class="pills">
-          <button class="pill" data-goto="brain-recompra">Abrir dashboard</button>
-        </div>
-      </div>
-
+      <div class="home-card teia"><div class="home-card-eyebrow">🎯 TEA — relatório completo</div><h3>Curso Neuromodulação no TEA</h3><p>Análise definitiva com dados Kiwify×Meta cruzados, dashboard visual interativo, demografia (76% feminino), padrões temporais, ofertas e plano de ação 60d.</p><div class="pills"><button class="pill" data-goto="tea">Abrir relatório</button></div></div>
+      <div class="home-card tdcs"><div class="home-card-eyebrow">🧠 tDCS — pivot técnico</div><h3>Estimulação Transcraniana por Corrente Contínua</h3><p>87 compradores · cross-sell 82,8% · conversão para PG em 80 dias · destino #1: Extensão Vagal. Dados detalhados aguardando export Eduzz.</p><div class="pills"><button class="pill" data-goto="tdcs">Abrir relatório</button></div></div>
+      <div class="home-card pos"><div class="home-card-eyebrow">🎓 Pós-Graduação — destino final</div><h3>Especialização premium</h3><p>27 alunos matrículados via Eduzz · 96,3% via esteira · DRY é atalho de 9 dias · TEA é feeder Kiwify #1 (5 alunos).</p><div class="pills"><button class="pill" data-goto="pos">Abrir relatório</button></div></div>
+      <div class="home-card estrat"><div class="home-card-eyebrow">📊 Análise estratégica consolidada</div><h3>Funil + insights + plano 60d</h3><p>Diagnóstico executivo: gargalos do funil (80,9% param), oportunidades de escala, escada de valor, plano de ação 30/60/90 dias e KPIs-alvo.</p><div class="pills"><button class="pill" data-goto="estratégica">Abrir análise</button></div></div>
     </div>
 
-    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Linha do tempo das análises TEA</h3>
-    <div class="home-card" style="padding:24px">
-      <div class="timeline">
-        <div class="timeline-row">
-          <div class="timeline-date">22/04/26</div>
-          <div class="timeline-content"><strong>v1 — Análise Estratégica de Tráfego Pago</strong>
-            <small>Diagnóstico inicial das 81 campanhas. Identifica curva de aprendizado (CPA R$ 640 → R$ 136), gargalo no checkout (17%), 5 campanhas concentram 49% do gasto. Sem ticket conhecido, sem ROAS calculado.</small></div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">22/04/26</div>
-          <div class="timeline-content"><strong>v2 — Margem Real & Potencial de Escala</strong>
-            <small>Releitura com ticket líquido R$ 254. Aparece o "dia de ouro" quarta-feira (ROAS 1,82x), Semana 1 do mês como janela forte, e cenários de escala R$ 15k–60k/mês. Operação opera em margem apertada (12,6%).</small></div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">22/04/26</div>
-          <div class="timeline-content"><strong>v3 — Recalibração para público B2B</strong>
-            <small>Descoberta crítica: o público é profissional de saúde, não familiares. Reinterpreta padrões temporais (semana 1 = repasse de convênios; quarta = dia de estudo clínico). Teto de escala sobe de R$ 60k para R$ 150k/mês. Gargalo real é a escada de produtos.</small></div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">22/04/26</div>
-          <div class="timeline-content"><strong>v4 — Análise Definitiva (Kiwify × Meta)</strong>
-            <small>Cruzamento real: ROAS 1,49x (não 1,14x), ticket R$ 306 (não R$ 254), e a "campeã" do Meta era prejuízo (ROAS 0,45x). Quinta é o dia real de venda (não quarta). 54% das vendas sem UTM — atribuição fantasma do Meta. R$ 18,5k recuperáveis em pix/boleto.</small></div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">23/04/26</div>
-          <div class="timeline-content"><strong>Dashboard TEA visual + Hotmart consolidado</strong>
-            <small>Inclusão da co-produção Hotmart (×2). ROAS sobe para 1,70x e margem para R$ 44,6k. Abril/26 sai de "zerado" para 31 vendas reveladas.</small></div>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <!-- TEA REPORTS (4 sub-tabs) -->
-  <section class="tab-pane" id="tea-reports">
+  <!-- ============ TEA ============ -->
+  <section class="tab-pane" id="tea">
+
+    <div class="rep-header" style="border-color:rgba(74,222,128,.25);background:linear-gradient(135deg,rgba(74,222,128,.06) 0%,rgba(15,23,42,.3) 100%)">
+      <div class="rep-eyebrow" style="color:#4ADE80">🎯 Brainpro Academy · Produto TEA</div>
+      <h1 class="rep-title">Curso Neuromodulação no TEA</h1>
+      <p class="rep-subtitle">Best-seller · feeder #1 da Pós-Graduação · 300 compradores Kiwify · ticket R$ 358</p>
+    </div>
+
+    <div class="subtab-bar">
+      <button class="subtab active" data-sub="tea-dash">📈 Dashboard Visual</button>
+      <button class="subtab" data-sub="tea-rel">📋 Relatório Estratégico</button>
+    </div>
+
+    <div class="subpane active" id="tea-dash">
+      <div class="iframe-wrap">
+        <div class="iframe-toolbar">
+          <span><strong>Dashboard TEA</strong> · 308 Kiwify + 54 Hotmart · gerado em 23/04/26</span>
+          <a href="Dashboard_TEA.html" target="_blank">Abrir em nova aba ↗</a>
+        </div>
+        <iframe src="Dashboard_TEA.html" loading="lazy" title="Dashboard TEA"></iframe>
+      </div>
+    </div>
+
+    <div class="subpane" id="tea-rel">
+      <div class="rep-body">
+        <h2 class="rep-h1">TEA · Visão executiva do produto</h2>
+        <p class="rep-p">O Curso Neuromodulação no TEA é o produto premium de maior tração da Brainpro Academy. Best-seller e principal feeder Kiwify para a Pós-Graduação, ele combina ticket alto, base feminina engajada (76%) e padrão de compra B2B típico de profissionais de saúde.</p>
+
+        <h3 class="rep-h2">Indicadores essenciais do produto</h3>
+        <div class="rep-table-wrap">
+          <table class="rep-table">
+            <tr><th>Indicador</th><th>Valor</th><th>Leitura executiva</th></tr>
+            <tr><td>Compradores Brainpro Kiwify</td><td>300</td><td>Base ativa para cross-sell e LAL</td></tr>
+            <tr><td>Vendas consolidadas (Kiwify+Hotmart)</td><td>362</td><td>Inclui co-produção operada por Equipe Milionária</td></tr>
+            <tr><td>Ticket médio</td><td>R$ 358 (Brainpro) · R$ 298 (consolidado)</td><td>Ticket no nível premium do mercado de cursos para profissionais de saúde</td></tr>
+            <tr><td>Receita acumulada</td><td>R$ 110k Brainpro · R$ 108k consolidado</td><td>Produto de maior receita acumulada em curso avulso</td></tr>
+            <tr><td>Taxa de recompra</td><td>18,0% (54 alunos)</td><td>Alunos compram outro produto depois — alimenta a esteira</td></tr>
+            <tr><td>Tempo médio até próxima compra</td><td>92 dias</td><td>Janela ideal para reativação: dia 60-90</td></tr>
+          </table>
+        </div>
+
+        <h3 class="rep-h2">Comportamento do comprador</h3>
+        <ul class="rep-list">
+          <li><strong>76% feminino</strong> · profissionais de saúde (psicólogas, terapeutas, fonoaudiólogas)</li>
+          <li><strong>Concentração regional:</strong> Sudeste 47% (SP 23,4% · RJ 12,3% · MG 9,4%) · Nordeste 18% · Sul 16%</li>
+          <li><strong>Ticket por gênero:</strong> feminino R$ 310 vs masculino R$ 294 — mulheres compram ofertas de ticket mais alto (+5,4%)</li>
+          <li><strong>Dia de ouro:</strong> quinta-feira (17,9% das vendas) · padrão B2B clássico</li>
+          <li><strong>Janelas horárias:</strong> 9-11h (27%) e 21-23h (15,9%) · antes da consulta e fim de expediente</li>
+          <li><strong>Semana do mês:</strong> Semana 1 e Semana 3 concentram 52,3% das vendas (recebimento de convênios)</li>
+        </ul>
+
+        <h3 class="rep-h2">Para onde o aluno TEA vai (cross-sell)</h3>
+        <div class="rep-table-wrap">
+          <table class="rep-table">
+            <tr><th>Próximo produto</th><th>Plataforma</th><th>Vol. clientes</th><th>Significado estratégico</th></tr>
+            <tr><td>Workshop TDAH</td><td>Brainpro</td><td>18×</td><td>Sequência natural de aprofundamento clínico</td></tr>
+            <tr><td>Assinatura Voomp</td><td>Voomp</td><td>16×</td><td>Migração para modelo recorrente — maior LTV</td></tr>
+            <tr><td>Frequências Binaurais</td><td>Brainpro</td><td>7×</td><td>Cross-sell lateral · cursos complementares</td></tr>
+            <tr><td>Pós-Graduação</td><td>Eduzz</td><td>5×</td><td>TEA é o feeder Kiwify #1 para a PG</td></tr>
+          </table>
+        </div>
+
+        <h3 class="rep-h2">Métodos de pagamento (308 vendas Kiwify+Hotmart)</h3>
+        <div class="rep-table-wrap">
+          <table class="rep-table">
+            <tr><th>Método</th><th>Vendas</th><th>%</th><th>Ticket médio</th></tr>
+            <tr><td>Pix</td><td>161</td><td>52,3%</td><td>R$ 293</td></tr>
+            <tr><td>Mastercard</td><td>93</td><td>30,2%</td><td>R$ 313</td></tr>
+            <tr><td>Visa</td><td>69</td><td>22,4%</td><td>R$ 310</td></tr>
+            <tr><td>Cartão Hotmart</td><td>29</td><td>9,4%</td><td>R$ 253</td></tr>
+            <tr><td>Boleto</td><td>5</td><td>1,6%</td><td>R$ 246</td></tr>
+          </table>
+        </div>
+
+        <h3 class="rep-h2">Ofertas internas do produto TEA</h3>
+        <ul class="rep-list">
+          <li><strong>Oferta TEA</strong> (base) — 139 vendas · ticket R$ 255</li>
+          <li><strong>Oferta Promo</strong> (com upsell) — 129 vendas · ticket R$ 341 · representa 47% da receita do produto</li>
+          <li><strong>Combo TEA.</strong> (premium) — 6 vendas · ticket R$ 816 · espaço de upsell/escalada subaproveitado</li>
+        </ul>
+
+        <h3 class="rep-h2">Pontos de atenção operacionais</h3>
+        <ul class="rep-list">
+          <li><strong>Gargalo de retenção:</strong> 82% dos compradores TEA não compram um segundo produto da esteira — janela de upsell dias 1-7 não está ativa</li>
+          <li><strong>Recuperação de pagamentos:</strong> R$ 18,5k recuperáveis em pix/boleto pendentes e cartões recusados (fluxos de e-mail + WhatsApp)</li>
+          <li><strong>Direcionamento para a oferta Promo:</strong> Promo entrega ticket 34% maior que a base — direcionar tráfego para Promo eleva receita por venda sem aumentar volume</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ tDCS ============ -->
+  <section class="tab-pane" id="tdcs">
+
+    <div class="rep-header" style="border-color:rgba(251,191,36,.25);background:linear-gradient(135deg,rgba(251,191,36,.06) 0%,rgba(15,23,42,.3) 100%)">
+      <div class="rep-eyebrow" style="color:#FBBF24">🧠 Brainpro Academy · Produto tDCS</div>
+      <h1 class="rep-title">Estimulação Transcraniana por Corrente Contínua (tDCS)</h1>
+      <p class="rep-subtitle">Produto técnico de aprofundamento · 87 compradores Eduzz · cross-sell 82,8% · pivot entre cursos básicos e Pós-Graduação</p>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi a"><div class="kpi-label">Compradores Eduzz</div><div class="kpi-val">87</div><div class="kpi-sub">base ativa para próximas ofertas</div></div>
+      <div class="kpi g"><div class="kpi-label">Cross-Sell</div><div class="kpi-val">82,8%</div><div class="kpi-sub">72/87 compraram outros cursos · alta aderência à esteira</div></div>
+      <div class="kpi r"><div class="kpi-label">Compra Direta</div><div class="kpi-val">17,2%</div><div class="kpi-sub">15/87 começaram pelo tDCS · público que entra direto</div></div>
+      <div class="kpi p"><div class="kpi-label">Conversão p/ Pós-Graduação</div><div class="kpi-val">3,4%</div><div class="kpi-sub">3 alunos · 80 dias até matrícula</div></div>
+      <div class="kpi c"><div class="kpi-label">Tempo p/ Próxima Compra</div><div class="kpi-val">22 dias</div><div class="kpi-sub">→ Extensão Vagal (18× · próxima oferta natural)</div></div>
+      <div class="kpi pk"><div class="kpi-label">Cross-Platform Kiwify</div><div class="kpi-val">20,7%</div><div class="kpi-sub">também compram TEA e Binaurais</div></div>
+    </div>
+
+    <div class="section">
+      <h3>Para onde o cliente do tDCS vai (próximas compras)</h3>
+      <table class="rep-table">
+        <tr><th>Próximo produto</th><th>Plataforma</th><th>Vol. clientes</th><th>Tempo médio</th><th>Leitura</th></tr>
+        <tr><td>Extensão Vagal Auricular</td><td>Eduzz</td><td>18×</td><td>22d</td><td><span class="pill-data green">Próximo passo natural — janela quente 15-25d</span></td></tr>
+        <tr><td>DRY Neurofeedback</td><td>Eduzz</td><td>9×</td><td>84d</td><td>Aprofundamento avançado</td></tr>
+        <tr><td>Curso TEA / TEA</td><td>Kiwify</td><td>8×</td><td>—</td><td>Cross-platform · base teórica</td></tr>
+        <tr><td>Frequências Binaurais</td><td>Kiwify</td><td>6×</td><td>—</td><td>Cross-platform técnico</td></tr>
+        <tr><td>Pós-Graduação</td><td>Eduzz</td><td>3×</td><td>80d</td><td><span class="pill-data amber">Destino premium</span></td></tr>
+        <tr><td>Não-Invasiva</td><td>Eduzz</td><td>3×</td><td>26d</td><td>Reentrada na esteira</td></tr>
+        <tr><td>Assinatura Voomp</td><td>Voomp</td><td>15</td><td>—</td><td>17,2% migram para recorrência</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Insights e ações para tDCS</h3>
+      <ul class="rep-list" style="margin:0">
+        <li><strong>tDCS não é produto de entrada</strong> — só 17,2% compram diretamente. Atue como produto de progressão técnica.</li>
+        <li><strong>Sequência ideal:</strong> Dia 15 após tDCS → ofertar Extensão Vagal com 15% desconto. Dia 60 → DRY. Dia 75 → Pós-Graduação.</li>
+        <li><strong>Cross-sell Kiwify</strong> ativo: dia 30 incluir TEA e Binaurais como ofertas paralelas — 14× combinados.</li>
+        <li><strong>Funil para PG</strong>: tDCS leva 80 dias até PG (vs 9d via DRY). Acelerar com bundle tDCS+DRY pode encurtar 4× o ciclo.</li>
+        <li><strong>Subaproveitamento</strong>: hoje tDCS gera R$ 34k receita estimada × 82,8% recompra = base extremamente engajada que poderia escalar 3× com campanhá dedicada.</li>
+      </ul>
+    </div>
+
+    <div class="placeholder-box">
+      <strong>⚠ Dados complementares para próxima rodada:</strong>
+      <ul>
+        <li>Sales report Eduzz com data e ticket exato por venda</li>
+        <li>Métodos de pagamento usados (Pix vs cartão vs boleto)</li>
+        <li>Demografia dos compradores tDCS (idade, gênero, profissão)</li>
+        <li>Histórico de pesquisa NPS/satisfação dos alunos tDCS</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ============ PÓS-GRADUAÇÃO ============ -->
+  <section class="tab-pane" id="pos">
+
+    <div class="rep-header" style="border-color:rgba(167,139,250,.25);background:linear-gradient(135deg,rgba(167,139,250,.06) 0%,rgba(15,23,42,.3) 100%)">
+      <div class="rep-eyebrow" style="color:#A78BFA">🎓 Brainpro Academy · Pós-Graduação</div>
+      <h1 class="rep-title">Especialização — destino premium da esteira</h1>
+      <p class="rep-subtitle">27 alunos matrículados · 96,3% via esteira (cross-sell) · múltiplataforma Eduzz/Voomp · principal feeder Kiwify: TEA</p>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi p"><div class="kpi-label">Alunos Matrículados</div><div class="kpi-val">27</div><div class="kpi-sub">via Eduzz · destino final da esteira</div></div>
+      <div class="kpi g"><div class="kpi-label">Via Esteira (cross-sell)</div><div class="kpi-val">96,3%</div><div class="kpi-sub">26 de 27 compraram antes</div></div>
+      <div class="kpi b"><div class="kpi-label">Cross-Platform</div><div class="kpi-val">29,6%</div><div class="kpi-sub">8 alunos compraram na Kiwify</div></div>
+      <div class="kpi c"><div class="kpi-label">Caminho Mais Rápido</div><div class="kpi-val">9 dias</div><div class="kpi-sub">via DRY Neurofeedback (6 alunos)</div></div>
+      <div class="kpi a"><div class="kpi-label">Caminho Mais Comum</div><div class="kpi-val">60 dias</div><div class="kpi-sub">via Extensão Vagal (6 alunos)</div></div>
+      <div class="kpi pk"><div class="kpi-label">Feeder Kiwify #1</div><div class="kpi-val">TEA</div><div class="kpi-sub">5 alunos · 24 dias até PG</div></div>
+    </div>
+
+    <div class="section">
+      <h3>Caminhos identificados até a Pós-Graduação (do mais rápido ao mais lento)</h3>
+      <table class="rep-table">
+        <tr><th>Produto de entrada</th><th>Plataforma</th><th>Dias até PG</th><th>Alunos</th><th>Leitura</th></tr>
+        <tr><td>DRY Neurofeedback</td><td>Eduzz</td><td><span class="pill-data green">9d</span></td><td>6</td><td>Atalho mais rápido — alta intenção</td></tr>
+        <tr><td>TEA / Curso TEA</td><td>Kiwify</td><td><span class="pill-data green">24d</span></td><td>3 (+5 cross)</td><td>Feeder Kiwify mais forte</td></tr>
+        <tr><td>Não-Invasiva (R$ 30)</td><td>Eduzz</td><td>27d</td><td>4</td><td>Funil R$ 30 → PG funciona</td></tr>
+        <tr><td>Biofeedback VFC</td><td>Eduzz</td><td>55d</td><td>3</td><td>VFC tem 91,7% recompra — escalar</td></tr>
+        <tr><td>Extensão Vagal</td><td>Eduzz</td><td>60d</td><td>6</td><td>Maior volume · caminho principal</td></tr>
+        <tr><td>tDCS</td><td>Eduzz</td><td><span class="pill-data amber">80d</span></td><td>3</td><td>Mais lento — bundle pode acelerar</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Insights e ações para a Pós-Graduação</h3>
+      <ul class="rep-list" style="margin:0">
+        <li><strong>A Pós é 100% alimentada pela esteira</strong> — 96,3% (26/27) tinham compra anterior. Acelerar a esteira = acelerar a PG.</li>
+        <li><strong>Reposicionar DRY Neurofeedback como "antessala da PG"</strong>: combo DRY+PG com desconto pode multiplicar a conversão (já entrega em 9 dias).</li>
+        <li><strong>Lead scoring proposto</strong>: +20pts DRY · +15pts Vagal · +10pts cada curso. Alunos com 40+ pontos recebem convite personalizado.</li>
+        <li><strong>Campanhá dia-5 pós-DRY</strong>: oferta direta de matrícula PG no e-mail/WhatsApp do dia 5 — janela em que o aluno decide PG.</li>
+        <li><strong>Cross-platform TEA→PG</strong>: 5 dos 27 alunos PG vinham do TEA Kiwify. Criar UTMs dedicadas para essa migração e tracking via Voomp.</li>
+        <li><strong>Saturação não é problema</strong>: 580 mil profissionais de saúde no Brasil · base atual de 27 alunos PG = penetração 0,005%. Espaço de mercado para anos.</li>
+      </ul>
+    </div>
+
+    <div class="placeholder-box">
+      <strong>⚠ Dados complementares para próxima rodada:</strong>
+      <ul>
+        <li>Ticket médio real da Pós-Graduação · modalidade de pagamento (mensalidade vs à vista)</li>
+        <li>Taxa de evasão / cancelamento da PG nos últimos 12 meses</li>
+        <li>Voomp churn e tempo médio de permanência dos alunos PG</li>
+        <li>Capacidade máxima de turmas e calendário de novas entradas</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ============ ANÁLISE ESTRATÉGICA ============ -->
+  <section class="tab-pane" id="estratégica">
     
-<section class="tab-pane" id="tab-tea-v1">
-  <div class="rep-header">
-    <div class="rep-eyebrow">Relatório · Analise_TEA.docx</div>
-    <h1 class="rep-title">Análise Estratégica de Tráfego Pago — TEA</h1>
-    <p class="rep-subtitle">Versão 1 · Diagnóstico inicial das 81 campanhas Meta Ads (sem ticket conhecido)</p>
-  </div>
-  <div class="rep-body">
-    <p class="rep-meta">ANÁLISE ESTRATÉGICA DE TRÁFEGO PAGO</p>
-<p class="rep-meta">Produto TEA — 2 Contas</p>
-<p class="rep-meta">Período analisado: 22/03/2023 a 22/04/2026 (lançamentos 03/2025 a 03/2026)</p>
-<p class="rep-meta">Cliente: Equipe Milionária</p>
-<p class="rep-meta">Relatório emitido em 22/04/2026</p>
-<h2 class="rep-h1">1. Sumário Executivo</h2>
-<p class="rep-p">Este relatório consolida o desempenho de 81 campanhas de tráfego pago do produto TEA, lançadas entre março/2025 e março/2026, com investimento total de R$ 63.495,85 e aproximadamente 286 compras estimadas (CPA médio de R$ 222,01).</p>
-<p class="rep-p">A leitura dos dados aponta três movimentos centrais:</p>
-<ul class="rep-list">
-<li>Curva de aprendizado evidente: o CPA saiu de R$ 640 em maio/25 para R$ 136 em março/26 — queda de 79% em 10 meses.</li>
-<li>Gargalo do funil não e o tráfego, é o checkout: 17,1% dos checkouts iniciados viram compra (esperado 30–50%). Hook rate (Imp→LPV) de 1,29% também indica potencial de criativo não aproveitado.</li>
-<li>Alta concentração (Pareto saudável): 5 campanhas concentram 49% do gasto e 57% das compras. O caminho de escala é duplicar a vencedora e cortar a cauda longa.</li>
-</ul>
-<p class="rep-p">O relatório detalha abaixo a tendência temporal, os gargalos, os cortes estratégicos e um plano de ação com cenários de investimento versus retorno para os próximos 30 a 60 dias.</p>
-<h2 class="rep-h1">2. Panorama geral de KPIs</h2>
-<p class="rep-p">Visão consolidada de todo o período analisado. Todos os valores em BRL.</p>
-<p class="rep-p">Observação metodológica: o relatório fonte não traz compras absolutas — foi estimado via Checkouts × Conv checkout/compras, validado por LPV × Conv Pag x compras (coincidência total). ROAS não foi calculado porque o relatório não traz faturamento. Recomenda-se exportar &#x27;Valor de conversão da compra&#x27; no próximo export.</p>
-<h2 class="rep-h1">3. Tendência mensal — como o produto evoluiu</h2>
-<p class="rep-p">Agrupamento usando a data de criação embutida no nome da campanha. Os 286 compradores se distribuem ao longo do ciclo de aprendizado:</p>
-<h3 class="rep-h2">Leitura da curva</h3>
-<ul class="rep-list">
-<li>Fase 1 — Exploração cara (mar–jul/25): CPA de R$ 238 a R$ 640. Grande volume de testes (18 campanhas/mês em mai e jun) e abril zerou compras. Fase de validação de públicos e páginas.</li>
-<li>Fase 2 — Consolidação (ago–nov/25): CPA estabiliza entre R$ 171 e R$ 269. Menos campanhas novas, escolhas mais certeiras. Out/25 tem a melhor tx checkout→compra do semestre (19,9%).</li>
-<li>Fase 3 — Ponto de virada (fev–mar/26): CPA cai para R$ 136 com tx checkout→compra de 25,1%. Março/26 concentra 109 compras em apenas 3 campanhas — a campanha líder [C] [TEA] [VENDAS] [CBO] [04/03/26] sozinha entregou 102 compras a R$ 127/compra.</li>
-</ul>
-<p class="rep-p">Tradução estratégica: o produto amadureceu. Março/26 não é sorte — é o resultado de testar a estrutura CBO + objetivo &#x27;Vendas&#x27; + criativo que funciona. A curva de aprendizado foi paga; agora é hora de escalar.</p>
-<h2 class="rep-h1">4. Análise semanal — melhores e piores semanas</h2>
-<h3 class="rep-h2">Top 5 semanas por compras</h3>
-<h3 class="rep-h2">Piores semanas com investimento relevante (&gt; R$ 500)</h3>
-<h3 class="rep-h2">Padrão entre semanas boas e ruins</h3>
-<ul class="rep-list">
-<li>Semanas vencedoras = orçamento concentrado em 1 a 2 campanhas. A melhor semana (03–09/03/26) teve 1 única campanha ativa. Jun/25 (2ª melhor) teve 5 campanhas, mas apenas uma respondendo. Regra geral: escala funciona quando o vencedor existe e o orçamento vai para ele.</li>
-<li>Semanas ruins = dispersão. A semana 06–12/05/25 rodou 4 campanhas diferentes, R$ 6.527 de gasto e apenas 5 compras.</li>
-<li>Semanas fracas clássicas = mudar tudo ao mesmo tempo. Começar semana com público frio + criativo novo + página nova elimina a possibilidade de isolar o que funciona. Mudar uma variável por vez acelera o aprendizado e reduz custo.</li>
-</ul>
-<h2 class="rep-h1">5. Melhores dias para ativar campanhas</h2>
-<p class="rep-p">Agrupando por dia da semana de lançamento da campanha:</p>
-<ul class="rep-list">
-<li>Melhor dia para ativar: quarta-feira. CPA de R$ 140 e 141 compras. 49% das compras totais vieram de campanhas ativadas numa quarta.</li>
-<li>Evitar: terça-feira e domingo. Terça concentrou R$ 9 mil e entregou apenas 13 compras. Domingo gasta muito (R$ 9,3 mil) e entrega pouco (29 compras, CPA R$ 320).</li>
-</ul>
-<p class="rep-p">Recomendação operacional: concentrar ativação de novas campanhas entre terça à noite e quarta-feira cedo, deixando a fase de aprendizado cair na segunda metade da quarta — quando o volume de tráfego e intenção de compra é historicamente maior.</p>
-<h2 class="rep-h1">6. Gargalos do funil — onde está o vazamento</h2>
-<p class="rep-p">Abrindo o funil do topo ao fundo com os números agregados do período:</p>
-<h3 class="rep-h2">Diagnóstico por etapa</h3>
-<p class="rep-p">Topo (Imp → LPV: 1,29%) — Gargalo de criativo. O Meta entrega impressões, mas o gancho não puxa clique suficiente. Meta saudável 1,5–2,5% para saúde/TEA. Frequência média 7,7x confirma queima — as mesmas pessoas vendo o mesmo anúncio várias vezes.</p>
-<p class="rep-p">Meio (LPV → Checkout: 11,70%) — Zona saudável. Entretanto, há forte divergência entre variantes de página: INLEAD antiga (16,4%) bate páginas de teste (9–12%). Há inventário de aprendizado aqui — a variante vencedora já foi identificada.</p>
-<p class="rep-p">Fundo (Checkout → Compra: 17,13%) — GARGALO PRINCIPAL. 83% de quem iniciou o checkout não finalizou. Para infoprodutos, o padrão bom é 30–50%: estamos pela metade. Causas típicas: atrito no meio de pagamento, falta de prova social no checkout, ausência de parcelamento ou Pix, cobrança inesperada, página de obrigado que falha, boleto que não é pago depois.</p>
-<p class="rep-p">Prioridade de ajustes (ordem recomendada):</p>
-<ul class="rep-list">
-<li>Checkout → Compra (maior alavanca, menor esforço): revisar a última milha.</li>
-<li>Criativo/topo: rotação e novos ângulos para derrubar frequência.</li>
-<li>Página intermediária: consolidar na página vencedora, cortar variantes.</li>
-</ul>
-<h2 class="rep-h1">7. Cortes estratégicos — o que funciona e o que não</h2>
-<h3 class="rep-h2">7.1. CBO supera ABO em todos os indicadores</h3>
-<p class="rep-p">CBO é 1,9x mais eficiente que ABO. Manter ABO apenas para testes controlados de públicos específicos.</p>
-<h3 class="rep-h2">7.2. Objetivo &#x27;Vendas&#x27; bate &#x27;Conversões&#x27;</h3>
-<p class="rep-p">&#x27;Vendas&#x27; (Advantage+ Sales) é 2x mais eficiente. Migrar o portfólio para Vendas é a ação de maior impacto imediato.</p>
-<h3 class="rep-h2">7.3. Público frio: queima dinheiro</h3>
-<p class="rep-p">R$ 7.312 torrados em público frio para gerar 4 compras. Os &#x27;Outros&#x27; (LAL e interesses) geram 77% das compras com CPA 10x menor. Pausar frio exceto em testes controlados com até R$ 30/dia por 3 dias e criativo extremamente validado.</p>
-<h3 class="rep-h2">7.4. Testes de criativo estão caros</h3>
-<p class="rep-p">Campanhas rotuladas como teste geram 3x mais gasto por compra. Considerar ABT estruturado (mesma copy, 3 hooks; R$ 30/dia por 3 dias; matar o pior a cada ciclo).</p>
-<h2 class="rep-h1">8. Campanhas vencedoras vs zumbis</h2>
-<h3 class="rep-h2">8.1. Top 5 campanhas por eficiência (CPA, mín. 5 compras)</h3>
-<p class="rep-p">Padrão comum: CBO + interesse PSCI/TERA (retargeting nutrido) ou públicos validados, criativos testados, e destaque absoluto para a campanha de &#x27;Vendas&#x27; de março/26.</p>
-<h3 class="rep-h2">8.2. Campanhas zumbi — gasto alto, zero compras</h3>
-<p class="rep-p">Total de R$ 8.380 (13% do orçamento) queimados sem conversão. Regra de kill rápido: gasto &gt; R$ 300 sem compra em 72h = pausar ou refatorar.</p>
-<h3 class="rep-h2">8.3. Concentração saudável — regra 80/20</h3>
-<ul class="rep-list">
-<li>Top 5 campanhas (6% do total) = 49% do gasto e 57% das compras.</li>
-<li>Top 10 campanhas (12% do total) = 59% do gasto e 72% das compras.</li>
-<li>Os outros 88% das campanhas entregam 28% das compras — cauda longa cara e imprevisível.</li>
-</ul>
-<p class="rep-p">Interpretação: o ganhador existe e é identificável. Estratégia vencedora é duplicá-lo (budget-up, lookalike dos compradores, clone com variação de criativo), não multiplicar testes.</p>
-<h2 class="rep-h1">9. Plano de ação — ajustes práticos imediatos</h2>
-<h3 class="rep-h2">9.1. Alavancas de conversão (ordem de prioridade)</h3>
-<ul class="rep-list">
-<li>1) Atacar o checkout (impacto esperado: +30% a +70% de vendas sem investimento adicional). Auditoria em: meio de pagamento (liberar Pix se não está), parcelamento visível, prova social no checkout (depoimentos, selo de segurança), redução de campos do formulário, teste A/B de upsell na thank-you. Meta: subir a tx checkout→compra de 17% para mais de 25%.</li>
-<li>2) Consolidar na estrutura vencedora. Padrão novo: CBO + objetivo &#x27;Vendas&#x27; + Advantage+ audiências. Migrar todas as campanhas de &#x27;Conversões&#x27; para &#x27;Vendas&#x27; nas próximas 2 semanas.</li>
-<li>3) Rotação de criativo estruturada. Frequência média 7,7x indica queima. Entregar 3 criativos novos por semana em 3 ângulos: (a) dor/identificação, (b) transformação/resultado, (c) autoridade/método. Aposentar criativo quando LPV-rate cair 30% do pico.</li>
-<li>4) Matar a cauda longa. Pausar todas as campanhas com CPA &gt; 2x o benchmark (R$ 250+) que já rodaram mais de R$ 300 sem compra. Realocar para escalar a vencedora e novos testes.</li>
-<li>5) Lookalike dos compradores. Criar LAL 1%, 3% e 5% a partir da base de compradores (mín. 100 compras para significância — já temos 286). Testar contra público PSCI/TERA.</li>
-</ul>
-<h3 class="rep-h2">9.2. Alavancas de topo (criativo)</h3>
-<ul class="rep-list">
-<li>LPV-rate meta: subir de 1,29% para &gt; 1,8% em 30 dias.</li>
-<li>Testar hooks em reels verticais 9:16 de 9 a 15 segundos (padrão Meta 2026).</li>
-<li>Aplicar &#x27;gancho em 3 segundos&#x27; — dor + identificação no primeiro frame.</li>
-<li>Rotacionar UGC/criador — infoproduto de saúde tem alta reatividade a rostos diferentes.</li>
-</ul>
-<h3 class="rep-h2">9.3. Disciplina operacional</h3>
-<ul class="rep-list">
-<li>Ativar novas campanhas preferencialmente quarta-feira (insight do relatório).</li>
-<li>Orçamento mínimo por campanha nova: R$ 50–80/dia para sair do aprendizado em menos de 72h.</li>
-<li>Regra do &#x27;kill rápido&#x27;: R$ 300 sem compra = pausa imediata ou refatoração.</li>
-<li>Orçamento de teste máximo: 20% do budget mensal. 80% fica com o vencedor.</li>
-</ul>
-<h2 class="rep-h1">10. Viabilidade de escala — cenários de investimento</h2>
-<p class="rep-p">Base: fase madura (mar/26), em que R$ 14.844 gerou 109 compras a CPA de R$ 136. Considera inflação natural de CPA à medida que o orçamento cresce.</p>
-<h3 class="rep-h2">Break-even por hipótese de ticket médio</h3>
-<p class="rep-p">O relatório-fonte não traz ticket médio. Três hipóteses (margem = ticket − CPA):</p>
-<p class="rep-p">(Margem bruta de mídia apenas — não considera custos de plataforma, taxas, equipe)</p>
-<h3 class="rep-h2">Conclusão sobre escala</h3>
-<ul class="rep-list">
-<li>Se ticket ≥ R$ 297: há espaço claro para triplicar o investimento. &#x27;Escala 1&#x27; entregaria +R$ 28 mil de lucro mensal. Recomendação: subir de R$ 15k → R$ 25k → R$ 40k em passos de 30 dias, validando CPA a cada passo.</li>
-<li>Se ticket ≤ R$ 197: a operação está no limite. Antes de escalar, atacar primeiro o gargalo do checkout (meta CPA R$ 100) ou aumentar ticket via order bump/upsell na thank-you.</li>
-<li>Janela de escala: próximos 45 dias são críticos. Março/26 mostrou que a operação destravou. Adiar a escala implica perder o momentum de aprendizado e o algoritmo do Meta reiniciar a curva.</li>
-</ul>
-<h2 class="rep-h1">11. Plano de execução — próximos 30 e 60 dias</h2>
-<h3 class="rep-h2">Sprint 1 (dias 1–15) — destravar conversão</h3>
-<ul class="rep-list">
-<li>Auditoria completa do checkout (meio de pagamento, atrito, prova social).</li>
-<li>Migrar top 3 campanhas ativas para objetivo &#x27;Vendas&#x27; + Advantage+.</li>
-<li>Pausar todas as campanhas zumbi e cauda longa com CPA &gt; R$ 300.</li>
-<li>Criar LAL 1%, 3%, 5% a partir da base de 286 compradores.</li>
-<li>Rodar 3 criativos novos (3 hooks diferentes) na campanha vencedora.</li>
-</ul>
-<h3 class="rep-h2">Sprint 2 (dias 16–30) — validar escala</h3>
-<ul class="rep-list">
-<li>Subir orçamento da campanha vencedora em +30% (não mais que isso por vez).</li>
-<li>Lançar nova campanha CBO Vendas testando o LAL 1% com os 2 melhores criativos.</li>
-<li>Medir CPA diário e comparar com baseline de mar/26.</li>
-<li>Se CPA se mantiver &lt; R$ 180, subir mais 30%.</li>
-</ul>
-<h3 class="rep-h2">Sprint 3 (dias 31–60) — consolidar e diversificar</h3>
-<ul class="rep-list">
-<li>Replicar estrutura vencedora em 2 novos conjuntos com variação de público.</li>
-<li>Teste A/B estruturado de páginas de destino (UTM e medição server-side).</li>
-<li>Campanha de retargeting &#x27;iniciou checkout e não comprou&#x27; (reservatório: 1.384 pessoas).</li>
-<li>Revisão mensal com este mesmo dashboard. Relançar relatório em 22/05/2026.</li>
-</ul>
-<h3 class="rep-h2">KPIs-alvo para reavaliação (22/05/2026)</h3>
-<h2 class="rep-h1">12. Apêndice metodológico</h2>
-<ul class="rep-list">
-<li>Dados processados: 81 campanhas (1 sem data removida), lançamento 26/03/2025 a 28/03/2026.</li>
-<li>Compras estimadas: Checkouts × &#x27;Conv checkout/compras&#x27;. Validado cruzando com LPV × &#x27;Conv Pag x compras&#x27; — 286 em ambos.</li>
-<li>Classificação de estrutura/público/objetivo: derivada da nomenclatura das campanhas.</li>
-<li>Dia da semana: corresponde ao dia de criação/ativação da campanha, não à distribuição diária do gasto.</li>
-<li>Limitações: ROAS e ticket médio não estão no relatório fonte. Recomendado adicionar &#x27;Valor de conversão da compra&#x27; no próximo export.</li>
-</ul>
-<p class="rep-p">— FIM DO RELATÓRIO —</p>
-<h2 class="rep-h1">Tabelas e Dados Detalhados</h2>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Indicador</th><th>Valor</th><th>Leitura</th></tr>
-<tr><td>Investimento total</td><td>R$ 63.495,85</td><td>13 meses de veiculação ativa</td></tr>
-<tr><td>Impressões</td><td>1.103.085</td><td>Volume saudável para o nicho</td></tr>
-<tr><td>Alcance (somado)</td><td>445.455</td><td>Frequência média 7,7x — alta</td></tr>
-<tr><td>LPVs (visualizações de página)</td><td>14.279</td><td>Hook rate 1,29% (meta: &gt;2%)</td></tr>
-<tr><td>Checkouts iniciados</td><td>1.670</td><td>Tx LPV → Checkout 11,7% (ok)</td></tr>
-<tr><td>Compras estimadas</td><td>aprox. 286</td><td>Tx Checkout → Compra 17,1%</td></tr>
-<tr><td>CPA médio</td><td>R$ 222,01</td><td>Alto. Melhor mês: R$ 136</td></tr>
-<tr><td>CPM médio ponderado</td><td>R$ 57,56</td><td>Aceitável para nicho de saúde</td></tr>
-<tr><td>Tx LPV → Compra (e2e)</td><td>2,00%</td><td>Abaixo de 3–4% desejados</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Mês</th><th>Campanhas</th><th>Investimento</th><th>LPVs</th><th>Compras</th><th>CPA</th><th>Chk→Compra</th></tr>
-<tr><td>mar/25</td><td>3</td><td>R$ 1.535,78</td><td>472</td><td>4,0</td><td>R$ 383,95</td><td>4,65%</td></tr>
-<tr><td>abr/25</td><td>3</td><td>R$ 776,67</td><td>139</td><td>0,0</td><td>—</td><td>0,00%</td></tr>
-<tr><td>mai/25</td><td>18</td><td>R$ 11.528,15</td><td>2.422</td><td>18,0</td><td>R$ 640,45</td><td>16,67%</td></tr>
-<tr><td>jun/25</td><td>18</td><td>R$ 14.522,66</td><td>2.865</td><td>61,0</td><td>R$ 238,08</td><td>14,99%</td></tr>
-<tr><td>jul/25</td><td>9</td><td>R$ 4.220,35</td><td>784</td><td>8,0</td><td>R$ 527,54</td><td>9,52%</td></tr>
-<tr><td>ago/25</td><td>2</td><td>R$ 2.689,47</td><td>574</td><td>10,0</td><td>R$ 268,95</td><td>12,99%</td></tr>
-<tr><td>set/25</td><td>9</td><td>R$ 4.605,54</td><td>1.286</td><td>26,0</td><td>R$ 177,14</td><td>14,05%</td></tr>
-<tr><td>out/25</td><td>10</td><td>R$ 5.313,00</td><td>1.367</td><td>31,0</td><td>R$ 171,39</td><td>19,87%</td></tr>
-<tr><td>nov/25</td><td>3</td><td>R$ 838,72</td><td>274</td><td>4,0</td><td>R$ 209,68</td><td>9,09%</td></tr>
-<tr><td>fev/26</td><td>2</td><td>R$ 2.621,34</td><td>1.049</td><td>15,0</td><td>R$ 174,76</td><td>17,24%</td></tr>
-<tr><td>mar/26</td><td>3</td><td>R$ 14.844,17</td><td>3.047</td><td>109,0</td><td>R$ 136,19</td><td>25,12%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Semana</th><th>Camp.</th><th>Investimento</th><th>LPVs</th><th>Compras</th><th>CPA</th></tr>
-<tr><td>03/03 a 09/03/26</td><td>1</td><td>R$ 12.952,42</td><td>2.693</td><td>102,0</td><td>R$ 126,98</td></tr>
-<tr><td>17/06 a 23/06/25</td><td>5</td><td>R$ 10.506,66</td><td>1.981</td><td>47,0</td><td>R$ 223,55</td></tr>
-<tr><td>14/10 a 20/10/25</td><td>5</td><td>R$ 3.074,75</td><td>703</td><td>16,0</td><td>R$ 192,17</td></tr>
-<tr><td>17/02 a 23/02/26</td><td>2</td><td>R$ 2.621,34</td><td>1.049</td><td>15,0</td><td>R$ 174,76</td></tr>
-<tr><td>16/09 a 22/09/25</td><td>6</td><td>R$ 2.686,58</td><td>679</td><td>15,0</td><td>R$ 179,11</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Semana</th><th>Camp.</th><th>Investimento</th><th>LPVs</th><th>Compras</th><th>CPA</th></tr>
-<tr><td>06/05 a 12/05/25</td><td>4</td><td>R$ 6.527,25</td><td>1.335</td><td>5,0</td><td>R$ 1.305,45</td></tr>
-<tr><td>13/05 a 19/05/25</td><td>6</td><td>R$ 2.062,11</td><td>456</td><td>1,0</td><td>R$ 2.062,11</td></tr>
-<tr><td>20/05 a 26/05/25</td><td>7</td><td>R$ 2.748,64</td><td>595</td><td>11,0</td><td>R$ 249,88</td></tr>
-<tr><td>01/07 a 07/07/25</td><td>4</td><td>R$ 1.934,84</td><td>327</td><td>8,0</td><td>R$ 241,86</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Dia</th><th>Campanhas</th><th>Investimento</th><th>Compras</th><th>CPA</th><th>Chk→Compra</th></tr>
-<tr><td>Segunda</td><td>6</td><td>R$ 2.613,77</td><td>12</td><td>R$ 217,81</td><td>23,53%</td></tr>
-<tr><td>Terça</td><td>11</td><td>R$ 9.089,14</td><td>13</td><td>R$ 699,16</td><td>13,83%</td></tr>
-<tr><td>Quarta</td><td>12</td><td>R$ 19.719,26</td><td>141</td><td>R$ 139,85</td><td>20,55%</td></tr>
-<tr><td>Quinta</td><td>23</td><td>R$ 19.132,61</td><td>76</td><td>R$ 251,74</td><td>14,87%</td></tr>
-<tr><td>Sexta</td><td>4</td><td>R$ 1.687,72</td><td>8</td><td>R$ 210,97</td><td>17,39%</td></tr>
-<tr><td>Sábado</td><td>3</td><td>R$ 1.950,23</td><td>7</td><td>R$ 278,60</td><td>21,21%</td></tr>
-<tr><td>Domingo</td><td>21</td><td>R$ 9.303,12</td><td>29</td><td>R$ 320,80</td><td>11,65%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Etapa</th><th>Volume</th><th>Conversão</th><th>Leitura</th></tr>
-<tr><td>Impressões</td><td>1.103.085</td><td>—</td><td>Volume saudável</td></tr>
-<tr><td>LPV (página)</td><td>14.279</td><td>1,29%</td><td>Hook rate baixo — criativo</td></tr>
-<tr><td>Checkout iniciado</td><td>1.670</td><td>11,70%</td><td>Dentro do esperado</td></tr>
-<tr><td>Compra (estimada)</td><td>aprox. 286</td><td>17,13%</td><td>Gargalo principal — checkout/oferta</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Estrutura</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>CPA</th><th>Chk→Compra</th></tr>
-<tr><td>CBO</td><td>63</td><td>R$ 40.486,11</td><td>221</td><td>R$ 183,19</td><td>18,73%</td></tr>
-<tr><td>ABO</td><td>16</td><td>R$ 22.811,07</td><td>65</td><td>R$ 350,94</td><td>13,63%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Objetivo</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>CPA</th><th>Chk→Compra</th></tr>
-<tr><td>VENDAS</td><td>4</td><td>R$ 15.108,65</td><td>110</td><td>R$ 137,35</td><td>24,50%</td></tr>
-<tr><td>CONVERSÕES</td><td>76</td><td>R$ 48.387,20</td><td>176</td><td>R$ 274,93</td><td>14,41%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Público</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>CPA</th><th>Chk→Compra</th></tr>
-<tr><td>Frio</td><td>7</td><td>R$ 7.312,60</td><td>4</td><td>R$ 1.828,15</td><td>4,55%</td></tr>
-<tr><td>PSCI/TERA (RMK)</td><td>37</td><td>R$ 15.145,00</td><td>62</td><td>R$ 244,27</td><td>15,50%</td></tr>
-<tr><td>Outros (LAL/int.)</td><td>36</td><td>R$ 41.038,25</td><td>220</td><td>R$ 186,54</td><td>18,61%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Grupo</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>CPA</th><th>LPV-Rate</th></tr>
-<tr><td>Operação padrão</td><td>71</td><td>R$ 55.497,11</td><td>274</td><td>R$ 202,54</td><td>1,26%</td></tr>
-<tr><td>Testes explícitos</td><td>9</td><td>R$ 7.998,74</td><td>12</td><td>R$ 666,56</td><td>1,56%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Campanha</th><th>Gasto</th><th>LPVs</th><th>Chk</th><th>Compras</th><th>CPA</th></tr>
-<tr><td>[TEA][CONV][CBO][3 PÚBLICOS VALIDADOS][26/05/25]</td><td>R$ 647</td><td>129</td><td>22</td><td>7</td><td>R$ 92</td></tr>
-<tr><td>[C-02][TEA][CONV][CBO][01/10/25]</td><td>R$ 1.257</td><td>365</td><td>46</td><td>11</td><td>R$ 114</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][16/09/25]</td><td>R$ 759</td><td>211</td><td>30</td><td>6</td><td>R$ 126</td></tr>
-<tr><td>[C][TEA][VENDAS][CBO][04/03/26]</td><td>R$ 12.952</td><td>2.693</td><td>401</td><td>102</td><td>R$ 127</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][PÁG S/VIDEO][01/06/25]</td><td>R$ 636</td><td>182</td><td>30</td><td>5</td><td>R$ 127</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Campanha</th><th>Gasto</th><th>LPVs</th><th>Chk</th><th>Chk→Compra</th></tr>
-<tr><td>[TEA][CONV][ABO][PÚBLICO FRIO][TESTE CRIATIVOS][06/05/25]</td><td>R$ 4.875</td><td>1.036</td><td>0</td><td>0%</td></tr>
-<tr><td>[TEA][CONV][CBO][CRIATIVOS][PÁGINA INLEAD PERS.][10/07/25]</td><td>R$ 1.038</td><td>200</td><td>29</td><td>0%</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][20/05/25]</td><td>R$ 752</td><td>184</td><td>0</td><td>0%</td></tr>
-<tr><td>[TEA][CONV][ABO][PÚBLICO FRIO][07/04/25]</td><td>R$ 592</td><td>92</td><td>0</td><td>0%</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][18/05/25]</td><td>R$ 581</td><td>134</td><td>0</td><td>0%</td></tr>
-<tr><td>[TEA][CONV][ABO][PÁGINA INLEAD][20/07/25]</td><td>R$ 543</td><td>117</td><td>0</td><td>0%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>CPA esperado</th><th>Compras/mês</th><th>Pressuposto</th><th>Risco</th></tr>
-<tr><td>Conservador</td><td>R$ 15.000</td><td>R$ 140</td><td>aprox. 107</td><td>Mantém mar/26</td><td>Baixo</td></tr>
-<tr><td>Base</td><td>R$ 25.000</td><td>R$ 155</td><td>aprox. 161</td><td>+20% CPA</td><td>Baixo</td></tr>
-<tr><td>Escala 1</td><td>R$ 40.000</td><td>R$ 175</td><td>aprox. 228</td><td>LAL + criativos</td><td>Médio</td></tr>
-<tr><td>Escala 2</td><td>R$ 60.000</td><td>R$ 200</td><td>aprox. 300</td><td>Saturação parcial</td><td>Médio-alto</td></tr>
-<tr><td>Agressivo</td><td>R$ 100.000</td><td>R$ 240+</td><td>aprox. 416+</td><td>Abrir geo/funis</td><td>Alto</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Ticket</th><th>CPA base</th><th>Margem/venda</th><th>Cenário Base</th><th>Cenário Escala 1</th><th>Cenário Escala 2</th></tr>
-<tr><td>R$ 197</td><td>R$ 155</td><td>R$ 42</td><td>+R$ 6,7k/mês</td><td>+R$ 5,0k/mês</td><td>ROI negativo</td></tr>
-<tr><td>R$ 297</td><td>R$ 155</td><td>R$ 142</td><td>+R$ 22,9k/mês</td><td>+R$ 28,0k/mês</td><td>+R$ 29,1k/mês</td></tr>
-<tr><td>R$ 497</td><td>R$ 155</td><td>R$ 342</td><td>+R$ 55,1k/mês</td><td>+R$ 73,4k/mês</td><td>+R$ 89,1k/mês</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>KPI</th><th>Baseline (mar/26)</th><th>Meta 30 dias</th><th>Meta 60 dias</th></tr>
-<tr><td>CPA</td><td>R$ 136</td><td>R$ 120</td><td>R$ 105</td></tr>
-<tr><td>Tx Checkout → Compra</td><td>25,1%</td><td>30%</td><td>35%</td></tr>
-<tr><td>LPV-rate</td><td>1,06%</td><td>1,5%</td><td>1,8%</td></tr>
-<tr><td>Compras/mês</td><td>109</td><td>180</td><td>280</td></tr>
-<tr><td>Investimento/mês</td><td>R$ 14,8k</td><td>R$ 22k</td><td>R$ 35k</td></tr>
-</table></div>
-  </div>
-</section>
-
-    
-<section class="tab-pane" id="tab-tea-v2">
-  <div class="rep-header">
-    <div class="rep-eyebrow">Relatório · Analise_TEA_Margem.docx</div>
-    <h1 class="rep-title">Análise de Margem Real &amp; Potencial de Escala</h1>
-    <p class="rep-subtitle">Versão 2 · Releitura ancorada em ticket líquido R$ 254 — primeira projeção de cenários</p>
-  </div>
-  <div class="rep-body">
-    <p class="rep-meta">ANÁLISE COMPLEMENTAR — MARGEM REAL E POTENCIAL DE ESCALA</p>
-<p class="rep-meta">Produto TEA · 2 Contas</p>
-<p class="rep-meta">Ticket líquido considerado: R$ 254,00/venda</p>
-<p class="rep-meta">Cliente: Equipe Milionária</p>
-<p class="rep-meta">Relatório emitido em 22/04/2026</p>
-<h2 class="rep-h1">1. O veredito em 30 segundos</h2>
-<p class="rep-p">Sobre o potencial de escala:</p>
-<p class="rep-p">Sim, existe potencial de escala real — mas com teto e pré-condições claras. Com ticket líquido de R$ 254, a operação como um todo operou com margem bruta de mídia de apenas R$ 9.148 (12,6%) e ROAS 1,14x no período — indicadores apertados. Porém, a fase madura (fev–mar/26) mostrou ROAS 1,87x e margem de R$ 118 por venda, o que comprova que o modelo é escalável até um limite.</p>
-<p class="rep-p">Limite prático: R$ 25k a R$ 40k/mês de investimento com o modelo atual. Passar disso exige destravamentos estruturais (detalhados nas seções 9 e 10).</p>
-<h2 class="rep-h1">2. Panorama financeiro real (13 meses)</h2>
-<p class="rep-p">Releitura dos KPIs agora com faturamento líquido calculado (compras × R$ 254):</p>
-<h3 class="rep-h2">O que esses números significam</h3>
-<ul class="rep-list">
-<li>Vista como operação completa de 13 meses, o TEA gerou R$ 9 mil de margem. Na prática, quase empatou com o investimento — a conta fechou porque março/26 sozinho entregou R$ 12.841 de margem e compensou os 6 meses vermelhos anteriores.</li>
-<li>A operação só é viável quando o CPA fica abaixo de R$ 200. A cada R$ 10 que o CPA sobe acima disso, 18 % da margem por venda evapora.</li>
-<li>A boa notícia: o último mês mostra que CPA de R$ 136 é alcançável de forma sustentada. O modelo funciona — o problema é que ainda é raso (apenas 3 campanhas de março entregaram 38% de todas as compras do período).</li>
-</ul>
-<h2 class="rep-h1">3. Quando o produto dá lucro — leitura mês a mês</h2>
-<p class="rep-p">Coluna &#x27;Margem&#x27; = Receita líquida − Gasto. Verde = lucro; vermelho = prejuízo.</p>
-<ul class="rep-list">
-<li>6 meses no vermelho (mar-ago/25) custaram R$ 10.590 de prejuízo — é o custo da curva de aprendizado.</li>
-<li>A partir de set/25 a operação fica consistentemente lucrativa. Jun/25 foi um falso positivo (breakeven por acidente), mas set/25 em diante é padrão novo.</li>
-<li>Março/26 entrega mais margem (R$ 12.842) do que os 10 meses anteriores somados (R$ -3.694). Essa é a medida do salto técnico recente.</li>
-</ul>
-<h2 class="rep-h1">4. Semana do mês — o ciclo mensal do público</h2>
-<p class="rep-p">Agrupamento por posição da data no mês (semana 1 = dias 1–7, semana 2 = 8–14, etc.).</p>
-<h3 class="rep-h2">Padrão encontrado — e ele é nítido</h3>
-<p class="rep-p">Semana 1 (dias 1-7) — A JANELA DE ESCALA. ROAS 1,39x e margem R$ 9.826 (107 % da margem total do período). Explicação comportamental: pessoas acabaram de receber salário/benefícios/BPC/pensão. Em produto de saúde relacionado a TEA — onde muitos compradores são familiares de dependentes e recebem benefícios assistenciais — essa janela é ainda mais marcada.</p>
-<p class="rep-p">Semana 2 (dias 8-14) — ZONA DE PREJUÍZO. Único período com ROAS abaixo de 0,7x. 18 campanhas rodaram aqui, mas geraram só 17 compras. Prejuízo de R$ 2.711 — sinal de que o público já gastou o dinheiro do início do mês e segura até os próximos depósitos.</p>
-<p class="rep-p">Semana 3 (dias 15-21) — ZONA NEUTRA. Coincide com 2ª parcela de alguns benefícios / pagamentos do dia 15. Margem positiva mas marginal. 26 campanhas concentradas aqui — é onde a equipe vem ativando mais, mas o retorno só empata.</p>
-<p class="rep-p">Semana 4 (dias 22-28) — RECUPERAÇÃO. Margem R$ 1.331 e ROAS 1,18x. Pessoas começam a preparar nova compra para o início do mês seguinte.</p>
-<p class="rep-p">Semana 5 (dias 29-31) — IRRELEVANTE. Apenas 2 campanhas e volume desprezível. Não há dado conclusivo.</p>
-<p class="rep-p">Recomendação operacional: alocar 40–50% do orçamento mensal na Semana 1, 25% na Semana 4, 20% na Semana 3 e cortar fortemente a Semana 2 (no máximo 10%, e apenas em retargeting de funil quente).</p>
-<h2 class="rep-h1">5. Dia da semana — onde a margem nasce e morre</h2>
-<p class="rep-p">Revendo com ROAS e margem real (antes víamos só CPA):</p>
-<h3 class="rep-h2">Padrão comportamental da semana</h3>
-<p class="rep-p">Quarta-feira é o dia de ouro. ROAS 1,82x e margem R$ 16.094 (sozinho representa 176 % da margem total da operação). 49% de todas as compras do período vieram de campanhas ativadas na quarta. Se fosse possível só operar na quarta, esse produto teria rentabilidade altíssima.</p>
-<p class="rep-p">Terça é o dia tóxico. ROAS 0,36x — cada real gasto retorna apenas R$ 0,36 de receita líquida. Prejuízo de R$ 5.787 concentrado aqui. Provavelmente efeito de &#x27;primeira quarta de curva de aprendizado&#x27; — campanhas ativadas na terça ainda estão em fase instável quando o volume vem na quarta.</p>
-<p class="rep-p">Domingo também é deficitário. R$ 9.303 gastos, R$ 1.937 de prejuízo. Padrão clássico: domingo à noite gera impressão barata mas o público não está com &#x27;mentalidade de compra&#x27;.</p>
-<p class="rep-p">Segunda, sexta: lucro modesto mas estável. Bons para campanhas de retargeting de cauda.</p>
-<p class="rep-p">Quinta: empata. 23 campanhas ativadas, ROAS 1,01x. O público já está mais saturado depois da quarta — não dá prejuízo, mas não multiplica.</p>
-<h2 class="rep-h1">6. O mapa de calor estratégico — quando investir pesado</h2>
-<p class="rep-p">Combinando os dois padrões, temos o &#x27;mapa&#x27; ideal de alocação de orçamento dentro do mês. Cada célula é a qualidade do momento para ativação/escala.</p>
-<h3 class="rep-h2">Regra de ouro operacional</h3>
-<ul class="rep-list">
-<li>Toda quarta-feira da semana 1 (dias 1-7 do mês) é uma &#x27;janela de escala&#x27;. Ativar nova campanha, subir budget da vencedora, rodar lançamento.</li>
-<li>Toda terça-feira da semana 2 (dias 8-14) é um &#x27;ponto de risco duplo&#x27;. Pausar ativações novas, manter só operação quente em retargeting.</li>
-<li>Em dias de depósito de benefícios assistenciais (1º, 15º ou 20º do mês — confirmar com o cliente): subir budget em +50 % para capturar intenção financeira ativa.</li>
-</ul>
-<h2 class="rep-h1">7. Campanhas lucrativas vs deficitárias</h2>
-<p class="rep-p">Com ticket líquido R$ 254, toda campanha com CPA ≥ R$ 254 é prejuízo. O recorte:</p>
-<h3 class="rep-h2">A descoberta importante</h3>
-<p class="rep-p">31 campanhas (38 % das ativas) geraram R$ 19.172 de margem. As outras campanhas (62 %) torraram R$ 10.147.</p>
-<p class="rep-p">O resultado final positivo da operação vem exclusivamente de uma minoria vencedora. Retirar a cauda longa deficitária mudaria o cenário:</p>
-<p class="rep-p">Só eliminando os projetos sem aderência, a margem da operação mais que dobra. Essa é a alavanca mais subestimada desse produto.</p>
-<h2 class="rep-h1">8. Diagnóstico de escala — existe potencial?</h2>
-<p class="rep-p">Resposta direta: sim, mas com limitações. Abaixo, os motivos para cada lado da balança.</p>
-<h3 class="rep-h2">8.1. Argumentos a favor da escala</h3>
-<ul class="rep-list">
-<li>Modelo vencedor validado. A campanha [C] [TEA] [VENDAS] [CBO] [04/03/26] entregou 102 compras a CPA de R$ 127 — margem de 50 % por venda. É o protótipo replicável.</li>
-<li>Curva de aprendizado paga. Os R$ 10 mil torrados em mar-ago/25 são afundados — agora o operacional rende. CPA caiu 79 % em 10 meses.</li>
-<li>Base de compradores pronta para LAL. 286 compras é volume suficiente para lookalike estatisticamente robusto (Meta pede mín. 100). Novos públicos qualificados ainda não foram explorados.</li>
-<li>Padrão temporal claro e explorável. Semana 1 + quarta-feira é um &#x27;oásis&#x27; de margem que pode ser explorado de forma cirúrgica.</li>
-<li>Produto com público nichado e emocionalmente engajado. TEA (transtorno do espectro autista) é um nicho de alta intenção — familiares buscam soluções ativamente, o que reduz dependência de estímulo via criativo.</li>
-</ul>
-<h3 class="rep-h2">8.2. Argumentos contra escala agressiva</h3>
-<ul class="rep-list">
-<li>Margem por venda crítica (R$ 32 na média). Cada R$ 10 de CPA acima do break-even derrete a margem. Dobrar o investimento com CPA atual (R$ 222) poderia zerar a rentabilidade rapidamente.</li>
-<li>Dependência de uma única campanha. Março/26: 102 das 109 compras do mês (93 %) vieram de 1 campanha. Se ela saturar ou for pausada, a operação cai de joelhos.</li>
-<li>Públicos limitados. PSCI/TERA (retargeting/nutrido) entrega CPA R$ 244 — borderline. É um reservatório pequeno que satura. Público frio queima dinheiro (CPA R$ 1.828). Restam interesses e LAL — que ainda não foram escalados.</li>
-<li>Checkout vaza 83 % dos interessados. Tx checkout→compra de 17,1 % versus 30-50 % esperado. Escalar tráfego antes de consertar o checkout apenas amplia o vazamento.</li>
-<li>Queima de criativo (frequência 7,7x). Público está sendo impactado pelos mesmos anúncios várias vezes. Em escala, isso acelera a saturação exponencialmente.</li>
-<li>Ticket fixo baixo (R$ 254 líquido). Produtos de R$ 254 líquidos exigem CPA muito baixo para margem saudável. Sem ticket maior (via order bump/upsell) ou backend de recorrência, o teto de escala é estrutural.</li>
-</ul>
-<h2 class="rep-h1">9. Onde estão as limitações — diagnóstico cirúrgico</h2>
-<p class="rep-p">Em ordem de impacto negativo sobre a escala:</p>
-<h3 class="rep-h2">9.1. OFERTA (ticket + backend) — LIMITAÇÃO MAIS SEVERA</h3>
-<p class="rep-p">Ticket líquido de R$ 254 é o que mais limita escala. Para cada R$ 10 de CPA acima do break-even, o produto precisa recuperar via volume — e o volume inflaciona CPA. É um ciclo estrutural que só se quebra mudando a oferta:</p>
-<ul class="rep-list">
-<li>Adicionar order bump (R$ 47 a R$ 97) na página de checkout — tipicamente eleva ticket médio em 20–30%.</li>
-<li>Upsell na thank-you page (produto complementar, mentoria, pacote extendido R$ 197-497).</li>
-<li>Downsell para quem não comprou o upsell.</li>
-<li>Plano de recorrência (assinatura mensal com conteúdo novo) — transforma LTV de R$ 254 em R$ 800-1.500.</li>
-</ul>
-<p class="rep-p">Meta: elevar ticket efetivo de R$ 254 para R$ 340+. Isso sozinho dobra o espaço de manobra de CPA.</p>
-<h3 class="rep-h2">9.2. FUNIL (checkout) — LIMITAÇÃO ALTA</h3>
-<p class="rep-p">83 % dos que iniciaram o checkout não finalizaram. Em escala, isso é um vazamento que amplia:</p>
-<ul class="rep-list">
-<li>Auditoria técnica: verificar Pix, cartão, parcelamento visível, certificado de segurança, tempo de carregamento.</li>
-<li>Auditoria persuasiva: depoimentos/garantia/escassez no próprio checkout.</li>
-<li>Simplificação: menos campos, autofill, one-click se possível.</li>
-<li>E-mail/WhatsApp de recuperação de abandono (reservatório de 1.384 pessoas que iniciaram e não finalizaram — cada 10 % recuperado = 140 compras extras = R$ 35 mil de receita).</li>
-</ul>
-<p class="rep-p">Meta: subir Chk→Compra de 17 % para ≥ 25 % em 30 dias.</p>
-<h3 class="rep-h2">9.3. PÚBLICO — LIMITAÇÃO MÉDIA</h3>
-<p class="rep-p">O &#x27;reservatório&#x27; atual tem problemas:</p>
-<ul class="rep-list">
-<li>Público frio não funciona: 4 compras em R$ 7.312 gastos. Manter em testes controlados (R$ 30/dia x 3 dias max).</li>
-<li>PSCI/TERA (remarketing/nutrido) satura: é um público pequeno e já intensivamente impactado (frequência 7,7x).</li>
-<li>LAL nunca foi testado em escala: 286 compradores é base suficiente e não foi explorada — é a maior fonte de crescimento não utilizada.</li>
-</ul>
-<p class="rep-p">Meta: diversificar entradas — LAL 1%, 3%, 5% de compradores + LAL de &#x27;iniciou checkout&#x27; + interesses combinados (pais de filhos especiais, terapeutas, psicopedagogos).</p>
-<h3 class="rep-h2">9.4. CRIATIVO — LIMITAÇÃO MÉDIA</h3>
-<p class="rep-p">Frequência média 7,7x e LPV-rate de 1,29% indicam saturação e fraqueza de gancho:</p>
-<ul class="rep-list">
-<li>Rotacionar criativo a cada 10-14 dias de veiculação (ou quando LPV-rate cai 30 % do pico individual).</li>
-<li>Testar 3 ângulos por semana: dor/identificação, transformação/resultado, autoridade/método.</li>
-<li>Formato: reels verticais 9:16 de 9-15 segundos com gancho em 3 segundos.</li>
-<li>UGC de familiares reais — em nicho TEA, rosto e emoção real convertem acima da média.</li>
-</ul>
-<p class="rep-p">Meta: LPV-rate ≥ 1,8 % em 30 dias.</p>
-<h3 class="rep-h2">9.5. ESTRUTURA DE CAMPANHA — LIMITAÇÃO BAIXA</h3>
-<p class="rep-p">Já existe convicção técnica: CBO &gt; ABO, Vendas &gt; Conversões. Execução é só aplicar consistentemente.</p>
-<h2 class="rep-h1">10. Cenários de escala com ticket R$ 254 (realista)</h2>
-<p class="rep-p">Refazendo os cenários do relatório anterior agora ancorados no ticket líquido informado:</p>
-<p class="rep-p">Leitura: sem mudar o ticket, a escala cautelosa (R$ 25k/mês) é o ponto-ótimo atual — maior margem absoluta com menor risco. Acima disso, margem por real investido cai rapidamente.</p>
-<p class="rep-p">Acima de R$ 60k/mês, o produto para de escalar e começa a destruir margem — é o teto estrutural para ticket R$ 254 com funil atual.</p>
-<h3 class="rep-h2">Cenário com ajustes no funil e oferta</h3>
-<p class="rep-p">Se checkout subir de 17 % para 25 % e ticket efetivo subir para R$ 340 (via order bump), o mapa muda:</p>
-<p class="rep-p">Com os destravamentos, o teto prático sobe de R$ 60k para R$ 100k+/mês e a margem se multiplica por 4-5x.</p>
-<h2 class="rep-h1">11. Conclusão — o que fazer nos próximos 60 dias</h2>
-<h3 class="rep-h2">11.1. Resposta direta às perguntas</h3>
-<p class="rep-p">Melhores dias para investir mais pesado:</p>
-<ul class="rep-list">
-<li>Quarta-feira (ROAS 1,82x) — dia de ouro absoluto.</li>
-<li>Segunda e sexta — lucro modesto, mas estáveis para manutenção.</li>
-</ul>
-<p class="rep-p">Melhores semanas para concentrar escala:</p>
-<ul class="rep-list">
-<li>Semana 1 do mês (dias 1-7) — margem de R$ 9.826 no período.</li>
-<li>Semana 4 do mês (dias 22-28) — preparação para a próxima janela forte.</li>
-</ul>
-<p class="rep-p">Períodos a evitar:</p>
-<ul class="rep-list">
-<li>Terça-feira — ROAS 0,36x, prejuízo estrutural.</li>
-<li>Domingo — ROAS 0,79x, deficitário.</li>
-<li>Semana 2 do mês (dias 8-14) — único período com ROAS &lt; 0,7x.</li>
-<li>Pior combinação possível: terça da segunda semana do mês — evitar ativações novas aqui.</li>
-</ul>
-<h3 class="rep-h2">11.2. Potencial de escala — resposta final</h3>
-<p class="rep-p">Sim, existe potencial — mas em 2 horizontes diferentes:</p>
-<ul class="rep-list">
-<li>Horizonte imediato (30-60 dias): escala até R$ 25-30k/mês é viável com ajustes táticos (alocação por semana/dia, matar cauda deficitária, LAL). Margem esperada: R$ 15k-25k/mês.</li>
-<li>Horizonte médio (90-180 dias): escala até R$ 60-100k/mês é viável SE os destravamentos estruturais forem feitos — checkout (17 %→25 %), ticket efetivo via order bump (R$ 254→R$ 340), LAL e interesses novos para sair da dependência de PSCI/TERA. Margem esperada: R$ 50k+/mês.</li>
-<li>Sem destravamentos: o teto é R$ 40k/mês. Acima disso, CPA inflaciona, margem desaparece e a operação volta a ser deficitária como nos primeiros 5 meses.</li>
-</ul>
-<h3 class="rep-h2">11.3. Onde está o gargalo real (uma frase)</h3>
-<p class="rep-p">A limitação principal NÃO é público, criativo ou tráfego — é a oferta. Um ticket líquido de R$ 254 sem backend/upsell/order bump deixa margem por venda apertada demais para sustentar escala. Resolver isso destrava tudo o resto.</p>
-<h3 class="rep-h2">11.4. As 5 ações que mais movem o ponteiro</h3>
-<ul class="rep-list">
-<li>1. Adicionar order bump no checkout. Impacto: +30-40 % no ticket efetivo. Effort: baixo (1-2 dias de trabalho da equipe de produto).</li>
-<li>2. Auditoria completa do checkout. Impacto: +40-80 % em compras sem subir 1 real de tráfego. Effort: médio.</li>
-<li>3. Alocação temporal cirúrgica (semana 1 + quarta). Impacto: +20-30 % de margem mantendo mesmo budget. Effort: muito baixo.</li>
-<li>4. Matar a cauda deficitária. Impacto: +R$ 11 mil de margem extra por 13 meses. Effort: 1 dia de limpeza.</li>
-<li>5. Ativar LAL 1%, 3%, 5% dos compradores. Impacto: abre nova fonte de volume qualificado (maior alavanca de escala real). Effort: baixo (1 dia de configuração).</li>
-</ul>
-<h2 class="rep-h1">12. Observações finais</h2>
-<p class="rep-p">Esta análise ainda opera sobre relatório agregado por campanha — não daily breakdown. Para refinar as conclusões de semana-do-mês e dia-da-semana (que aqui foram extraídas da data de criação das campanhas), recomendo exportar do Meta Ads um relatório separado com corte diário (&#x27;Divisão por dia&#x27;) e reanalisar — os padrões devem se confirmar, mas poderiam variar em 10-20 %.</p>
-<p class="rep-p">Importante: a análise de margem aqui assume que o valor líquido de R$ 254 é fixo por venda. Se houver variação (checkouts de produtos complementares, order bumps já existentes, reembolsos, chargebacks), revisar os números.</p>
-<p class="rep-p">— FIM DA ANÁLISE COMPLEMENTAR —</p>
-<h2 class="rep-h1">Tabelas e Dados Detalhados</h2>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Indicador financeiro</th><th>Valor</th><th>Leitura</th></tr>
-<tr><td>Investimento total (gasto de mídia)</td><td>R$ 63.495,85</td><td>13 meses</td></tr>
-<tr><td>Receita líquida (286 × R$ 254)</td><td>R$ 72.644,00</td><td>—</td></tr>
-<tr><td>Margem bruta de mídia</td><td>R$ 9.148,15</td><td>Apertada</td></tr>
-<tr><td>Margem % sobre receita</td><td>12,6%</td><td>Muito baixa</td></tr>
-<tr><td>ROAS líquido</td><td>1,14x</td><td>Mal. Meta: ≥ 1,50x</td></tr>
-<tr><td>CPA médio histórico</td><td>R$ 222,01</td><td>A R$ 32 do break-even</td></tr>
-<tr><td>CPA break-even</td><td>R$ 254,00</td><td>Teto absoluto</td></tr>
-<tr><td>Margem média por venda</td><td>R$ 31,99</td><td>Crítica — sem folga</td></tr>
-<tr><td>CPA ponto-ótimo (mar/26)</td><td>R$ 136,19</td><td>Margem R$ 117,81/venda</td></tr>
-<tr><td>ROAS ponto-ótimo (mar/26)</td><td>1,87x</td><td>Saudável</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Mês</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>Receita líq.</th><th>Margem</th><th>ROAS</th><th>Margem/venda</th></tr>
-<tr><td>mar/25</td><td>3</td><td>R$ 1.536</td><td>4</td><td>R$ 1.016</td><td>(R$ 519)</td><td>0,66x</td><td>(R$ 130)</td></tr>
-<tr><td>abr/25</td><td>3</td><td>R$ 777</td><td>0</td><td>R$ 0</td><td>(R$ 777)</td><td>0,00x</td><td>—</td></tr>
-<tr><td>mai/25</td><td>18</td><td>R$ 11.528</td><td>18</td><td>R$ 4.572</td><td>(R$ 6.956)</td><td>0,40x</td><td>(R$ 386)</td></tr>
-<tr><td>jun/25</td><td>18</td><td>R$ 14.523</td><td>61</td><td>R$ 15.494</td><td>R$ 971</td><td>1,07x</td><td>R$ 16</td></tr>
-<tr><td>jul/25</td><td>9</td><td>R$ 4.220</td><td>8</td><td>R$ 2.032</td><td>(R$ 2.188)</td><td>0,48x</td><td>(R$ 274)</td></tr>
-<tr><td>ago/25</td><td>2</td><td>R$ 2.689</td><td>10</td><td>R$ 2.540</td><td>(R$ 149)</td><td>0,94x</td><td>(R$ 15)</td></tr>
-<tr><td>set/25</td><td>9</td><td>R$ 4.606</td><td>26</td><td>R$ 6.604</td><td>R$ 1.998</td><td>1,43x</td><td>R$ 77</td></tr>
-<tr><td>out/25</td><td>10</td><td>R$ 5.313</td><td>31</td><td>R$ 7.874</td><td>R$ 2.561</td><td>1,48x</td><td>R$ 83</td></tr>
-<tr><td>nov/25</td><td>3</td><td>R$ 839</td><td>4</td><td>R$ 1.016</td><td>R$ 177</td><td>1,21x</td><td>R$ 44</td></tr>
-<tr><td>fev/26</td><td>2</td><td>R$ 2.621</td><td>15</td><td>R$ 3.810</td><td>R$ 1.189</td><td>1,45x</td><td>R$ 79</td></tr>
-<tr><td>mar/26</td><td>3</td><td>R$ 14.844</td><td>109</td><td>R$ 27.686</td><td>R$ 12.842</td><td>1,87x</td><td>R$ 118</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Semana do mês</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>Receita líq.</th><th>Margem</th><th>ROAS</th></tr>
-<tr><td>Semana 1 (dias 1-7)</td><td>16</td><td>R$ 25.226</td><td>138</td><td>R$ 35.052</td><td>R$ 9.826</td><td>1,39x</td></tr>
-<tr><td>Semana 2 (dias 8-14)</td><td>18</td><td>R$ 7.029</td><td>17</td><td>R$ 4.318</td><td>(R$ 2.711)</td><td>0,61x</td></tr>
-<tr><td>Semana 3 (dias 15-21)</td><td>26</td><td>R$ 23.559</td><td>96</td><td>R$ 24.384</td><td>R$ 825</td><td>1,03x</td></tr>
-<tr><td>Semana 4 (dias 22-28)</td><td>18</td><td>R$ 7.305</td><td>34</td><td>R$ 8.636</td><td>R$ 1.331</td><td>1,18x</td></tr>
-<tr><td>Semana 5 (dias 29-31)</td><td>2</td><td>R$ 376</td><td>1</td><td>R$ 254</td><td>(R$ 122)</td><td>0,68x</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Dia</th><th>Camp.</th><th>Investimento</th><th>Compras</th><th>Receita líq.</th><th>Margem</th><th>ROAS</th></tr>
-<tr><td>Segunda</td><td>6</td><td>R$ 2.614</td><td>12</td><td>R$ 3.048</td><td>R$ 434</td><td>1,17x</td></tr>
-<tr><td>Terça</td><td>11</td><td>R$ 9.089</td><td>13</td><td>R$ 3.302</td><td>(R$ 5.787)</td><td>0,36x</td></tr>
-<tr><td>Quarta</td><td>12</td><td>R$ 19.719</td><td>141</td><td>R$ 35.814</td><td>R$ 16.095</td><td>1,82x</td></tr>
-<tr><td>Quinta</td><td>23</td><td>R$ 19.133</td><td>76</td><td>R$ 19.304</td><td>R$ 171</td><td>1,01x</td></tr>
-<tr><td>Sexta</td><td>4</td><td>R$ 1.688</td><td>8</td><td>R$ 2.032</td><td>R$ 344</td><td>1,20x</td></tr>
-<tr><td>Sábado</td><td>3</td><td>R$ 1.950</td><td>7</td><td>R$ 1.778</td><td>(R$ 172)</td><td>0,91x</td></tr>
-<tr><td>Domingo</td><td>21</td><td>R$ 9.303</td><td>29</td><td>R$ 7.366</td><td>(R$ 1.937)</td><td>0,79x</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Semana do mês</th><th>Melhor dia</th><th>Segunda opção</th><th>Evitar</th><th>Alocação sugerida</th></tr>
-<tr><td>Semana 1 (dias 1-7)</td><td>Quarta</td><td>Sexta / Segunda</td><td>Terça / Domingo</td><td>40-50% do budget</td></tr>
-<tr><td>Semana 2 (dias 8-14)</td><td>Quarta</td><td>Segunda</td><td>Terça / Domingo / Quinta</td><td>5-10% (só retargeting)</td></tr>
-<tr><td>Semana 3 (dias 15-21)</td><td>Quarta</td><td>Sexta</td><td>Terça / Domingo</td><td>20% do budget</td></tr>
-<tr><td>Semana 4 (dias 22-28)</td><td>Quarta</td><td>Segunda</td><td>Terça / Domingo</td><td>25% do budget</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Segmento</th><th>Nº campanhas</th><th>Investimento</th><th>Compras</th><th>Margem acumulada</th></tr>
-<tr><td>Lucrativas (CPA &lt; R$ 254)</td><td>31</td><td>R$ 43.820</td><td>248</td><td>+ R$ 19.172</td></tr>
-<tr><td>Marginais (CPA R$ 254-300)</td><td>7</td><td>R$ 3.958</td><td>14</td><td>− R$ 402</td></tr>
-<tr><td>Deficitárias (CPA &gt; R$ 300)</td><td>8</td><td>R$ 5.937</td><td>18</td><td>− R$ 1.365</td></tr>
-<tr><td>Zumbi (0 compras, &gt;R$ 500)</td><td>6</td><td>R$ 8.380</td><td>0</td><td>− R$ 8.380</td></tr>
-<tr><td>Demais testes (&lt; R$ 500)</td><td>28</td><td>R$ 1.401</td><td>6</td><td>+ R$ 123</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Gasto</th><th>Compras</th><th>Margem</th></tr>
-<tr><td>Operação histórica (real)</td><td>R$ 63.496</td><td>286</td><td>+ R$ 9.148</td></tr>
-<tr><td>Sem campanhas deficitárias</td><td>R$ 47.778</td><td>268</td><td>+ R$ 20.294</td></tr>
-<tr><td>Ganho potencial</td><td>−24,8%</td><td>−6,3%</td><td>+121,8%</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>CPA esperado</th><th>Compras/mês</th><th>Receita líq.</th><th>Margem</th><th>ROAS</th></tr>
-<tr><td>Base estável</td><td>R$ 15.000</td><td>R$ 140</td><td>107</td><td>R$ 27.178</td><td>R$ 12.178</td><td>1,81x</td></tr>
-<tr><td>Escala cautelosa</td><td>R$ 25.000</td><td>R$ 160</td><td>156</td><td>R$ 39.624</td><td>R$ 14.624</td><td>1,58x</td></tr>
-<tr><td>Escala agressiva</td><td>R$ 40.000</td><td>R$ 190</td><td>211</td><td>R$ 53.494</td><td>R$ 13.494</td><td>1,34x</td></tr>
-<tr><td>Limite sem destravar</td><td>R$ 60.000</td><td>R$ 230</td><td>261</td><td>R$ 66.261</td><td>R$ 6.261</td><td>1,10x</td></tr>
-<tr><td>Além do limite</td><td>R$ 100.000</td><td>R$ 280+</td><td>357</td><td>R$ 90.714</td><td>(R$ 9.285)</td><td>0,91x</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>CPA</th><th>Compras</th><th>Receita efetiva</th><th>Margem</th></tr>
-<tr><td>Escala cautelosa</td><td>R$ 25.000</td><td>R$ 130</td><td>192</td><td>R$ 65.280</td><td>R$ 40.280</td></tr>
-<tr><td>Escala agressiva</td><td>R$ 40.000</td><td>R$ 155</td><td>258</td><td>R$ 87.720</td><td>R$ 47.720</td></tr>
-<tr><td>Pesado</td><td>R$ 60.000</td><td>R$ 180</td><td>333</td><td>R$ 113.220</td><td>R$ 53.220</td></tr>
-<tr><td>Muito pesado</td><td>R$ 100.000</td><td>R$ 220</td><td>455</td><td>R$ 154.700</td><td>R$ 54.700</td></tr>
-</table></div>
-  </div>
-</section>
-
-    
-<section class="tab-pane" id="tab-tea-v3">
-  <div class="rep-header">
-    <div class="rep-eyebrow">Relatório · Analise_TEA_Recalibracao.docx</div>
-    <h1 class="rep-title">Recalibração Estratégica — Público B2B</h1>
-    <p class="rep-subtitle">Versão 3 · Addendum após descobrir que o público é profissionais de saúde</p>
-  </div>
-  <div class="rep-body">
-    <p class="rep-meta">RECALIBRAÇÃO ESTRATÉGICA — PÚBLICO B2B</p>
-<p class="rep-meta">Produto TEA · Profissionais de Saúde</p>
-<p class="rep-meta">Addendum à análise anterior — novas conclusões</p>
-<p class="rep-meta">Emitido em 22/04/2026</p>
-<h2 class="rep-h1">1. Por que essa informação muda a leitura</h2>
-<p class="rep-p">A informação de que o público do TEA é composto por profissionais de saúde (não por famílias de pessoas com autismo, como a análise anterior supôs implicitamente) não é um ajuste menor — é uma mudança de categoria. Passamos de B2C para B2B educacional em nicho premium. Três implicações imediatas:</p>
-<ul class="rep-list">
-<li>O ticket líquido de R$ 254 provavelmente representa um produto de entrada (curso inicial, mini-treinamento ou ingresso em evento). O LTV real potencial é 3 a 10x esse número via especializações, certificações e recorrência de conteúdo.</li>
-<li>Profissionais de saúde compram diferente: avaliam metodologia, autoridade do autor, selo institucional, utilidade clínica — e decidem em ciclos mais longos. Criativos baseados em emoção/dor familiar performam bem abaixo de criativos baseados em autoridade técnica.</li>
-<li>O teto de escala muda drasticamente. Se hoje o produto tem base de 286 compradores ativos, são 286 profissionais qualificados — base de ouro para cross-sell, upsell e desenvolvimento de novos produtos no mesmo público.</li>
-</ul>
-<p class="rep-p">As siglas das próprias campanhas já apontavam para isso: PSCI = psicólogos, TERA = terapeutas, e há referências a &#x27;médico interno&#x27;. A segmentação estava certa — só a interpretação do que ela significa financeiramente estava subvalorizada.</p>
-<h2 class="rep-h1">2. Releitura dos padrões temporais</h2>
-<p class="rep-p">Os números não mudam — mas a explicação comportamental sim, e com ela a prescrição tática.</p>
-<h3 class="rep-h2">Semana 1 do mês (dias 1-7) — continua sendo a janela forte</h3>
-<p class="rep-p">Antes: &#x27;salário e benefícios assistenciais&#x27;. Agora, interpretação correta:</p>
-<ul class="rep-list">
-<li>Profissionais de saúde liberais recebem repasses de convênios no início do mês (ANS regulamenta prazos de pagamento em 30 dias).</li>
-<li>Consultórios fecham mês e distribuem retirada — dinheiro disponível para investimento profissional.</li>
-<li>Ciclo psicológico: &#x27;mês novo, decisão nova&#x27; — profissional começa o mês com disposição para investir em si. É o equivalente a &#x27;ano novo, vida nova&#x27; em micro-ciclo.</li>
-</ul>
-<p class="rep-p">Prescrição: manter alocação de 40-50% do budget na semana 1. Ativações novas preferencialmente na 1ª quarta do mês (ou seja, entre dia 1 e 7 em dia de semana 3).</p>
-<h3 class="rep-h2">Semana 2 (dias 8-14) — o motivo do prejuízo</h3>
-<p class="rep-p">Antes: &#x27;público já gastou o dinheiro&#x27;. Agora:</p>
-<ul class="rep-list">
-<li>Pico de atendimento clínico. Profissional de saúde tem agenda mais cheia nesta semana (retornos de pacientes, sessões iniciadas no começo do mês).</li>
-<li>Menor disponibilidade mental para consumir conteúdo de formação/compra — foco operacional.</li>
-<li>Sem urgência financeira: o dinheiro ainda &#x27;está na conta&#x27;, mas a cabeça está no consultório.</li>
-</ul>
-<p class="rep-p">Prescrição: em vez de cortar para 5-10% como sugerido antes, operar exclusivamente com retargeting de &#x27;quase-compradores&#x27; (abandono de checkout dos 1.384 da base). Nenhuma campanha de topo.</p>
-<h3 class="rep-h2">Quarta-feira — dia de ouro tem explicação específica</h3>
-<ul class="rep-list">
-<li>Agenda clínica mais leve no meio da semana (muitos profissionais concentram atendimentos nas pontas — segunda/terça e quinta/sexta).</li>
-<li>Dia tradicional de estudo/atualização no meio acadêmico clínico.</li>
-<li>Eventos online, lives e webinars de atualização profissional concentram-se em quartas à noite.</li>
-</ul>
-<p class="rep-p">Prescrição: lançar criativos de conteúdo técnico (não emocional) preferencialmente quarta-feira à tarde/noite. Formato de &#x27;aula-convite&#x27; de 60-120s tende a bater reels curtos de venda direta.</p>
-<h3 class="rep-h2">Terça-feira — prejuízo tem explicação</h3>
-<ul class="rep-list">
-<li>Pico de atendimento de início de semana: profissional está clinicando.</li>
-<li>Baixa disponibilidade para consumir conteúdo comercial/decisório.</li>
-<li>CPA alto + tx conversão baixa: o público impactado está ocupado.</li>
-</ul>
-<p class="rep-p">Prescrição: cortar terça completamente para campanhas de topo. Manter apenas remarketing leve.</p>
-<h3 class="rep-h2">Domingo — deficitário tem explicação</h3>
-<ul class="rep-list">
-<li>Profissional em descanso — baixa intenção de investir em formação.</li>
-<li>Domingo à noite é dia de &#x27;planejamento da semana&#x27; — mas decisões de compra profissional raramente acontecem aqui.</li>
-</ul>
-<p class="rep-p">Prescrição: pausar domingo ou manter só conteúdo topo de funil com CPC baixo (awareness, não conversão).</p>
-<h2 class="rep-h1">3. Público e criativo — as recomendações mudam</h2>
-<h3 class="rep-h2">3.1. Público frio — reavaliando o diagnóstico</h3>
-<p class="rep-p">Antes: &#x27;queima dinheiro, pausar quase sempre&#x27;. Agora, nuance importante:</p>
-<ul class="rep-list">
-<li>O público frio não funcionou porque provavelmente estava segmentado por interesses genéricos (autismo, TEA, etc) que captam muito leigo e família — baixíssima aderência ao nicho profissional.</li>
-<li>Para profissionais, a segmentação correta é por: cargos profissionais (psicólogo, fonoaudiólogo, terapeuta ocupacional), demografia (idade 25-50, ensino superior), interesses em entidades/publicações (CFP, Sociedade Brasileira de Fonoaudiologia, revistas científicas), comportamento de compra em cursos de formação continuada.</li>
-<li>Meta Ads tem sinalizadores específicos para &#x27;health care industry&#x27; e &#x27;medical professions&#x27; que não parecem estar em uso.</li>
-</ul>
-<p class="rep-p">Prescrição revisada: não é &#x27;pausar frio para sempre&#x27; — é &#x27;pausar frio mal segmentado e testar frio bem segmentado&#x27; com R$ 50-80/dia por 5 dias usando targeting profissional nativo do Meta.</p>
-<h3 class="rep-h2">3.2. LAL — potencial ainda maior</h3>
-<p class="rep-p">Com 286 profissionais de saúde comprados, o lookalike não é &#x27;parecido com quem comprou&#x27; — é &#x27;parecido com profissionais qualificados&#x27;. Isso tem performance significativamente maior que LAL de B2C comum:</p>
-<ul class="rep-list">
-<li>LAL 1% de compradores = 2,1 milhões de pessoas no Brasil com perfil similar a profissional de saúde que comprou. Altamente qualificado.</li>
-<li>Em B2B educacional, LAL 1% costuma bater em 2-3x a performance de interesses combinados.</li>
-<li>Recomendação adicional: criar LAL separadamente para compradores e para &#x27;iniciou checkout&#x27; — públicos diferentes com comportamentos distintos.</li>
-</ul>
-<p class="rep-p">Prescrição: priorizar LAL no Sprint 1. Pode ser o maior salto de performance dos próximos 30 dias.</p>
-<h3 class="rep-h2">3.3. Criativo — o ângulo muda</h3>
-<p class="rep-p">Antes a sugestão era 3 ângulos: dor, transformação, autoridade. Para profissionais de saúde, a composição vira:</p>
-<p class="rep-p">Profissional de saúde tem filtro forte contra sensacionalismo/emoção barata. Criativos de &#x27;dor genérica&#x27; tendem a queimar a relação com o público qualificado. Se a fase de maio/jul 2025 teve criativos muito emocionais, pode explicar parte do prejuízo desse período.</p>
-<h2 class="rep-h1">4. Potencial de escala — revisão para cima</h2>
-<p class="rep-p">A conclusão anterior era: &#x27;escala até R$ 40k sem destravar; R$ 60-100k com destravamentos&#x27;. Com a releitura B2B, a matemática fica mais favorável por três razões:</p>
-<h3 class="rep-h2">4.1. LTV real é muito maior que R$ 254</h3>
-<p class="rep-p">Profissionais de saúde são o público-alvo perfeito para escadaria de produtos: o curso inicial é porta de entrada. Cenários razoáveis de LTV médio:</p>
-<p class="rep-p">Se o LTV efetivo subir para R$ 650, o break-even CPA passa a ser R$ 650 (em vez de R$ 254). Isso significa que mesmo CPA de R$ 300-400 fica lucrativo no longo prazo — e abre escala muito mais agressiva.</p>
-<h3 class="rep-h2">4.2. Público-alvo é grande o suficiente</h3>
-<p class="rep-p">Dados do CFP/CFFa/CFM (conselhos profissionais) — volume nacional potencial:</p>
-<ul class="rep-list">
-<li>Psicólogos ativos no Brasil: ~450.000 (CFP)</li>
-<li>Fonoaudiólogos: ~55.000 (CFFa)</li>
-<li>Terapeutas ocupacionais: ~45.000 (COFFITO)</li>
-<li>Psicopedagogos, pediatras, neuropediatras (contribuintes ao nicho TEA): +30.000</li>
-</ul>
-<p class="rep-p">Público-alvo nacional estimado: 580.000 profissionais. Com 286 compras acumuladas em 13 meses, a penetração atual é de 0,05 % — existe muito espaço de mercado antes de saturar.</p>
-<h3 class="rep-h2">4.3. Reservatórios intactos</h3>
-<ul class="rep-list">
-<li>LAL 1/3/5% de compradores — nunca testado em escala.</li>
-<li>Interesses profissionais específicos (CFP, revistas científicas, sociedades profissionais) — não aparecem na nomenclatura das campanhas.</li>
-<li>Públicos regionais (SP, RJ, MG concentram 60 % dos profissionais — segmentação geográfica não explorada).</li>
-<li>Retargeting de 1.384 profissionais que iniciaram checkout e não compraram — em B2B educacional, essas pessoas tendem a voltar em ciclos de 30-90 dias.</li>
-</ul>
-<h3 class="rep-h2">4.4. Novo teto de escala projetado</h3>
-<p class="rep-p">O teto anterior de R$ 100k/mês era calculado assumindo ticket fixo de R$ 254. Com escada de produtos B2B típica para profissionais de saúde, o teto sobe para R$ 150-200k/mês viáveis.</p>
-<h2 class="rep-h1">5. Ajustes no plano de 60 dias (o que muda)</h2>
-<h3 class="rep-h2">Sprint 1 (dias 1-15) — acrescentar</h3>
-<ul class="rep-list">
-<li>Validar se a segmentação das campanhas ativas está usando as categorias profissionais do Meta (cargo, indústria) e não só interesses genéricos.</li>
-<li>Mapear junto ao cliente a escada de produtos existente (tem order bump? upsell? comunidade? especialização?). Isso define o LTV real e recalcula o CPA-máximo aceitável.</li>
-<li>Refazer os criativos de topo com ângulo de autoridade/utilidade clínica (não emocional). Rodar 3 peças de &#x27;aula-convite&#x27; 90-120s.</li>
-</ul>
-<h3 class="rep-h2">Sprint 2 (dias 16-30) — acrescentar</h3>
-<ul class="rep-list">
-<li>Se a escada existe mas está subutilizada: ativar order bump e medir % de adesão. Cada 10 pontos de adesão = +R$ 6-10/venda de margem.</li>
-<li>Testar frio com segmentação profissional correta (cargos CBO + interesses de entidades): R$ 50/dia por 5 dias.</li>
-<li>Configurar campanha de retargeting para &#x27;iniciou checkout &gt; 30 dias atrás&#x27; — em B2B educacional, retargeting de ciclo longo tem taxa de recuperação alta.</li>
-</ul>
-<h3 class="rep-h2">Sprint 3 (dias 31-60) — acrescentar</h3>
-<ul class="rep-list">
-<li>Se o LTV real for ≥ R$ 500, reavaliar todos os CPAs-alvo. Campanhas com CPA R$ 280-350 que pareciam &#x27;caras&#x27; podem estar na verdade dentro da zona de lucro se o backend for ativado.</li>
-<li>Testar expansão regional: campanhas dedicadas para SP+RJ+MG (60% do mercado) e outras campanhas para Nordeste (onde preço de mídia tende a ser menor).</li>
-<li>Começar a desenhar o segundo produto da escada se ainda não existir — o maior gargalo de longo prazo pode ser a ausência do próximo degrau.</li>
-</ul>
-<h2 class="rep-h1">6. Conclusão recalibrada</h2>
-<p class="rep-p">Resposta à pergunta central, agora com o contexto correto:</p>
-<p class="rep-p">O produto TEA tem potencial de escala significativamente maior do que a análise anterior sugeria. Por ser B2B educacional para profissionais de saúde — um nicho premium, grande (580 mil profissionais) e pouquíssimo penetrado (0,05%) — as limitações financeiras que apareciam com ticket fixo de R$ 254 se dissolvem quando o LTV real de R$ 500-900 é considerado.</p>
-<p class="rep-p">O gargalo real não é público nem tráfego — é a arquitetura de backend/escada de produtos. Se ela já existe e não está sendo medida, é só ligar corretamente. Se ela não existe, construí-la é a prioridade 0 para destravar escala acima de R$ 50k/mês.</p>
-<p class="rep-p">Os padrões temporais identificados (semana 1 + quarta-feira) continuam válidos — a explicação comportamental é outra, mas o mapa de alocação de budget é o mesmo. É um excelente ativo operacional imediato, mesmo sem mudanças estruturais.</p>
-<h3 class="rep-h2">As 3 perguntas-chave para o cliente</h3>
-<ul class="rep-list">
-<li>Qual é o portfólio completo de produtos hoje? Existe upsell ativo na thank-you page? Comunidade com recorrência? Especialização avançada?</li>
-<li>Qual é a LTV médio observado por comprador em 12 meses?</li>
-<li>As campanhas estão usando segmentação profissional do Meta (cargo, indústria) ou só interesses genéricos tipo &#x27;autismo&#x27;?</li>
-</ul>
-<p class="rep-p">A resposta dessas 3 perguntas define se a escala próxima está em R$ 40k ou R$ 150k/mês.</p>
-<p class="rep-p">— FIM DA RECALIBRAÇÃO —</p>
-<h2 class="rep-h1">Tabelas e Dados Detalhados</h2>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Ângulo</th><th>Peso recomendado</th><th>Exemplo de gancho</th><th>Formato ideal</th></tr>
-<tr><td>Autoridade/método</td><td>50%</td><td>&#x27;O protocolo de avaliação TEA que eu ensino pra 286 terapeutas&#x27;</td><td>Aula-convite 90-120s com quadro branco</td></tr>
-<tr><td>Utilidade clínica</td><td>30%</td><td>&#x27;Como estruturar o plano terapêutico nas primeiras 4 sessões&#x27;</td><td>Lista/infográfico ou carrossel</td></tr>
-<tr><td>Aspiração/carreira</td><td>15%</td><td>&#x27;Como montei consultório especializado em autismo&#x27;</td><td>Depoimento UGC 30-60s</td></tr>
-<tr><td>Dor/emoção</td><td>5%</td><td>&#x27;Aquela sessão que não saiu do papel...&#x27;</td><td>Reels curto 15-30s (apenas retargeting)</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Componente</th><th>Ticket</th><th>Conversão esperada</th><th>LTV incremental/comprador</th></tr>
-<tr><td>Produto inicial (atual)</td><td>R$ 254 líq.</td><td>100% (baseline)</td><td>R$ 254</td></tr>
-<tr><td>Order bump (livro/material)</td><td>R$ 47-97</td><td>35-50%</td><td>R$ 24-48</td></tr>
-<tr><td>Upsell (especialização)</td><td>R$ 497-997</td><td>10-20%</td><td>R$ 75-200</td></tr>
-<tr><td>Comunidade/recorrência</td><td>R$ 97/mês</td><td>15% (12m avg)</td><td>R$ 175</td></tr>
-<tr><td>Eventos/formação avançada</td><td>R$ 1.997+</td><td>5-10%</td><td>R$ 120-200</td></tr>
-<tr><td>LTV TOTAL potencial</td><td>—</td><td>—</td><td>R$ 650-900/comprador</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>CPA aceitável</th><th>Compras/mês</th><th>Comentário</th></tr>
-<tr><td>Sem mudanças (tático)</td><td>R$ 25-30k</td><td>R$ 160</td><td>155-188</td><td>Pato-ótimo atual</td></tr>
-<tr><td>Com order bump</td><td>R$ 40-50k</td><td>R$ 200</td><td>200-250</td><td>Margem estável</td></tr>
-<tr><td>Com escada completa (LTV R$ 650)</td><td>R$ 80-120k</td><td>R$ 350</td><td>230-340</td><td>Break-even em 3 meses</td></tr>
-<tr><td>Com time de vendas / ligações</td><td>R$ 150k+</td><td>R$ 500</td><td>300+</td><td>Modelo de alto-ticket</td></tr>
-</table></div>
-  </div>
-</section>
-
-    
-<section class="tab-pane" id="tab-tea-v4">
-  <div class="rep-header">
-    <div class="rep-eyebrow">Relatório · Analise_TEA_DEFINITIVA.docx</div>
-    <h1 class="rep-title">Análise Definitiva — Vendas × Tráfego Cruzados</h1>
-    <p class="rep-subtitle">Versão 4 · Consolidado com Kiwify (308 vendas pagas) × Meta Ads — fonte de verdade</p>
-  </div>
-  <div class="rep-body">
-    <p class="rep-meta">ANÁLISE DEFINITIVA — VENDAS × TRÁFEGO CRUZADOS</p>
-<p class="rep-meta">Curso Neuromodulação no TEA</p>
-<p class="rep-meta">Relatório consolidado com dados reais da Kiwify (308 vendas pagas) × Meta Ads</p>
-<p class="rep-meta">Cliente: Equipe Milionária · Público: Profissionais de Saúde</p>
-<p class="rep-meta">Emitido em 22/04/2026</p>
-<h2 class="rep-h1">1. O que muda com o cruzamento real de dados</h2>
-<p class="rep-p">O relatório da Kiwify trouxe dados definitivos sobre as 457 transações (308 pagas, 77 aguardando, 64 recusadas, 7 reembolsadas, 1 chargeback) com data, hora, método, UTM e valor líquido por venda. Cinco correções materiais na análise anterior:</p>
-<p class="rep-p">1. O ROAS real é 1,49x (não 1,14x). Ticket médio real é R$ 306,54 — 20,7 % acima dos R$ 254 base. A operação gerou R$ 30.918 de margem bruta (não R$ 9.148). Produto muito mais rentável do que parecia.</p>
-<p class="rep-p">2. A &#x27;campanha campeã&#x27; da análise anterior foi prejuízo. [C] [TEA] [VENDAS] [CBO] [04/03/26] — que o Meta reportou 102 compras — entregou 23 vendas reais (atribuição UTM). ROAS real: 0,69x. O mês de março/26 foi deficitário em R$ 4.580, não lucrativo em R$ 12.842. Inflação de atribuição do Meta em objetivo &#x27;Vendas&#x27; (view-through).</p>
-<p class="rep-p">3. O dia &#x27;campeão&#x27; NÃO é quarta — é quinta. Na análise anterior, baseada em data de criação de campanha, quarta parecia o melhor dia. Na realidade, quinta concentra 55 vendas (17,9 %) e segunda 52 (16,9 %). Quarta é o PIOR dia de compra (11,4 %) — o que faz sentido: ativar quarta → campanha atinge público na quinta (dia de ouro).</p>
-<p class="rep-p">4. &#x27;Taxa Chk→Compra de 17 %&#x27; era falsa leitura. Aprovação real de pagamento é 68,6 % (saudável). O número 17 % era um indicador do Meta mal interpretado. O gargalo verdadeiro de funil está em: 14 % de recusas de cartão + 16,8 % de pix/boleto não finalizados.</p>
-<p class="rep-p">5. Order bump já existe (oferta &#x27;Promo&#x27;). Oferta &#x27;TEA&#x27; (ticket R$ 254) concorre com oferta &#x27;Promo&#x27; (ticket R$ 340 — com upsell embutido). Promo representa 42 % das vendas e 47 % da receita. A escada de produtos não é inexistente — ela está em uso, apenas não mapeada.</p>
-<h2 class="rep-h1">2. O quadro financeiro real</h2>
-<p class="rep-p">Em outras palavras: o produto TEA é três vezes mais lucrativo do que a primeira análise fez parecer. O erro estava em assumir ticket fixo de R$ 254 — o ticket efetivo é 20 % maior por conta do upsell já incorporado na oferta &#x27;Promo&#x27;.</p>
-<h2 class="rep-h1">3. Mês a mês com vendas reais atribuídas</h2>
-<p class="rep-p">Cruzando gasto de mídia (mês de veiculação) com vendas reais (mês de compra na Kiwify):</p>
-<h3 class="rep-h2">O que os dados reais mostram — inversão importante</h3>
-<ul class="rep-list">
-<li>Março, abril e julho/25 — os &#x27;meses ruins&#x27; da primeira análise — foram na verdade os MAIS lucrativos em ROAS (3,45x, 2,38x e 3,13x). A leitura errada vinha da atribuição defasada do Meta: gasto dessas campanhas teve efeito nos meses seguintes (remarketing, boca-a-boca, conversão atrasada).</li>
-<li>Março/26 — o &#x27;mês campeão&#x27; da primeira análise — foi o pior: ROAS 0,69x, prejuízo de R$ 4.581. O Meta reportou 109 compras; a realidade foram 40 vendas. Objetivo &#x27;Vendas&#x27;/Advantage+ estava inflando contagem com atribuição view-through de 7 dias.</li>
-<li>Mai/25, ago/25 e set/25 foram marginais. Gasto alto, ROAS próximo de 1,0 — breakeven.</li>
-<li>Out/25 e fev/26 — estáveis e lucrativos (ROAS 2,09x e 1,91x). São os melhores meses para replicar como modelo — não março/26.</li>
-</ul>
-<h2 class="rep-h1">4. Padrão real de compra por dia da semana</h2>
-<p class="rep-p">Agora com data real da venda (não data de criação da campanha):</p>
-<h3 class="rep-h2">Inversão do padrão — por quê?</h3>
-<p class="rep-p">A análise anterior apontou quarta como dia de ativação vencedor. Com dados reais de compra, temos a imagem completa:</p>
-<ul class="rep-list">
-<li>Ativar novas campanhas na quarta é certo — elas entram em &#x27;curva de aprendizado&#x27; e viram máquina de venda na quinta (dia de pico real).</li>
-<li>Quarta é &#x27;dia de trabalho&#x27; do profissional: ele está vendo o criativo, mas não fechando compra ainda. O ciclo de decisão dura ~24h.</li>
-<li>Quinta + Segunda + Domingo concentram 51 % das vendas. Esses são os 3 dias que o profissional tem tempo mental para fechar a compra.</li>
-<li>Domingo à noite (19-23h) é janela forte — planejamento de semana, profissional revisa o que quer priorizar.</li>
-<li>Sexta e sábado são mais fracos — profissional em modo lazer, não compra.</li>
-</ul>
-<p class="rep-p">Recomendação: ativação na quarta + budget reforçado na quinta + monitorar domingo à noite e segunda de manhã.</p>
-<h2 class="rep-h1">5. A janela de compra — padrão horário B2B confirmado</h2>
-<p class="rep-p">Distribuição das 308 vendas ao longo do dia:</p>
-<h3 class="rep-h2">Padrão 100% compatível com rotina clínica</h3>
-<ul class="rep-list">
-<li>Dupla janela: 9-11h (antes das consultas da manhã) e 21-23h (depois do jantar, fim do expediente). Juntos representam 45,5 % das vendas.</li>
-<li>Vale de atendimento (15-17h): quando o profissional está clinicando, compras despencam para 8,4 %. É o horário de menor conversão.</li>
-<li>Almoço (12-14h) tem boa conversão: profissional está entre consultas, revisa o que vai estudar.</li>
-</ul>
-<p class="rep-p">Tática: subir lance/budget nas janelas 09-11h e 21-23h; reduzir budget entre 15-17h. Em CBO, o Meta já faz isso parcialmente — mas vale aplicar programação de horário para forçar.</p>
-<h3 class="rep-h2">Top combos dia + hora</h3>
-<h2 class="rep-h1">6. Semana do mês — padrão confirmado</h2>
-<ul class="rep-list">
-<li>Semana 1 e Semana 3 somam 52,3 % das vendas — são as duas janelas fortes mensais, provavelmente por recebimento de convênios (início do mês) + segundo repasse (dia 15).</li>
-<li>Semana 2 ainda é a mais fraca, mas com dado real (17,2 %) é menos gritante que a análise anterior sugeria. Continua sendo a semana de menor prioridade.</li>
-<li>Dias campeões do mês em volume: 23, 6, 4, 16, 17, 1, 5, 20, 29, 22 — padrão de início de mês (1-7) e pós-dia 15.</li>
-</ul>
-<h3 class="rep-h2">Matriz — semana do mês × dia da semana (onde fica o ouro)</h3>
-<p class="rep-p">Top-3 combos: Semana 3 × Quinta (21 vendas), Semana 4 × Segunda (18), Semana 1 × Quinta (17). Evitar: Semana 5 × Quarta (1), Semana 2 × Quinta (3).</p>
-<h2 class="rep-h1">7. Gargalos reais — onde vazam vendas</h2>
-<p class="rep-p">Com 457 transações totais e 308 pagas, o funil pós-clique tem 3 pontos de perda:</p>
-<h3 class="rep-h2">Receita potencial a recuperar</h3>
-<p class="rep-p">R$ 18.460 é 20 % da receita atual total — recuperável apenas com fluxos automatizados de e-mail e WhatsApp. Zero investimento de tráfego, pura operação:</p>
-<ul class="rep-list">
-<li>Fluxo de 3 e-mails + 2 WhatsApps em 24-48-72h após pix/boleto gerado e não pago.</li>
-<li>Fluxo de recuperação de cartão recusado: 1 e-mail imediato &#x27;tente outro cartão ou PIX&#x27; + 1 ligação (se houver equipe).</li>
-<li>Implementação via Kiwify (já integrada) + ferramenta de automação — 3 a 5 dias de setup.</li>
-</ul>
-<h3 class="rep-h2">Método de pagamento — o Pix domina</h3>
-<ul class="rep-list">
-<li>Pix domina (45 %) — já está ofertado no checkout.</li>
-<li>Cartão parcelado: 62 vendas em 12x (20 % do total). Parcelamento longo é importante — remover seria catastrófico.</li>
-<li>Boleto é marginal (3 vendas, 1 %) mas vale manter como opção institucional para profissionais de CNPJ.</li>
-</ul>
-<h2 class="rep-h1">8. Atribuição — o problema do tracking invisível</h2>
-<p class="rep-p">Das 308 vendas pagas:</p>
-<ul class="rep-list">
-<li>140 (45,5%) têm UTM_campaign — rastreáveis até a campanha específica do Meta.</li>
-<li>88 têm UTM_source=FB mas sem UTM_campaign — veio do Facebook/Instagram, mas atribuição de campanha perdida.</li>
-<li>168 (54,5%) não têm UTM nenhuma — orgânico/direto/afiliado/boca-a-boca, ou view-through de mídia paga sem cookie persistido.</li>
-</ul>
-<p class="rep-p">A receita &#x27;sem UTM&#x27; (R$ 47.636) é praticamente igual à receita atribuída via UTM (R$ 44.731). Isso significa que metade do valor gerado pelo Meta não está sendo corretamente contabilizado nos relatórios da plataforma.</p>
-<h3 class="rep-h2">Top 10 campanhas por vendas reais (UTM)</h3>
-<p class="rep-p">Descoberta crítica: a campanha &#x27;campeã&#x27; do Meta (04/03/26) é a MENOS rentável das grandes (ROAS 0,45x). A verdadeira vencedora foi a [PAGINA INLEAD ANTIGA][19/06/25] — campanha ABO de jun/25 que o Meta reportou 41 compras, mas entregou 31 vendas reais a ROAS 1,15x (breakeven positivo).</p>
-<p class="rep-p">Isso quebra a narrativa anterior de &#x27;CBO sempre supera ABO&#x27;. A campanha ABO mais antiga teve melhor resultado real que a CBO de Vendas mais recente. Hipótese: Advantage+/&#x27;Vendas&#x27; está inflando atribuição sem entregar volume proporcional.</p>
-<h3 class="rep-h2">Ação imediata: corrigir atribuição</h3>
-<ul class="rep-list">
-<li>Configurar UTMs corretamente em todas as campanhas (utm_source=FB, utm_medium=cpc, utm_campaign={{campaign.name}}, utm_content={{ad.name}}).</li>
-<li>Implementar CAPI (Conversion API) do Meta para reduzir perda de atribuição para ~15 %.</li>
-<li>Parar de usar métricas do Meta como verdade — fonte de verdade é a Kiwify.</li>
-<li>Em cada reunião de performance, comparar: (a) Meta-reported compras vs (b) Kiwify UTM atribuídas. A divergência indica peso do view-through fake.</li>
-</ul>
-<h2 class="rep-h1">9. Ofertas — a escada já está funcionando parcialmente</h2>
-<p class="rep-p">A coluna &#x27;Oferta&#x27; da Kiwify revela que já há diferenciação de produto:</p>
-<p class="rep-p">&#x27;Promo&#x27; tem ticket 34 % maior que &#x27;TEA&#x27; (R$ 341 vs R$ 255). A oferta Promo representa 42 % das vendas e 47 % da receita. Isso significa que o upsell/order bump existe — e quando é ofertado, converte mais valor.</p>
-<p class="rep-p">&#x27;TEA.&#x27; (com ponto) tem ticket R$ 816 — 3,2x a base. Apenas 6 vendas, mas comprovam que há espaço para um produto premium (combo, pacote completo, certificação). Esse degrau da escada está subutilizado.</p>
-<h3 class="rep-h2">Recomendações sobre oferta</h3>
-<ul class="rep-list">
-<li>Mapear exatamente qual é a diferença entre &#x27;TEA&#x27; e &#x27;Promo&#x27; — e se possível, direcionar 100 % do tráfego pago para &#x27;Promo&#x27; (que tem ticket maior).</li>
-<li>Promover agressivamente &#x27;TEA.&#x27; (combo premium de R$ 816) como upsell da thank-you page da Promo — sample de 6 vendas a R$ 816 já soma R$ 4.898.</li>
-<li>Criar campanhas segmentadas que já ofertem Promo em vez de TEA base — economiza 1 clique do cliente e aumenta ticket.</li>
-<li>Atenção com 10%OFF e &#x27;TEA.&#x27;: oferta de desconto e oferta premium canibalizam diferentes públicos — testar com cuidado.</li>
-</ul>
-<h2 class="rep-h1">10. Potencial de escala — veredito final com dados reais</h2>
-<p class="rep-p">Com ticket médio real de R$ 306,54 e ROAS consolidado de 1,49x, a matemática é mais favorável que todas as projeções anteriores.</p>
-<h3 class="rep-h2">Cenários atualizados (ticket R$ 306)</h3>
-<p class="rep-p">Com dados reais, o teto sem destravamentos profundos fica em R$ 40-60k/mês, mantendo margem em torno de R$ 13k. Acima de R$ 100k, a operação se aproxima de breakeven mesmo com ticket R$ 306.</p>
-<h3 class="rep-h2">Cenários se 20 % da receita perdida for recuperada (+R$ 18k)</h3>
-<p class="rep-p">Implementando recuperação de pix/boleto e cartão recusado:</p>
-<p class="rep-p">Com recuperação implementada, o teto se desloca: R$ 60k/mês vira o ponto-ótimo, não o limite de risco. A margem sobe para ~R$ 22k/mês.</p>
-<h3 class="rep-h2">A pergunta final: existe potencial de escala?</h3>
-<p class="rep-p">SIM — e o potencial é maior do que os relatórios anteriores sugeriam. Com ticket real de R$ 306 e ROAS de 1,49x:</p>
-<ul class="rep-list">
-<li>Curto prazo (30-60 dias): R$ 25-30k/mês é atingível sem nenhum destravamento estrutural, mantendo margem de R$ 13-15k.</li>
-<li>Médio prazo (90-180 dias): R$ 60k/mês é viável com as 3 alavancas (recuperação de abandono, correção de atribuição, migração para oferta Promo).</li>
-<li>Longo prazo (180+ dias): R$ 100k/mês requer 2ª oferta (ex: especialização avançada de R$ 997+) para elevar LTV efetivo. Já existe embrião (&#x27;TEA.&#x27; de R$ 816) — escalar.</li>
-<li>Limitação estrutural real: o público-alvo (~580 mil profissionais de saúde no Brasil) suporta esse volume por vários anos — saturação não é preocupação de curto prazo.</li>
-</ul>
-<h3 class="rep-h2">Gargalo real — resumido</h3>
-<ul class="rep-list">
-<li>Não é o tráfego. O tráfego pago está gerando leads e vendas. ROAS 1,49x comprova.</li>
-<li>Não é o ticket. Ticket real de R$ 306 é saudável, e já há combo de R$ 816 validado.</li>
-<li>Não é o checkout. Aprovação de 68,6 % é saudável. Pix + cartão + parcelamento em 12x já estão ofertados.</li>
-<li>O gargalo é: (a) atribuição de conversão fantasma no Meta fazendo decisões ruins de alocação; (b) falta de recuperação de carrinho abandonado; (c) direcionamento de tráfego para oferta &#x27;TEA&#x27; em vez da &#x27;Promo&#x27; (perdendo R$ 85 de ticket por venda).</li>
-</ul>
-<h2 class="rep-h1">11. Plano de ação — 60 dias finais</h2>
-<h3 class="rep-h2">Semana 1-2 — correções invisíveis (zero investimento extra)</h3>
-<ul class="rep-list">
-<li>Configurar UTMs em 100% das campanhas ativas. Verificar que {{campaign.name}} não está sendo passado como literal.</li>
-<li>Implementar CAPI (Conversion API) para reduzir perda de atribuição.</li>
-<li>Montar fluxo de 3 e-mails + 2 WhatsApps de recuperação de pix/boleto pendentes (48h, 72h, 120h).</li>
-<li>Fluxo de recuperação de cartão recusado: e-mail imediato &#x27;tente outro método&#x27; + link de pagamento reenviado.</li>
-<li>Estudar diferença entre ofertas &#x27;TEA&#x27; e &#x27;Promo&#x27; — redirecionar tráfego para &#x27;Promo&#x27; onde fizer sentido.</li>
-</ul>
-<h3 class="rep-h2">Semana 3-4 — reestruturação de campanhas</h3>
-<ul class="rep-list">
-<li>Pausar campanha [C] [TEA] [VENDAS] [CBO] [04/03/26] ou reduzir budget em 70 % — ROAS real de 0,45x.</li>
-<li>Replicar estrutura da [PAGINA INLEAD ANTIGA] de jun/25 (ROAS real 1,15x, 31 vendas).</li>
-<li>Testar frio com segmentação profissional correta (cargos + interesses em entidades).</li>
-<li>Ativar criativo específico para janelas de compra: versão &#x27;antes da consulta&#x27; (manhã) e versão &#x27;depois do trabalho&#x27; (noite).</li>
-<li>Criar LAL 1%, 3%, 5% a partir dos 308 compradores reais.</li>
-</ul>
-<h3 class="rep-h2">Semana 5-8 — escala controlada</h3>
-<ul class="rep-list">
-<li>Subir investimento de R$ 15k para R$ 25k/mês em 3 passos de 30 % a cada 10 dias.</li>
-<li>Monitorar ROAS real (Kiwify, não Meta) semanalmente.</li>
-<li>Ampliar combo premium &#x27;TEA.&#x27; (R$ 816) como upsell sistemático na thank-you page.</li>
-<li>Testar oferta segmentada por especialidade: &#x27;para psicólogos&#x27;, &#x27;para fonoaudiólogos&#x27;, &#x27;para TOs&#x27;.</li>
-</ul>
-<h3 class="rep-h2">KPIs-alvo (reavaliação em 22/06/2026)</h3>
-<p class="rep-p">— FIM DA ANÁLISE DEFINITIVA —</p>
-<h2 class="rep-h1">Tabelas e Dados Detalhados</h2>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Indicador</th><th>Valor real</th><th>Vs análise anterior</th></tr>
-<tr><td>Vendas pagas (Kiwify)</td><td>308</td><td>+7,7% (estimava 286)</td></tr>
-<tr><td>Ticket médio líquido</td><td>R$ 306,54</td><td>+20,7% (estimava R$ 254)</td></tr>
-<tr><td>Receita líquida total</td><td>R$ 94.414,00</td><td>+30,0% (estimava R$ 72.644)</td></tr>
-<tr><td>Gasto de tráfego (Meta)</td><td>R$ 63.495,85</td><td>Igual</td></tr>
-<tr><td>ROAS líquido real</td><td>1,49x</td><td>+30,7% (estimava 1,14x)</td></tr>
-<tr><td>Margem bruta de mídia</td><td>R$ 30.918,15</td><td>+237,9% (estimava R$ 9.148)</td></tr>
-<tr><td>CPA real</td><td>R$ 206,16</td><td>−7,1% (estimava R$ 222)</td></tr>
-<tr><td>Margem média por venda</td><td>R$ 100,38</td><td>+213,7% (estimava R$ 32)</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Mês</th><th>Gasto</th><th>Vendas</th><th>Receita líq.</th><th>Ticket médio</th><th>ROAS</th><th>Margem</th></tr>
-<tr><td>mar/25</td><td>R$ 1.536</td><td>10</td><td>R$ 5.302</td><td>R$ 530</td><td>3,45x</td><td>R$ 3.766</td></tr>
-<tr><td>abr/25</td><td>R$ 777</td><td>3</td><td>R$ 1.847</td><td>R$ 616</td><td>2,38x</td><td>R$ 1.070</td></tr>
-<tr><td>mai/25</td><td>R$ 11.528</td><td>38</td><td>R$ 13.344</td><td>R$ 351</td><td>1,16x</td><td>R$ 1.816</td></tr>
-<tr><td>jun/25</td><td>R$ 14.523</td><td>61</td><td>R$ 20.656</td><td>R$ 339</td><td>1,42x</td><td>R$ 6.134</td></tr>
-<tr><td>jul/25</td><td>R$ 4.220</td><td>39</td><td>R$ 13.191</td><td>R$ 338</td><td>3,13x</td><td>R$ 8.971</td></tr>
-<tr><td>ago/25</td><td>R$ 2.689</td><td>10</td><td>R$ 3.063</td><td>R$ 306</td><td>1,14x</td><td>R$ 374</td></tr>
-<tr><td>set/25</td><td>R$ 4.606</td><td>24</td><td>R$ 6.193</td><td>R$ 258</td><td>1,34x</td><td>R$ 1.587</td></tr>
-<tr><td>out/25</td><td>R$ 5.313</td><td>43</td><td>R$ 11.113</td><td>R$ 258</td><td>2,09x</td><td>R$ 5.800</td></tr>
-<tr><td>nov/25</td><td>R$ 839</td><td>5</td><td>R$ 1.359</td><td>R$ 272</td><td>1,62x</td><td>R$ 520</td></tr>
-<tr><td>fev/26</td><td>R$ 2.621</td><td>19</td><td>R$ 5.007</td><td>R$ 264</td><td>1,91x</td><td>R$ 2.386</td></tr>
-<tr><td>mar/26</td><td>R$ 14.844</td><td>40</td><td>R$ 10.263</td><td>R$ 257</td><td>0,69x</td><td>(R$ 4.581)</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Dia</th><th>Vendas</th><th>% das vendas</th><th>Receita líq.</th><th>Ticket médio</th><th>Leitura</th></tr>
-<tr><td>Segunda</td><td>52</td><td>16,9%</td><td>R$ 15.902</td><td>R$ 306</td><td>Dia forte — manhã</td></tr>
-<tr><td>Terça</td><td>38</td><td>12,3%</td><td>R$ 11.365</td><td>R$ 299</td><td>Médio</td></tr>
-<tr><td>Quarta</td><td>35</td><td>11,4%</td><td>R$ 11.031</td><td>R$ 315</td><td>Pior dia de compra</td></tr>
-<tr><td>Quinta</td><td>55</td><td>17,9%</td><td>R$ 17.523</td><td>R$ 319</td><td>DIA DE OURO</td></tr>
-<tr><td>Sexta</td><td>40</td><td>13,0%</td><td>R$ 11.586</td><td>R$ 290</td><td>Regular</td></tr>
-<tr><td>Sábado</td><td>38</td><td>12,3%</td><td>R$ 11.548</td><td>R$ 304</td><td>Médio</td></tr>
-<tr><td>Domingo</td><td>50</td><td>16,2%</td><td>R$ 15.460</td><td>R$ 309</td><td>Forte — noite</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Faixa horária</th><th>Vendas</th><th>% das vendas</th><th>Receita líq.</th><th>Perfil do comprador</th></tr>
-<tr><td>00-05 (madrugada)</td><td>9</td><td>2,9%</td><td>R$ 2.809</td><td>Insônia/SP vs BR</td></tr>
-<tr><td>06-08 (café)</td><td>43</td><td>14,0%</td><td>R$ 12.990</td><td>Antes de sair pra clínica</td></tr>
-<tr><td>09-11 (antes consulta)</td><td>83</td><td>27,0%</td><td>R$ 26.218</td><td>PICO ABSOLUTO</td></tr>
-<tr><td>12-14 (almoço)</td><td>47</td><td>15,3%</td><td>R$ 13.951</td><td>Intervalo clínico</td></tr>
-<tr><td>15-17 (expediente)</td><td>26</td><td>8,4%</td><td>R$ 8.417</td><td>EM ATENDIMENTO — pior</td></tr>
-<tr><td>18-20 (pós-trabalho)</td><td>43</td><td>14,0%</td><td>R$ 12.743</td><td>Saída do consultório</td></tr>
-<tr><td>21-23 (noite)</td><td>57</td><td>18,5%</td><td>R$ 17.286</td><td>SEGUNDO PICO</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Combo</th><th>Vendas</th><th>% das vendas</th><th>Prioridade</th></tr>
-<tr><td>Segunda 09-10h</td><td>14</td><td>4,5%</td><td>Escalar ao máximo</td></tr>
-<tr><td>Quinta 09-11h</td><td>10</td><td>3,2%</td><td>Escalar ao máximo</td></tr>
-<tr><td>Domingo 21-22h</td><td>10</td><td>3,2%</td><td>Escalar ao máximo</td></tr>
-<tr><td>Quinta 21-22h</td><td>10</td><td>3,2%</td><td>Escalar ao máximo</td></tr>
-<tr><td>Segunda 10h</td><td>7</td><td>2,3%</td><td>Manter</td></tr>
-<tr><td>Domingo 11h</td><td>6</td><td>1,9%</td><td>Manter</td></tr>
-<tr><td>Terça 22h</td><td>6</td><td>1,9%</td><td>Manter</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Semana</th><th>Vendas</th><th>% das vendas</th><th>Receita líq.</th><th>ROAS</th><th>Alocação ideal</th></tr>
-<tr><td>Semana 1 (1-7)</td><td>85</td><td>27,6%</td><td>R$ 24.706</td><td>~1,5x</td><td>30-35% do budget</td></tr>
-<tr><td>Semana 2 (8-14)</td><td>53</td><td>17,2%</td><td>R$ 17.081</td><td>~1,0x</td><td>10-15% do budget</td></tr>
-<tr><td>Semana 3 (15-21)</td><td>76</td><td>24,7%</td><td>R$ 22.073</td><td>~1,3x</td><td>25-30% do budget</td></tr>
-<tr><td>Semana 4 (22-28)</td><td>66</td><td>21,4%</td><td>R$ 20.577</td><td>~1,3x</td><td>20-25% do budget</td></tr>
-<tr><td>Semana 5 (29-31)</td><td>28</td><td>9,1%</td><td>R$ 9.977</td><td>Dias irregulares</td><td>10% (se houver dia)</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Sem/Dia</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr>
-<tr><td>Semana 1</td><td>13</td><td>11</td><td>15</td><td>17</td><td>9</td><td>12</td><td>8</td></tr>
-<tr><td>Semana 2</td><td>7</td><td>9</td><td>5</td><td>3</td><td>10</td><td>5</td><td>14</td></tr>
-<tr><td>Semana 3</td><td>6</td><td>9</td><td>10</td><td>21</td><td>12</td><td>12</td><td>6</td></tr>
-<tr><td>Semana 4</td><td>18</td><td>6</td><td>4</td><td>11</td><td>7</td><td>7</td><td>13</td></tr>
-<tr><td>Semana 5</td><td>8</td><td>3</td><td>1</td><td>3</td><td>2</td><td>2</td><td>9</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Estado do pedido</th><th>Qtd</th><th>Valor bruto</th><th>Diagnóstico</th></tr>
-<tr><td>Pagas (paid)</td><td>308</td><td>R$ 118.577</td><td>OK — receita consolidada</td></tr>
-<tr><td>Aguardando pagamento</td><td>77</td><td>R$ 28.860</td><td>Boleto/Pix não finalizado</td></tr>
-<tr><td>Recusadas (refused)</td><td>64</td><td>R$ 27.666</td><td>Cartão recusado pelo banco</td></tr>
-<tr><td>Reembolsadas</td><td>7</td><td>R$ ~</td><td>Dentro do padrão de mercado</td></tr>
-<tr><td>Chargeback</td><td>1</td><td>R$ ~</td><td>Irrelevante</td></tr>
-<tr><td>Aprovação</td><td>68,6%</td><td>—</td><td>Taxa saudável para infoproduto</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Alavanca</th><th>Receita potencial</th><th>Taxa típica</th><th>Valor recuperável</th></tr>
-<tr><td>Recuperação Pix/boleto (77 pedidos)</td><td>R$ 28.860</td><td>40%</td><td>R$ 11.544</td></tr>
-<tr><td>Recuperação cartão recusado (64 pedidos)</td><td>R$ 27.666</td><td>25%</td><td>R$ 6.916</td></tr>
-<tr><td>TOTAL recuperável</td><td>R$ 56.526</td><td>—</td><td>R$ 18.460</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Método</th><th>Vendas</th><th>Receita</th><th>Ticket</th><th>Parcelas médias</th></tr>
-<tr><td>Pix</td><td>138</td><td>R$ 41.359</td><td>R$ 300</td><td>à vista</td></tr>
-<tr><td>Mastercard</td><td>93</td><td>R$ 29.123</td><td>R$ 313</td><td>7,5x</td></tr>
-<tr><td>Visa</td><td>69</td><td>R$ 21.376</td><td>R$ 310</td><td>6,5x</td></tr>
-<tr><td>Elo</td><td>5</td><td>R$ 1.834</td><td>R$ 367</td><td>6x</td></tr>
-<tr><td>Boleto</td><td>3</td><td>R$ 723</td><td>R$ 241</td><td>1x</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Campanha (via UTM)</th><th>Vendas</th><th>Receita líq.</th><th>Gasto tráfego</th><th>ROAS</th></tr>
-<tr><td>[TEA][CONV][ABO][PAGINA INLEAD ANTIGA][19/06/25]</td><td>31</td><td>R$ 10.567</td><td>R$ 9.225</td><td>1,15x</td></tr>
-<tr><td>[C] [TEA] [VENDAS] [CBO] [04/03/26]</td><td>23</td><td>R$ 5.852</td><td>R$ 12.952</td><td>0,45x</td></tr>
-<tr><td>[TEA][CONV][ABO][PUBLICO FRIO][TESTE CRIATIVOS][06/05/25]</td><td>10</td><td>R$ 3.409</td><td>R$ 4.875</td><td>0,70x</td></tr>
-<tr><td>AppSell (venda via app Kiwify)</td><td>7</td><td>R$ 2.300</td><td>—</td><td>n/a</td></tr>
-<tr><td>[C-01][TEA][CONV][ABO][PSCI/TERA][21/08/25]</td><td>7</td><td>R$ 1.781</td><td>R$ 1.836</td><td>0,97x</td></tr>
-<tr><td>[TEA][CONV][CBO][ABERTO][26/05/25]</td><td>7</td><td>R$ 2.386</td><td>n/a</td><td>—</td></tr>
-<tr><td>[TEA][CONV][CBO]MEDICO INTERNO][PÁGINA S/VIDEO][01/06]</td><td>4</td><td>R$ 1.364</td><td>R$ 921</td><td>1,48x</td></tr>
-<tr><td>[TEA][CONV][CBO][REMARKETING][03/07/25]</td><td>4</td><td>R$ 1.364</td><td>n/a</td><td>—</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][20/05/25]</td><td>4</td><td>R$ 1.364</td><td>R$ 752</td><td>1,81x</td></tr>
-<tr><td>[TEA][CONV][CBO][PSCI/TERA][22/06/25]</td><td>3</td><td>R$ 1.023</td><td>R$ 633</td><td>1,62x</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Oferta</th><th>Vendas</th><th>Receita</th><th>Ticket médio</th><th>O que é</th></tr>
-<tr><td>TEA</td><td>139</td><td>R$ 35.412</td><td>R$ 255</td><td>Produto base</td></tr>
-<tr><td>Promo</td><td>129</td><td>R$ 43.974</td><td>R$ 341</td><td>Upsell embutido</td></tr>
-<tr><td>PROMO2</td><td>11</td><td>R$ 3.750</td><td>R$ 341</td><td>Variante da Promo</td></tr>
-<tr><td>10%OFF</td><td>7</td><td>R$ 2.146</td><td>R$ 307</td><td>Desconto específico</td></tr>
-<tr><td>TEA. (com ponto)</td><td>6</td><td>R$ 4.898</td><td>R$ 816</td><td>Combo premium!</td></tr>
-<tr><td>Promoaluno</td><td>2</td><td>R$ 814</td><td>R$ 407</td><td>Para alunos já cadastrados</td></tr>
-<tr><td>Combo</td><td>1</td><td>R$ 256</td><td>R$ 256</td><td>Teste</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>CPA esperado</th><th>Vendas/mês</th><th>Receita líq.</th><th>Margem</th></tr>
-<tr><td>Base atual (mantendo eficiência)</td><td>R$ 15.000</td><td>R$ 180</td><td>83</td><td>R$ 25.443</td><td>R$ 10.443</td></tr>
-<tr><td>Escala cautelosa</td><td>R$ 25.000</td><td>R$ 200</td><td>125</td><td>R$ 38.319</td><td>R$ 13.319</td></tr>
-<tr><td>Escala agressiva</td><td>R$ 40.000</td><td>R$ 230</td><td>174</td><td>R$ 53.340</td><td>R$ 13.340</td></tr>
-<tr><td>Pesada (precisa LAL + novos criativos)</td><td>R$ 60.000</td><td>R$ 260</td><td>231</td><td>R$ 70.810</td><td>R$ 10.810</td></tr>
-<tr><td>Agressivo (novos produtos)</td><td>R$ 100.000</td><td>R$ 300</td><td>333</td><td>R$ 102.078</td><td>R$ 2.078</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>Cenário</th><th>Investimento/mês</th><th>Receita incluindo recuperação</th><th>Margem recalculada</th></tr>
-<tr><td>Base</td><td>R$ 15.000</td><td>R$ 29.043 (+R$ 3.600)</td><td>R$ 14.043</td></tr>
-<tr><td>Escala cautelosa</td><td>R$ 25.000</td><td>R$ 43.719 (+R$ 5.400)</td><td>R$ 18.719</td></tr>
-<tr><td>Escala agressiva</td><td>R$ 40.000</td><td>R$ 61.140 (+R$ 7.800)</td><td>R$ 21.140</td></tr>
-<tr><td>Pesada</td><td>R$ 60.000</td><td>R$ 82.210 (+R$ 11.400)</td><td>R$ 22.210</td></tr>
-</table></div>
-<div class="rep-table-wrap"><table class="rep-table">
-<tr><th>KPI</th><th>Atual</th><th>Meta 30 dias</th><th>Meta 60 dias</th></tr>
-<tr><td>ROAS real (receita/gasto)</td><td>1,49x</td><td>1,65x</td><td>1,85x</td></tr>
-<tr><td>Ticket médio líquido</td><td>R$ 306</td><td>R$ 325</td><td>R$ 350</td></tr>
-<tr><td>Aprovação de pagamento</td><td>68,6%</td><td>75%</td><td>80%</td></tr>
-<tr><td>Atribuição via UTM</td><td>45,5%</td><td>70%</td><td>85%</td></tr>
-<tr><td>Vendas/mês</td><td>~40</td><td>70</td><td>95</td></tr>
-<tr><td>Investimento/mês</td><td>R$ 15k</td><td>R$ 22k</td><td>R$ 30k</td></tr>
-<tr><td>Margem bruta de mídia/mês</td><td>~R$ 7k</td><td>R$ 15k</td><td>R$ 22k</td></tr>
-</table></div>
-  </div>
-</section>
-
-  </section>
-
-  <!-- TEA DASHBOARD -->
-  <section class="tab-pane" id="tea-dashboard">
-    <div class="iframe-wrap">
-      <div class="iframe-toolbar">
-        <span><strong>Dashboard_TEA.html</strong> · 308 Kiwify + 54 Hotmart · ROAS 1,70x · gerado em 23/04/26</span>
-        <a href="Dashboard_TEA.html" target="_blank">Abrir em nova aba ↗</a>
-      </div>
-      <iframe src="Dashboard_TEA.html" loading="lazy" title="Dashboard TEA"></iframe>
+    <div class="rep-header" style="border-color:rgba(34,211,238,.25);background:linear-gradient(135deg,rgba(34,211,238,.08) 0%,rgba(15,23,42,.3) 100%)">
+      <div class="rep-eyebrow" style="color:#22D3EE">📊 Brainpro Academy · Análise Estratégica</div>
+      <h1 class="rep-title">Diagnóstico executivo consolidado — funil, cross-sell e plano</h1>
+      <p class="rep-subtitle">Visão multi-produto · 1.263 clientes · R$ 729k receita · 1.707 transações · todas as plataformas</p>
     </div>
-  </section>
 
-  <!-- BRAINPRO COMPORTAMENTO -->
-  <section class="tab-pane" id="brain-comportamento">
-    <div class="iframe-wrap">
-      <div class="iframe-toolbar">
-        <span><strong>Dashboard_Comportamento_Compra_BRAINPRO.html</strong> · padrões de decisão e funil de aquisição</span>
-        <a href="Dashboard_Comportamento_Compra_BRAINPRO.html" target="_blank">Abrir em nova aba ↗</a>
-      </div>
-      <iframe src="Dashboard_Comportamento_Compra_BRAINPRO.html" loading="lazy" title="BRAINPRO Comportamento"></iframe>
+    <div class="home-hero" style="border-color:rgba(34,211,238,.2);background:linear-gradient(135deg,rgba(34,211,238,.08) 0%,rgba(15,23,42,.3) 100%);">
+      <h2 style="font-size:18px;color:#F1F5F9">Resumo executivo — em 3 frases</h2>
+      <p style="margin-top:8px"><strong style="color:#4ADE80">Negócio é saudável e tem alavanca clara de escala:</strong> R$ 729k receita acumulada com LTV de R$ 577. <strong style="color:#FBBF24">Maior gargalo é a passagem do 1º para o 2º produto:</strong> 80,9% dos clientes param após uma compra (1.022 de 1.263) — converter só 10% desses gera +R$ 53k. <strong style="color:#A78BFA">A escada de valor existe e funciona quando ativada:</strong> cliente com 3+ produtos vale 2,6× mais (R$ 1.203 vs R$ 467) e a janela crítica de upsell é 0-7 dias.</p>
     </div>
-  </section>
 
-  <!-- BRAINPRO RECOMPRA -->
-  <section class="tab-pane" id="brain-recompra">
-    <div class="iframe-wrap">
-      <div class="iframe-toolbar">
-        <span><strong>Dashboard_Recompra_BRAINPRO.html</strong> · funil entrada → recompra → pós-graduação</span>
-        <a href="Dashboard_Recompra_BRAINPRO.html" target="_blank">Abrir em nova aba ↗</a>
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Funil de retenção · onde o cliente para de avançar</h3>
+    <div class="section" style="padding:24px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:grid;grid-template-columns:160px 1fr 70px 70px;gap:14px;align-items:center;padding:12px 16px;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:8px"><span style="font-size:13px;font-weight:600">1+ produto</span><div style="height:10px;background:linear-gradient(90deg,#4ADE80,#22C55E);border-radius:5px;width:100%"></div><span style="font-weight:700;text-align:right">1.263</span><span style="color:#94A3B8;font-size:12px;text-align:right">100%</span></div>
+        <div style="display:grid;grid-template-columns:160px 1fr 70px 70px;gap:14px;align-items:center;padding:12px 16px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.18);border-radius:8px"><span style="font-size:13px;font-weight:600">2+ produtos</span><div style="height:10px;background:linear-gradient(90deg,#FBBF24,#f59e0b);border-radius:5px;width:19.1%"></div><span style="font-weight:700;text-align:right">241</span><span style="color:#94A3B8;font-size:12px;text-align:right">19,1%</span></div>
+        <div style="display:grid;grid-template-columns:160px 1fr 70px 70px;gap:14px;align-items:center;padding:12px 16px;background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.18);border-radius:8px"><span style="font-size:13px;font-weight:600">3+ produtos (VIP)</span><div style="height:10px;background:linear-gradient(90deg,#A78BFA,#8b5cf6);border-radius:5px;width:5.1%"></div><span style="font-weight:700;text-align:right">64</span><span style="color:#94A3B8;font-size:12px;text-align:right">5,1%</span></div>
+        <div style="display:grid;grid-template-columns:160px 1fr 70px 70px;gap:14px;align-items:center;padding:12px 16px;background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.18);border-radius:8px"><span style="font-size:13px;font-weight:600">5+ produtos</span><div style="height:10px;background:linear-gradient(90deg,#F87171,#EF4444);border-radius:5px;width:0.7%"></div><span style="font-weight:700;text-align:right">9</span><span style="color:#94A3B8;font-size:12px;text-align:right">0,7%</span></div>
       </div>
-      <iframe src="Dashboard_Recompra_BRAINPRO.html" loading="lazy" title="BRAINPRO Recompra"></iframe>
+      <p style="margin-top:14px;font-size:13px;color:#94A3B8"><strong style="color:#FBBF24">Gargalo máximo:</strong> 80,9% para no 1º produto (1.022 clientes). Esse é o ponto único de maior alavancagem — converter 10% desses gera +R$ 53k de receita imediata sem aumentar 1 real de tráfego.</p>
     </div>
+
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Cross-sell · principais progressões</h3>
+    <div class="section" style="padding:0">
+      <table class="rep-table">
+        <tr><th>Origem</th><th>Destino</th><th>Vol. clientes</th><th>Tempo médio</th><th>Leitura estratégica</th></tr>
+        <tr><td>Não-Invasiva (R$ 30)</td><td>Assinatura Voomp</td><td>33</td><td>—</td><td><span class="pill-data green">Maior caminho de receita</span></td></tr>
+        <tr><td>Não-Invasiva</td><td>TEA</td><td>25</td><td>—</td><td>Caminho clássico de aprofundamento</td></tr>
+        <tr><td>Binaurais</td><td>TEA</td><td>25</td><td>46d</td><td>Recompra rápida — janela quente</td></tr>
+        <tr><td>TEA</td><td>Workshop TDAH</td><td>18</td><td>—</td><td>Sequência natural pós-TEA</td></tr>
+        <tr><td>Não-Invasiva</td><td>Binaurais</td><td>17</td><td>—</td><td>Mesma faixa de ticket — escada lateral</td></tr>
+        <tr><td>TEA</td><td>Assinatura Voomp</td><td>16</td><td>—</td><td>Migração para alto LTV</td></tr>
+      </table>
+    </div>
+
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Insights estratégicos · onde atacar primeiro</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:24px">
+      <div style="padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(30,41,59,.55),rgba(15,23,42,.35));border-left:3px solid #F87171"><div style="font-size:20px;color:#F87171;margin-bottom:6px">①</div><h4 style="font-size:13px;color:#F1F5F9;margin-bottom:6px;font-weight:700">Maior gargalo da operação</h4><p style="font-size:12.5px;color:#94A3B8;line-height:1.55">80,9% dos clientes param no 1º produto. <strong style="color:#F1F5F9">Converter 10% deles para um 2º produto = +R$ 53k.</strong></p></div>
+      <div style="padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(30,41,59,.55),rgba(15,23,42,.35));border-left:3px solid #F87171"><div style="font-size:20px;color:#F87171;margin-bottom:6px">②</div><h4 style="font-size:13px;color:#F1F5F9;margin-bottom:6px;font-weight:700">Janela de upsell de 7 dias</h4><p style="font-size:12.5px;color:#94A3B8;line-height:1.55">Mediana entre 1ª e 2ª compra = <strong>4 dias</strong>. <strong style="color:#F1F5F9">Sem sequência automatizada nos dias 1, 3, 5, 7 — perdendo o momento.</strong></p></div>
+      <div style="padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(30,41,59,.55),rgba(15,23,42,.35));border-left:3px solid #FBBF24"><div style="font-size:20px;color:#FBBF24;margin-bottom:6px">③</div><h4 style="font-size:13px;color:#F1F5F9;margin-bottom:6px;font-weight:700">Voomp = 64,7% da receita</h4><p style="font-size:12.5px;color:#94A3B8;line-height:1.55">R$ 471k de R$ 729k. <strong style="color:#F1F5F9">60% paga via boleto = risco de inadimplência. Cross-sell de assinantes só 5,2%.</strong></p></div>
+      <div style="padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(30,41,59,.55),rgba(15,23,42,.35));border-left:3px solid #4ADE80"><div style="font-size:20px;color:#4ADE80;margin-bottom:6px">④</div><h4 style="font-size:13px;color:#F1F5F9;margin-bottom:6px;font-weight:700">VFC: oportunidade escondida</h4><p style="font-size:12.5px;color:#94A3B8;line-height:1.55">VFC tem <strong>91,7% recompra em 17 dias</strong>. Hoje só 24 compradores. <strong style="color:#F1F5F9">Promover como porta secundária pode dobrar a velocidade da esteira.</strong></p></div>
+      <div style="padding:18px;border-radius:12px;background:linear-gradient(135deg,rgba(30,41,59,.55),rgba(15,23,42,.35));border-left:3px solid #4ADE80"><div style="font-size:20px;color:#4ADE80;margin-bottom:6px">⑤</div><h4 style="font-size:13px;color:#F1F5F9;margin-bottom:6px;font-weight:700">DRY = atalho para PG</h4><p style="font-size:12.5px;color:#94A3B8;line-height:1.55">DRY → PG em <strong>9 dias</strong> (vs 80d via tDCS). 6 dos 27 alunos PG vieram via DRY. <strong style="color:#F1F5F9">Reposicionar DRY como antessala da PG.</strong></p></div>
+      
+
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">Plano de ação 30/60/90 dias</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:24px">
+      <div style="background:linear-gradient(135deg,rgba(96,165,250,.06) 0%,rgba(30,41,59,.35) 100%);border:1px solid rgba(96,165,250,.18);border-radius:12px;padding:20px">
+        <div style="font-size:10px;font-weight:800;color:#60A5FA;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Sprint 1 · Dias 1-30</div>
+        <div style="font-size:15px;font-weight:700;color:#F1F5F9;margin-bottom:14px">Destravar gargalo do 1º→2º produto</div>
+        <ul style="list-style:none;padding:0">
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Sequência automatizada de upsell dias 1/3/5/7 (e-mail + WhatsApp)</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Oferta 2º produto: combo ou desconto 30-40% válido 72h</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Webinar gratuito como isca para 418 dormentes Não-Invasiva</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Fluxo de recuperação pix/boleto pendente (R$ 18,5k em jogo)</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Mapear capacidade de novas turmas da Pós-Graduação</li>
+        </ul>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(96,165,250,.06) 0%,rgba(30,41,59,.35) 100%);border:1px solid rgba(96,165,250,.18);border-radius:12px;padding:20px">
+        <div style="font-size:10px;font-weight:800;color:#60A5FA;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Sprint 2 · Dias 31-60</div>
+        <div style="font-size:15px;font-weight:700;color:#F1F5F9;margin-bottom:14px">Acelerar a esteira para PG</div>
+        <ul style="list-style:none;padding:0">
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Reposicionar DRY como antessala da PG</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Promover Avaliação VFC como porta secundária</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Lead scoring (40+ pts = convite PG)</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Migrar 30% boletos Voomp para cartão</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Programa pós-compra Voomp: redução de churn nas assinaturas</li>
+        </ul>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(96,165,250,.06) 0%,rgba(30,41,59,.35) 100%);border:1px solid rgba(96,165,250,.18);border-radius:12px;padding:20px">
+        <div style="font-size:10px;font-weight:800;color:#60A5FA;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Sprint 3 · Dias 61-90</div>
+        <div style="font-size:15px;font-weight:700;color:#F1F5F9;margin-bottom:14px">Escalar com base destravada</div>
+        <ul style="list-style:none;padding:0">
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Bundle TEA + tDCS + DRY com desconto progressivo</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Programa VIP clientes 2+ produtos</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Programa de indicação entre alunos da Pós-Graduação</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ NPS / pesquisa de satisfação por degrau da esteira</li>
+          <li style="font-size:12px;color:#94A3B8;padding:5px 0 5px 16px;position:relative;line-height:1.5">→ Revisão executiva mensal</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:13px;font-weight:700;color:#94A3B8;margin:24px 0 12px 0;letter-spacing:.05em;text-transform:uppercase">KPIs-Alvo · Reavaliação 30/60/90</h3>
+    <div class="section" style="padding:0">
+      <table class="rep-table">
+        <tr><th>KPI</th><th>Atual</th><th>Meta 30 dias</th><th>Meta 60 dias</th><th>Meta 90 dias</th></tr>
+        <tr><td>Taxa recompra (1+ → 2+)</td><td>19,1%</td><td>22%</td><td>26%</td><td><strong style="color:#4ADE80">30%</strong></td></tr>
+        <tr><td>LTV médio por cliente</td><td>R$ 577</td><td>R$ 620</td><td>R$ 680</td><td><strong style="color:#4ADE80">R$ 750</strong></td></tr>
+        <tr><td>Clientes VIP (3+ produtos)</td><td>64</td><td>78</td><td>95</td><td><strong style="color:#4ADE80">128</strong></td></tr>
+        <tr><td>Alunos PG matrículados</td><td>27</td><td>32</td><td>40</td><td><strong style="color:#4ADE80">55</strong></td></tr>
+        
+        
+        <tr><td>Receita mensal consolidada</td><td>~R$ 60k</td><td>R$ 75k</td><td>R$ 95k</td><td><strong style="color:#4ADE80">R$ 120k</strong></td></tr>
+      </table>
+    </div>
+
   </section>
 
-</main>
+  <!-- ============ COMPORTAMENTO & RECOMPRA ============ -->
+  <section class="tab-pane" id="comportamento">
 
-<script>
-(function(){
-  const primaryBtns = document.querySelectorAll('#primaryTabs .primary-tab');
-  const subBar = document.getElementById('secondaryBar');
-  const subBtns = document.querySelectorAll('#secondaryTabs .secondary-tab');
-  const panes = document.querySelectorAll('.tab-pane');
-  const subPanes = document.querySelectorAll('#tea-reports section.tab-pane');
+    <div class="subtab-bar">
+      <button class="subtab active" data-sub="comp-recompra">🔁 Funil de Recompra</button>
+      <button class="subtab" data-sub="comp-comportamento">🧭 Comportamento de Compra</button>
+    </div>
 
-  function activatePrimary(tabId){
-    primaryBtns.forEach(b=>b.classList.toggle('active', b.dataset.tab===tabId));
-    panes.forEach(p=>p.classList.toggle('active', p.id===tabId));
-    // show secondary bar only for tea-reports
-    if(tabId==='tea-reports'){
-      subBar.classList.add('show');
-      // ensure first sub is active if none
-      const anyActive = Array.from(subPanes).some(p=>p.classList.contains('active'));
-      if(!anyActive){ activateSub('tab-tea-v1'); }
-    } else {
-      subBar.classList.remove('show');
-    }
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
-  function activateSub(subId){
-    subBtns.forEach(b=>b.classList.toggle('active', b.dataset.sub===subId));
-    subPanes.forEach(p=>p.classList.toggle('active', p.id===subId));
-  }
+    <div class="subpane active" id="comp-recompra">
+      <div class="iframe-wrap">
+        <div class="iframe-toolbar">
+          <span><strong>Dashboard de Recompra</strong> · funil entrada → recompra → pós-graduação · 1.263 clientes</span>
+          <a href="Dashboard_Recompra_BRAINPRO.html" target="_blank">Abrir em nova aba ↗</a>
+        </div>
+        <iframe src="Dashboard_Recompra_BRAINPRO.html" loading="lazy" title="Recompra"></iframe>
+      </div>
+    </div>
 
-  primaryBtns.forEach(b=>b.addEventListener('click',()=>activatePrimary(b.dataset.tab)));
-  subBtns.forEach(b=>b.addEventListener('click',()=>activateSub(b.dataset.sub)));
-
-  // Home pills navigation
-  document.querySelectorAll('[data-goto]').forEach(el=>{
-    el.addEventListener('click',()=>{
-      activatePrimary(el.dataset.goto);
-      if(el.dataset.sub) activateSub(el.dataset.sub);
-    });
-  });
-
-  // Initialize sub-panes inside #tea-reports — first one active
-  if(subPanes.length){
-    subPanes.forEach((p,i)=>p.classList.toggle('active', i===0));
-  }
-})();
-</script>
-</body>
-</html>
+    <div 
